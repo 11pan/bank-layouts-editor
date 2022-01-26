@@ -1,2 +1,3 @@
-# bank-layouts-editor
-Edit bank layouts for runelite!
+# Bank Layout Editor
+
+Edit your bank layouts with this tool.

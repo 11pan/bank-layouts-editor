@@ -1,0 +1,39 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public --no-clear"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "node-sass": "^7.0.1",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0",
+    "svelte-dnd-action": "^0.9.14",
+    "svelte-grid": "^5.1.1",
+    "svelte-preprocess": "^4.10.2"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "bulma": "^0.9.3",
+    "bulma-pro": "^0.2.0",
+    "fuse": "^0.4.0",
+    "fuse.js": "^6.5.3",
+    "postcss": "^8.4.5",
+    "sirv-cli": "^2.0.0",
+    "svelma": "^0.4.5",
+    "svelte-drag": "^2.4.0",
+    "svelte-materialify": "^0.3.11",
+    "svelte-quicksearch-bar": "^1.0.4",
+    "svelte-typeahead": "^4.2.1"
+  }
+}
