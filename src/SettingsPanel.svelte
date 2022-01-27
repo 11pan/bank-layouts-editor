@@ -1,19 +1,42 @@
 <script>
-	import { Field, Input, Icon, Toast } from 'svelma';
+	import { Field, Input, Icon, Toast, Button, Tab, Tabs, Switch } from 'svelma';
 	import ItemSlot from './ItemSlot.svelte';
 
 	import { SLOTS, TAG_NAME } from './stores.js'
 	import { itemContainer } from "./container";
+	import ModalCard from './ModalCard.svelte';
 
 	$SLOTS['icon'] = [-1];
 
 
+	let importModalActive = false;
+	let exportModalActive = false;
 
+	let importText = '';
+	let exportTextLayout = '';
+	let exportTextTag = '';
 
+	let tagOrLayout = 1;
+
+	let exportText = '';
+	let exportType = 'Layout';
+	let addToLayout = true;
+
+	const setExportText = (tagOrLayout) => {
+		exportText = (tagOrLayout == 0 ? exportTextTag : exportTextLayout);
+		exportType = (tagOrLayout == 0 ? 'Tag' : 'Layout');
+	}
+	$: setExportText(tagOrLayout);
 
 	export const importLayout = e => {
-		navigator.clipboard.readText()
-			.then(text => {
+		try {
+			var text = importText;
+			var type = '';
+
+			if (text.includes('banktaglayoutsplugin')) {
+				type = 'Layout';
+
+				// Load bank layout
 				var bankLayoutItems = text.substring(text.indexOf("banktaglayoutsplugin:") + 1, text.indexOf(",banktag"));
 				bankLayoutItems = bankLayoutItems.split(",");
 				$TAG_NAME = bankLayoutItems[0].split(":")[1];
@@ -43,12 +66,31 @@
 				}
 
 				$SLOTS['taggedItems'] = [...tagItems];
+			} else {
+				type = 'Tag';
 
+				// Load bank tag
+				var banktagItems = text.split(',');
+				$SLOTS['icon'][0] = parseInt(banktagItems[1]);
+				$TAG_NAME = banktagItems[0];
+				$SLOTS['grid'].fill(-1);
 
-				Toast.create({ message: 'Layout imported successfully', type: 'is-success', position: 'is-bottom-left' });
-			}).catch(e => {
-				Toast.create({ message: 'Error importing layout: ' + e.message, type: 'is-danger', position: 'is-bottom-left'});
-			});
+				var items = [];
+				for (var i = 2; i < banktagItems.length; i++)
+					items.push(parseInt(banktagItems[i]));
+
+				if (addToLayout) {
+					for (var i = 0; i < items.length; i++)
+						$SLOTS['grid'][i] = items[i];
+				} else {
+					$SLOTS['taggedItems'] = [...items];
+				}
+			}
+
+			Toast.create({ message: type + ' imported successfully', type: 'is-success', position: 'is-bottom-left' });
+		} catch (e) {
+			Toast.create({ message: 'Error importing ' + type + ': ' + e.message, type: 'is-danger', position: 'is-bottom-left'});
+		};
 	}
 
 	export const exportLayout = e => {
@@ -62,12 +104,15 @@
 					out += ($SLOTS['grid'][i] + ":" + i + ",");
 				}
 			
-			out += "banktag:" + $TAG_NAME + "," + ($SLOTS['icon'][0] >= 0 ? $SLOTS['icon'][0] : 0) + ',';
-			out += $SLOTS['items'].filter(x => (x >= 0)).join(',');
+			out += "banktag:"
+			var banktag = $TAG_NAME + "," + ($SLOTS['icon'][0] >= 0 ? $SLOTS['icon'][0] : 0) + ',';
+			banktag += $SLOTS['items'].filter(x => (x >= 0)).join(',');
 
-			navigator.clipboard.writeText(out);
 
-			Toast.create({ message: 'Layout exported successfully', type: 'is-success', position: 'is-bottom-left' });
+			exportTextLayout = out + banktag;
+			exportTextTag = banktag;
+
+			setExportText(tagOrLayout);
 		} catch (e) {
 			Toast.create({ message: 'Error exporting layout: ' + e.message, type: 'is-danger', position: 'is-bottom-left'});
 		}
@@ -101,10 +146,43 @@
 	</div>
 
 	<div class='card-footer'>
-		<a on:click={importLayout} class='card-footer-item'><Icon pack="fas" icon="file-import" />&nbsp; Import</a>
-		<a on:click={exportLayout} class='card-footer-item'><Icon pack="fas" icon="file-export" />&nbsp; Export</a>
+		<a on:click={(e) => {importModalActive=true}} class='card-footer-item'><Icon pack="fas" icon="file-import" />&nbsp; Import</a>
+		<a on:click={(e) => {exportModalActive=true; exportLayout(e); }} class='card-footer-item'><Icon pack="fas" icon="file-export" />&nbsp; Export</a>
 	</div>
 </div>
+
+<ModalCard bind:active={importModalActive} title='Import' successName='Import' on:success={importLayout}>
+	<span>Paste your Tag or Layout code here</span>
+	<Field>
+		<Input type='textarea' bind:value={importText}/>
+	</Field>
+	<div class='is-pulled-right'>
+		<Switch bind:checked={addToLayout}>Add to Layout</Switch>
+	</div>
+</ModalCard>
+
+
+<ModalCard
+	bind:active={exportModalActive}
+	title='Export'
+	successName='Copy to Clipboard'
+	on:success={(e) => {
+		var text = exportText;
+		var type = exportType;
+
+		try {
+			navigator.clipboard.writeText(text);
+			Toast.create({ message: type + ' copied successfully', type: 'is-success', position: 'is-bottom-left' });
+		} catch (e) {
+			Toast.create({ message: 'Error copying ' + type + ': ' + e.message, type: 'is-danger', position: 'is-bottom-left'});
+		}
+	}}>
+	<Tabs bind:active={tagOrLayout} style="is-fullwidth">
+		<Tab label='Tag' icon='tag'></Tab>
+		<Tab label='Layout' icon='th-large'></Tab>
+	</Tabs>
+	<Input type='textarea' bind:value={exportText} readonly/>
+</ModalCard>
 
 
 <style>

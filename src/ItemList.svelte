@@ -25,6 +25,14 @@
 			$SLOTS['items'][i] = all_items[i];
 	}
 
+	const removeItem = id => {
+		$SLOTS['taggedItems'] = $SLOTS['taggedItems'].filter(e => e != id);
+
+		for (var i = 0; i < $SLOTS['grid'].length; i++)
+			if ($SLOTS['grid'][i] == id)
+				$SLOTS['grid'][i] = -1;
+	}
+
 	const onUpdate = (...args) => {
 		addItem(-1);
 	}
@@ -43,7 +51,7 @@
 
 	{#each $SLOTS['items'] as item, idx}
 		<div
-			on:contextmenu|preventDefault={ e => { $SLOTS['items'][idx] = -1; } }
+			on:contextmenu|preventDefault={ e => { removeItem($SLOTS['items'][idx]); } }
 		>
 
 			<ItemSlot
