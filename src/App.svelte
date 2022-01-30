@@ -6,15 +6,19 @@
 	import FragmentApp from './fragments/FragmentApp.svelte';
 
 	let pages = {
-		'/': BankLayoutsApp,
-		'/fragments': FragmentApp
+		'': BankLayoutsApp,
+		'fragments': FragmentApp
 	}
 
-	let component;
+	let component = BankLayoutsApp;
 
-	for (const [key, value] of Object.entries(pages)) {
-		page(key, (ctx) => { component = value; });
-	}
+	page('/', (ctx) => {
+		if (ctx.hash in pages) {
+			var value = pages[ctx.hash];
+			component = value;
+			ctx.handled = true;
+		}
+	});
 
 	page.start();
 </script>
