@@ -5,7 +5,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv docs --no-clear"
+    "start": "sirv docs --no-clear --single"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -28,6 +28,8 @@
     "bulma-pro": "^0.2.0",
     "fuse": "^0.4.0",
     "fuse.js": "^6.5.3",
+    "glpk.js": "^4.0.1",
+    "page": "^1.11.6",
     "postcss": "^8.4.5",
     "sirv-cli": "^2.0.0",
     "svelma": "^0.4.5",

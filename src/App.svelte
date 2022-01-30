@@ -1,29 +1,23 @@
+<!-- Handle routing -->
+
 <script>
-	// import ItemSearch from "./ItemSearch.svelte";
-	// import ItemGrid from "./ItemGrid.svelte"
+	import page from 'page';
+	import BankLayoutsApp from './BankLayoutsApp.svelte';
+	import FragmentApp from './fragments/FragmentApp.svelte';
 
-	import { getItems } from "./stores.js"
-	const promise = getItems();
+	let pages = {
+		'/': BankLayoutsApp,
+		'/fragments': FragmentApp
+	}
 
+	let component;
 
-	import MainPanel from './MainPanel.svelte'
+	for (const [key, value] of Object.entries(pages)) {
+		page(key, (ctx) => { component = value; });
+	}
 
+	page.start();
 </script>
 
-	{#await promise}
-		Loading...
-	{:then items}
-		<div class='section'>
-			<div class='container'>
-				<MainPanel />
-			</div>
-		
-		</div>
-	{:catch error}
-		There was an error: {JSON.stringify(error)}.
-	{/await}
 
-
-<style>
-
-</style>
+<svelte:component this={component} />
