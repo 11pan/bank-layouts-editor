@@ -56,7 +56,7 @@ export let fragments = {
 	"Other": [
 		["Barbarian Pest Wars", "Twin Strikes", "Knife's Edge"],
 		["Mother's Magic Fossils", "Chain Magic", "Endless Knowledge"],
-		["Rogues' Chompy Farm", "Double Tap", "Unchained Talent"]
+		["Rogues' Chompy Farm", "Double Tap", "Unchained Talent"],
 		["Clued In", "Last Recall", "Drakan's Touch"],
 		["Hot On The Trail", "Fast Metabolism", "Chain Magic"],
 		["Message In A Bottle", "Knife's Edge", "Greedy Gatherer"]
