@@ -13,8 +13,9 @@
 	}
 
 	var allSets = [];
+	var nameToSet = {};
 	for (const [key, value] of Object.entries(sets)) {
-		value.forEach((x) => { x.id = allSets.length; allSets.push(x); })
+		value.forEach((x) => { x.id = allSets.length; allSets.push(x); nameToSet[x.name] = x; })
 	}
 
 	
@@ -85,12 +86,37 @@
 
 			if (result.status == glpk.GLP_OPT) {
 				var soln = [];
+				var counts = {};
+
+				var add = (x) => {
+					if (x in counts) counts[x] += 1;
+					else counts[x] = 1;
+				}
 
 				for (var i = 0; i < allFragments.length; i++)
-					if (result.vars[i] == 1)
+					if (result.vars[i] == 1) {
 						soln.push(allFragments[i][1]);
+					
+						add(allFragments[i][2]);
+						add(allFragments[i][3]);
+					}
 
-				solutions = [...solutions, soln];
+				var sets = [];
+				var alts = [];
+				for (const [set, cnt] of Object.entries(counts))
+					if (cnt >= nameToSet[set].req)
+						sets.push([set, cnt]);
+					else if (nameToSet[set].alt != 0 && cnt >= nameToSet[set].alt)
+						alts.push([set, cnt]);
+				
+				sets.sort();
+				alts.sort();
+
+				sets = sets.concat(alts);
+				
+
+						
+				solutions = [...solutions, [sets, ...soln]];
 
 				// Add our constraint and go again
 				var constraint_vars = [];
@@ -161,8 +187,16 @@
 				<tbody>
 					{#each solutions as solution}
 						<tr>
-							{#each solution as frag}
-								<td>{frag}</td>
+							{#each solution as frag, idx}
+								<td>
+									{#if idx == 0}
+										{#each frag as set}
+											<span class='tag is-link {set[1] == nameToSet[set[0]].alt ? "is-light" : ""}'>{set[0]}</span>&nbsp;
+										{/each}
+									{:else}
+										{frag}
+									{/if}
+								</td>
 							{/each}
 						</tr>
 					{/each}
