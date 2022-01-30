@@ -12,7 +12,7 @@
 
 	let component = BankLayoutsApp;
 
-	page('/', (ctx) => {
+	page((ctx) => {
 		if (ctx.hash in pages) {
 			var value = pages[ctx.hash];
 			component = value;
