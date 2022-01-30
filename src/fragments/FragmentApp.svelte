@@ -118,7 +118,7 @@
 			<div class='columns is-centered' id='fragments'>
 				{#each Object.entries(fragments) as fragmentGroup, groupIdx}
 					<div class='column'>
-						<h4 class='title is-4'>{fragmentGroup[0]}</h4>
+						<h4 class='title is-3'>{fragmentGroup[0]}</h4>
 
 						{#each fragmentGroup[1] as fragment, fragIdx}
 							<Switch disabled={fragsChecked >= maxFrags && !checked[fragment[0]]} bind:checked={checked[fragment[0]]}>{fragment[1]}</Switch>

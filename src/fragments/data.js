@@ -36,6 +36,8 @@ export let fragments = {
 		["Golden Brick Road", "The Alchemist", "Trailblazer"],
 		["Grave Robber", "Fast Metabolism", "The Craftsman"],
 		["Homewrecker", "The Alchemist", "Last Recall"],
+		["Imcando's Apprentice", "The Craftsman", "Chain Magic"],
+		["Just Druid!", "The Alchemist", "Greedy Gatherer"],
 		["Mixologist", "The Alchemist", "Unchained Talent"],
 		["Molten Miner", "Greedy Gatherer", "Personal Banker"],
 		["Plank Stretcher", "Unchained Talent", "Endless Knowledge"],
@@ -51,18 +53,13 @@ export let fragments = {
 		["Smooth Criminal", "Trailblazer", "Last Recall"]
 	],
 
-	"Clues": [	
-		["Clued In", "Last Recall", "Drakan's Touch"],
-		["Hot On The Trail", "Fast Metabolism", "Chain Magic"],
-		["Imcando's Apprentice", "The Craftsman", "Chain Magic"],
-		["Just Druid!", "The Alchemist", "Greedy Gatherer"],
-		["Message In A Bottle", "Knife's Edge", "Greedy Gatherer"]
-	],
-
-	"Minigames": [
+	"Other": [
 		["Barbarian Pest Wars", "Twin Strikes", "Knife's Edge"],
 		["Mother's Magic Fossils", "Chain Magic", "Endless Knowledge"],
 		["Rogues' Chompy Farm", "Double Tap", "Unchained Talent"]
+		["Clued In", "Last Recall", "Drakan's Touch"],
+		["Hot On The Trail", "Fast Metabolism", "Chain Magic"],
+		["Message In A Bottle", "Knife's Edge", "Greedy Gatherer"]
 	]
 }
 
