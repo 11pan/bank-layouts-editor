@@ -1,6 +1,6 @@
 <script>
 	import { fragments, sets } from './data.js';
-	import { Switch, Button } from 'svelma';
+	import { Switch, Button, Icon } from 'svelma';
 
 	import GLPK from 'glpk.js';
 
@@ -22,7 +22,10 @@
 	let checked = new Array(allFragments.length);
 	checked.fill(false);
 
-	let setsChecked = new Array(allSets.length);
+	
+	let setsChecked = new Array(allSets.length).fill(false);
+	let setsAlt = new Array(allSets.length).fill(false);
+	
 
 	let maxNumSolns = 100;
 	let maxFrags = 7;
@@ -64,7 +67,7 @@
 					if (allFragments[j].includes(allSets[i].name))
 						set_vars.push({ name: vars[j], coef: 1 });
 
-				set_constraints.push({ name: allSets[i].name + '1', vars: set_vars, bnds: { type: glpk.GLP_LO, ub: maxFrags, lb: allSets[i].req } })
+				set_constraints.push({ name: allSets[i].name + '1', vars: set_vars, bnds: { type: glpk.GLP_LO, ub: maxFrags, lb: (setsAlt[i] ? allSets[i].alt : allSets[i].req) } })
 			}
 		}
 
@@ -147,7 +150,7 @@
 						<h4 class='title is-3'>{fragmentGroup[0]}</h4>
 
 						{#each fragmentGroup[1] as fragment, fragIdx}
-							<Switch disabled={fragsChecked >= maxFrags && !checked[fragment[0]]} bind:checked={checked[fragment[0]]}>{fragment[1]}</Switch>
+							<Switch disabled={fragsChecked >= maxFrags && !checked[fragment[0]]} bind:checked={checked[fragment[0]]} on:click={() => { console.log('test'); }}>{fragment[1]}</Switch>
 							<br />
 						{/each}
 					</div>
@@ -166,6 +169,13 @@
 
 						{#each setGroup[1] as set, fragIdx}
 							<Switch bind:checked={setsChecked[set.id]}>{set.name}</Switch>
+							{#if setsChecked[set.id] && set.alt > 0}
+								{#if setsAlt[set.id]}
+									<a style='vertical-align: text-top;' on:click={(e) => { setsAlt[set.id] = false; }}>Partial</a>
+								{:else}
+									<a style='vertical-align: text-top;' on:click={(e) => { setsAlt[set.id] = true; }}>Full</a>
+								{/if}
+							{/if}
 							<br />
 						{/each}
 					</div>
