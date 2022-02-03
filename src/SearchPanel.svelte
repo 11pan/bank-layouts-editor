@@ -8,6 +8,8 @@
 
 	$SLOTS['search'] = [];
 
+	const SEARCH_LIMIT = 80;
+
 	const data = Object.values($ITEM_MAP).filter(item => (!item.duplicate && item.type == 'normal'));
 	const randomItem = () => data[Math.floor(Math.random() * data.length)];
 
@@ -20,7 +22,7 @@
 		for (var i = 0; i < result.length; i++)
 			$SLOTS['search'].push(result[i].item.id);
 	}
-	const search = text => { updateSlots(fuse.search(text, { limit: 50 })); }
+	const search = text => { updateSlots(fuse.search(text, { limit: SEARCH_LIMIT })); }
 
 
 	let searchText = '';

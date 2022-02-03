@@ -81,7 +81,7 @@
 		flex-direction: column;
 		
 		color: #FFF;
-		font-size: 10pt;
+		font-size: 8pt;
 
 
 		/* background-color: rgb(199, 199, 199); */

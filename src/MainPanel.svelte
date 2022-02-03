@@ -8,7 +8,7 @@
 </script>
 
 <div class='columns'>
-	<div class='column is-4'>
+	<div class='column is-3'>
 		<SettingsPanel/>
 
 		<SearchPanel />
