@@ -46,6 +46,7 @@
 				on:svelte-drag:end = { () => { dragging = false; x = 0; y = 0; globalDispatch('drop', { source: container, itemID: itemID, slotID: slotID }); } }
 				style='pointer-events: {dragging ? "none" : "all"}; {dragging ? "z-index: 9999999;" : ""}'
 				title={getItem(itemID).name}
+				on:touchmove|preventDefault
 			>
 				<div class="item"><Icon id={itemID}/></div>
 				<div class="item-text">{itemID}</div>	

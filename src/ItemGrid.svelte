@@ -3,7 +3,10 @@
 	import { itemContainer } from "./container";
 	import { SLOTS } from "./stores"
 
-	$SLOTS['grid'] = new Array(16*8).fill(-1);
+	const W = 8;
+
+	$SLOTS['grid'] = new Array(16*W).fill(-1);
+	
 </script>
 
 <div class='grid'>
@@ -16,6 +19,9 @@
 				if (e.detail.source == "grid")
 				$SLOTS['grid'][e.detail.slotID] = item;
 				$SLOTS['grid'][idx] = e.detail.itemID;
+
+				if (idx >= ($SLOTS['grid'].length - W))
+					$SLOTS['grid'] = $SLOTS['grid'].concat(new Array(W).fill(-1));
 			}}
 		>
 
