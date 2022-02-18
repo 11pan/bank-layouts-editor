@@ -67,11 +67,22 @@
 
       if (new_layout) { // SAVES A NEW LAYOUT 
 
-        let save_object = {
+        let save_object;
+
+        if ($SLOTS['items'].filter(x => (x >= 0)).length > 0) {
+          save_object = {
+            id: Math.random().toString(26).slice(2),
+            name: $TAG_NAME,
+            icon: ($SLOTS['icon'][0] >= 0 ? $SLOTS['icon'][0] : 0),
+            layout_string: (out + banktag)
+          }
+        } else {
+          save_object = {
             id: Math.random().toString(26).slice(2),
             name: "New layout",
             icon: 952,
             layout_string: "banktaglayoutsplugin:New layout,banktag:New layout,952,"
+          }
         }
 
         layouts.push(save_object);
