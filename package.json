@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "@rollup/plugin-json": "^6.0.0",
     "bulma": "^0.9.3",
     "bulma-pro": "^0.2.0",
     "fuse": "^0.4.0",
