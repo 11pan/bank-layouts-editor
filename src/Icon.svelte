@@ -1,8 +1,9 @@
 <script>
+	import itemdb from "./item-db.json";
+
 	export let id;
 
-	const item_icons_url = "https://raw.githubusercontent.com/osrsbox/osrsbox-db/master/docs/items-icons/";
-	const getIconURL = (id) => item_icons_url + id + ".png";
+	const getIconURL = (id) => itemdb[id].icon;
 </script>
 
 <img src={getIconURL(id)} alt={id} />

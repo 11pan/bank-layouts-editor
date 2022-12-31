@@ -10,7 +10,7 @@
 
 	const SEARCH_LIMIT = 80;
 
-	const data = Object.values($ITEM_MAP).filter(item => (!item.duplicate && item.type == 'normal'));
+	const data = Object.values($ITEM_MAP);
 	const randomItem = () => data[Math.floor(Math.random() * data.length)];
 
 	const fuse = new Fuse(data, { keys: ['name'] });
