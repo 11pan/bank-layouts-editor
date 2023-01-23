@@ -17,18 +17,9 @@
 	export let highlighted = false;
 	let x = 0, y = 0;
 
-	const getItem = id => {
-		if (id in $ITEM_MAP)
-			return $ITEM_MAP[id];
-		else
-			return $ITEM_MAP[0];
-	}
+	const getItem = id => $ITEM_MAP[id] ? $ITEM_MAP[id] : Object.values($ITEM_MAP).find(x => x.placeholderId === id)
 
 </script>
-
-
-
-
 
 <div
 	class="container"

@@ -3,7 +3,8 @@
 
 	export let id;
 
-	const getIconURL = (id) => itemdb[id].icon;
+	const getIconURL = (id) => itemdb[id] ? itemdb[id].icon : Object.values(itemdb).find(x => x.placeholderId === id).icon;
+	
 </script>
 
 <img src={getIconURL(id)} alt={id} />
