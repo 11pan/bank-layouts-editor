@@ -1,7 +1,8 @@
 <script>
 	import ItemSlot from "./ItemSlot.svelte";
 	import { itemContainer } from "../Utility/container";
-	import { SLOTS } from "../Utility/stores"
+	import { SLOTS, ITEMS_IN_GRID } from "../Utility/stores"
+	import SavedLayoutsPanel from "../Panels/SavedLayoutsPanel.svelte"
 
 	$SLOTS['items'] = new Array(16*8).fill(-1);
 	$SLOTS['taggedItems'] = [];
@@ -23,6 +24,9 @@
 		$SLOTS['items'].fill(-1);
 		for (var i = 0; i < all_items.length; i++)
 			$SLOTS['items'][i] = all_items[i];
+
+
+		$ITEMS_IN_GRID = $SLOTS.items.filter((x) => x != -1).length > 0 ? true : false;
 	}
 
 	const removeItem = id => {
