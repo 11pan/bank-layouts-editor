@@ -5,6 +5,8 @@ export const ITEM_MAP = writable({});
 export const SLOTS = writable({});
 export const TAG_NAME = writable("");
 export const ACTIVE_LAYOUT = writable({});
+export const ITEMS_IN_GRID = writable(false);
+
 export const LAYOUTS = writable(localStorage.getItem("LAYOUTS") || "[]");
 LAYOUTS.subscribe((val) => {
   localStorage.setItem("LAYOUTS", val);
