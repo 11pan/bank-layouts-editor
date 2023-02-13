@@ -6,8 +6,9 @@
 	import { itemContainer } from "../Utility/container";
 	import ModalCard from '../Components/ModalCard.svelte';
 
-	$SLOTS['icon'] = [-1];
+	import { compressLayoutStr, decompressLayoutStr } from "../Utility/compress";
 
+	$SLOTS['icon'] = [-1];
 
 	let importModalActive = false;
 	let exportModalActive = false;
@@ -22,11 +23,32 @@
 	let exportType = 'Layout';
 	let addToLayout = true;
 
+	let shareButtonText = "Share";
+
+
 	const setExportText = (tagOrLayout) => {
 		exportText = (tagOrLayout == 0 ? exportTextTag : exportTextLayout);
 		exportType = (tagOrLayout == 0 ? 'Tag' : 'Layout');
 	}
 	$: setExportText(tagOrLayout);
+
+	const getShareUrl = (e) => {
+		let compressedString = compressLayoutStr(exportTextLayout);
+		navigator.clipboard.writeText(`${window.location.href.split('?')[0]}?layout=${compressedString}`);
+		Toast.create({ message: 'Link to layout copied successfully', type: 'is-success', position: 'is-bottom-left' });
+	}
+
+	const loadLayoutFromQueryString = () => {
+		const urlParams = new URLSearchParams(window.location.search);
+    	const compressedLayoutString = urlParams.get("layout")
+
+		if (compressedLayoutString) {
+			importText = decompressLayoutStr(compressedLayoutString)
+			importLayout();
+		}
+	}
+
+	window.onload = loadLayoutFromQueryString;
 
 	export const importLayout = e => {
 		try {
@@ -118,13 +140,6 @@
 		}
 	}
 
-
-
-
-
-
-
-
 </script>
 
 <div class='card'>
@@ -148,6 +163,7 @@
 	<div class='card-footer'>
 		<a on:click={(e) => {importModalActive=true}} class='card-footer-item'><Icon pack="fas" icon="file-import" />&nbsp; Import</a>
 		<a on:click={(e) => {exportModalActive=true; exportLayout(e); }} class='card-footer-item'><Icon pack="fas" icon="file-export" />&nbsp; Export</a>
+		<a on:click={(e) => { exportLayout(e); getShareUrl(e) ; shareButtonText = "Copied!"; setInterval(function() { shareButtonText = "Share"}, 2000)}} class='card-footer-item'><Icon pack="fas" icon="share" />{shareButtonText}</a>
 	</div>
 </div>
 
