@@ -1,5 +1,5 @@
 <script>
-	import { Field, Input, Icon, Toast, Button, Tab, Tabs, Switch } from 'svelma';
+	import { Field, Input, Icon, Toast, Button, Tab, Tabs, Switch, Tooltip } from 'svelma';
 	import ItemSlot from '../Components/ItemSlot.svelte';
 
 	import { SLOTS, TAG_NAME } from '../Utility/stores.js'
