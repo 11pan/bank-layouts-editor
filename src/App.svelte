@@ -2,8 +2,8 @@
 
 <script>
 	import page from 'page';
-	import BankLayoutsApp from './BankLayoutsApp.svelte';
-	import FragmentApp from './fragments/FragmentApp.svelte';
+	import BankLayoutsApp from './BankLayouts/BankLayoutsApp.svelte';
+	import FragmentApp from './FragmentPicker/FragmentApp.svelte';
 
 	let pages = {
 		'': BankLayoutsApp,
