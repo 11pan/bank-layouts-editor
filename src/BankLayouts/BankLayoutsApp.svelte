@@ -2,11 +2,25 @@
 	// import ItemSearch from "./ItemSearch.svelte";
 	// import ItemGrid from "./ItemGrid.svelte"
 
-	import { getItems } from "./Utility/stores.js"
+	import { getItems, WELCOME_POPUP } from "./Utility/stores.js"
 	const promise = getItems();
 
 
 	import MainPanel from './Panels/MainPanel.svelte'
+	import { Notification } from 'svelma';
+
+	if ($WELCOME_POPUP === "true") {
+		Notification.create({message: 'Welcome to bank layout editor!<br><br>' + 
+		'This editor can be used to create or modify bank layouts<br>' + 
+		'for the Bank Tag Layouts Runelite plugin.<br><br>' + 
+		'Please ensure you have Bank Tag Layouts plugin installed<br>' + 
+		'Before you try exporting a layout into Runelite.<br><br>' + 
+		'If you encounter any issues or have suggestions,<br>' + 
+		'please create an issue ticket on <a href="https://github.com/11pan/bank-layouts-editor">Github</a>.<br><br>' + 
+		'<small>(This popup will not be shown again once you close it)</small>', position: "is-bottom-left", duration: 3600000 })
+
+		document.getElementsByClassName("delete")[0].onclick = () => $WELCOME_POPUP = "false";
+	}
 
 </script>
 

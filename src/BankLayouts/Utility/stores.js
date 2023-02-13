@@ -10,6 +10,13 @@ LAYOUTS.subscribe((val) => {
   localStorage.setItem("LAYOUTS", val);
 });
 
+export const WELCOME_POPUP = writable(
+  localStorage.getItem("WELCOME_POPUP") || "true"
+);
+WELCOME_POPUP.subscribe((val) => {
+  localStorage.setItem("WELCOME_POPUP", val);
+});
+
 export const getItems = async () => {
   ITEM_MAP.set(itemdb);
 

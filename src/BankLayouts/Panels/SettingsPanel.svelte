@@ -168,7 +168,7 @@
 </div>
 
 <ModalCard bind:active={importModalActive} title='Import' successName='Import' on:success={importLayout}>
-	<span>Paste your Tag or Layout code here</span>
+	<span>On Runelite, right click the bank tag tab you want to import and press "Export tag tab with layout" and paste the layout here.</span>
 	<Field>
 		<Input type='textarea' bind:value={importText}/>
 	</Field>
