@@ -1,5 +1,5 @@
 <script>
-	import itemdb from "./item-db.json";
+	import itemdb from "../../Data/item-db.json";
 
 	export let id;
 

@@ -1,8 +1,8 @@
 <script>
 	import { Field, Input } from 'svelma';
-	import ItemSlot from './ItemSlot.svelte';
-	import { ITEM_MAP, SLOTS } from "./stores";
-	import { itemContainer } from "./container";
+	import ItemSlot from '../Components/ItemSlot.svelte';
+	import { ITEM_MAP, SLOTS } from "../Utility/stores";
+	import { itemContainer } from "../Utility/container";
 
 	import Fuse from 'fuse.js';
 

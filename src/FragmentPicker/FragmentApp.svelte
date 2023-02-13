@@ -1,5 +1,5 @@
 <script>
-	import { fragments, sets } from './data.js';
+	import { fragments, sets } from '../Data/FragmentData.js';
 	import { Switch, Button, Icon } from 'svelma';
 
 	import GLPK from 'glpk.js';

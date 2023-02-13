@@ -1,6 +1,6 @@
 <script>
-	import ItemGrid from './ItemGrid.svelte';
-	import ItemList from './ItemList.svelte';
+	import ItemGrid from '../Components/ItemGrid.svelte';
+	import ItemList from '../Components/ItemList.svelte';
 	import { Tabs, Tab } from 'svelma';
 
 	let active = 1;

@@ -1,7 +1,7 @@
 <script>
 	import ItemSlot from "./ItemSlot.svelte";
-	import { itemContainer } from "./container";
-	import { SLOTS } from "./stores"
+	import { itemContainer } from "../Utility/container";
+	import { SLOTS } from "../Utility/stores"
 
 	const W = 8;
 

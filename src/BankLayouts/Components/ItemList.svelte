@@ -1,7 +1,7 @@
 <script>
 	import ItemSlot from "./ItemSlot.svelte";
-	import { itemContainer } from "./container";
-	import { SLOTS } from "./stores"
+	import { itemContainer } from "../Utility/container";
+	import { SLOTS } from "../Utility/stores"
 
 	$SLOTS['items'] = new Array(16*8).fill(-1);
 	$SLOTS['taggedItems'] = [];

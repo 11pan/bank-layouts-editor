@@ -7,8 +7,8 @@
 	import Icon from "./Icon.svelte";
 	import { draggable } from 'svelte-drag'
 	import { createEventDispatcher } from "svelte";
-	import { globalDispatch } from './container.js'
-	import { ITEM_MAP } from "./stores.js"
+	import { globalDispatch } from '../Utility/container.js'
+	import { ITEM_MAP } from "../Utility/stores.js"
 	
 	const dispatch = createEventDispatcher();
 	const bgColor = "rgb(63, 63, 63)", highlightColor = "rgb(102, 102, 102)";

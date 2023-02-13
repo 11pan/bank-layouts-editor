@@ -1,10 +1,10 @@
 <script>
 	import { Field, Input, Icon, Toast, Button, Tab, Tabs, Switch } from 'svelma';
-	import ItemSlot from './ItemSlot.svelte';
+	import ItemSlot from '../Components/ItemSlot.svelte';
 
-	import { SLOTS, TAG_NAME } from './stores.js'
-	import { itemContainer } from "./container";
-	import ModalCard from './ModalCard.svelte';
+	import { SLOTS, TAG_NAME } from '../Utility/stores.js'
+	import { itemContainer } from "../Utility/container";
+	import ModalCard from '../Components/ModalCard.svelte';
 
 	$SLOTS['icon'] = [-1];
 

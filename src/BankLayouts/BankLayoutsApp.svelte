@@ -2,11 +2,11 @@
 	// import ItemSearch from "./ItemSearch.svelte";
 	// import ItemGrid from "./ItemGrid.svelte"
 
-	import { getItems } from "./stores.js"
+	import { getItems } from "./Utility/stores.js"
 	const promise = getItems();
 
 
-	import MainPanel from './MainPanel.svelte'
+	import MainPanel from './Panels/MainPanel.svelte'
 
 </script>
 

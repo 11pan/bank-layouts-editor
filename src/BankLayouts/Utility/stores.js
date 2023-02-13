@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import itemdb from "./item-db.json";
+import itemdb from "../../Data/item-db.json";
 
 export const ITEM_MAP = writable({});
 export const SLOTS = writable({});

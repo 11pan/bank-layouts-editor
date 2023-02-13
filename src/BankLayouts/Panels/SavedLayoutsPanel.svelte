@@ -1,6 +1,6 @@
 <script>
-    import Icon from "./Icon.svelte";
-    import { SLOTS, TAG_NAME, LAYOUTS, ACTIVE_LAYOUT } from './stores.js'
+    import Icon from "../Components/Icon.svelte";
+    import { SLOTS, TAG_NAME, LAYOUTS, ACTIVE_LAYOUT } from '../Utility/stores.js'
     import { Toast } from 'svelma';
 
     export const loadLayout = async (layout_object) => {
