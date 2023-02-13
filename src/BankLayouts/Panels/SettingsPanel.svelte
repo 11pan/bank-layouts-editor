@@ -186,6 +186,7 @@
 		var text = exportText;
 		var type = exportType;
 
+
 		try {
 			navigator.clipboard.writeText(text);
 			Toast.create({ message: type + ' copied successfully', type: 'is-success', position: 'is-bottom-left' });

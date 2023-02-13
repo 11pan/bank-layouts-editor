@@ -2,7 +2,6 @@
 	import ItemSlot from "./ItemSlot.svelte";
 	import { itemContainer } from "../Utility/container";
 	import { SLOTS, ITEMS_IN_GRID } from "../Utility/stores"
-	import SavedLayoutsPanel from "../Panels/SavedLayoutsPanel.svelte"
 
 	$SLOTS['items'] = new Array(16*8).fill(-1);
 	$SLOTS['taggedItems'] = [];

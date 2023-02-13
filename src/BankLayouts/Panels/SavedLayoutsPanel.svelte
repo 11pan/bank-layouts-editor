@@ -2,21 +2,25 @@
     import Icon from "../Components/Icon.svelte";
     import { SLOTS, TAG_NAME, LAYOUTS, ACTIVE_LAYOUT, ITEMS_IN_GRID } from '../Utility/stores.js'
     import { Toast } from 'svelma';
+    import ModalCard from '../Components/ModalCard.svelte';
 
     let newLayout = true;
+    let confirmationModalActive = false;
 
-    export const createNewLayout = async () => {
-      let layouts = JSON.parse($LAYOUTS || "[]");
+    export const createNewLayout = async (confirmed) => {
+      if (confirmed) {
+        let layouts = JSON.parse($LAYOUTS || "[]");
 
-      let save_object = {
+        let save_object = {
             id: Math.random().toString(26).slice(2),
             name: "New layout",
             icon: 952,
             layout_string: "banktaglayoutsplugin:New layout,banktag:New layout,952,"
           }
-      layouts.push(save_object);
-      $LAYOUTS = JSON.stringify(layouts);
-      loadLayout(save_object);
+        layouts.push(save_object);
+        $LAYOUTS = JSON.stringify(layouts);
+        loadLayout(save_object);
+      }
     }
 
     export const loadLayout = async (layout_object) => {
@@ -158,7 +162,7 @@
           </span>
           {/if}
           <span class='column is-narrow'>
-            <button class="button is-small is-pulled-right is-vcentered" on:click={() => {createNewLayout()}}>
+            <button class="button is-small is-pulled-right is-vcentered" on:click={() => { $SLOTS.items.filter((x) => x != -1).length > 0 ? confirmationModalActive = true : createNewLayout(true) }}>
               <span class="icon is-small">
                 <i class="fas fa-plus"></i>
               </span>
@@ -200,3 +204,8 @@
   </a>
   {/each}
 </nav>
+
+
+<ModalCard bind:active={confirmationModalActive} title='Are you sure?' successName='Confirm' on:success={createNewLayout}>
+	<span>The grid contains items, any unsaved changes will be discarded.</span>
+</ModalCard>
