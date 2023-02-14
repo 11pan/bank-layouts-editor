@@ -34,6 +34,9 @@
 		for (var i = 0; i < $SLOTS['grid'].length; i++)
 			if ($SLOTS['grid'][i] == id)
 				$SLOTS['grid'][i] = -1;
+
+		$ITEMS_IN_GRID = $SLOTS.items.filter((x) => x != -1).length > 0 ? true : false;
+
 	}
 
 	const onUpdate = (...args) => {

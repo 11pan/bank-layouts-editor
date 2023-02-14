@@ -3,8 +3,6 @@
 	import SearchPanel from './SearchPanel.svelte';
 	import LayoutPanel from './LayoutPanel.svelte';
 	import SavedLayoutsPanel from './SavedLayoutsPanel.svelte';
-
-	import {  } from 'svelma';
 </script>
 
 <div class='columns'>
