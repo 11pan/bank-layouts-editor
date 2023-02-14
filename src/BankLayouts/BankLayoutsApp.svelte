@@ -1,14 +1,14 @@
 <script>
-	// import ItemSearch from "./ItemSearch.svelte";
-	// import ItemGrid from "./ItemGrid.svelte"
-
 	import { getItems, WELCOME_POPUP } from "./Utility/stores.js"
 	const promise = getItems();
 
-
 	import MainPanel from './Panels/MainPanel.svelte'
-	import { Notification } from 'svelma';
-
+	import { Notification, Progress } from 'svelma';
+	import { decompressLayoutStr } from "./Utility/compress";
+	
+	import ImportLayout from "./Utility/LoadLayout.svelte"
+	let importLayoutComponent;
+	
 	if ($WELCOME_POPUP === "true") {
 		Notification.create({message: 'Welcome to bank layout editor!<br><br>' + 
 		'This editor can be used to create or modify bank layouts<br>' + 
@@ -22,22 +22,31 @@
 		document.getElementsByClassName("delete")[0].onclick = () => $WELCOME_POPUP = "false";
 	}
 
+	const LoadLayoutFromQueryString = () => {
+		const urlParams = new URLSearchParams(window.location.search);
+    	const compressedLayoutString = urlParams.get("layout")
+
+		if (compressedLayoutString) {
+			importLayoutComponent.LoadLayout(decompressLayoutStr(compressedLayoutString));
+		}
+	}
+
+	window.onload = LoadLayoutFromQueryString;
+	
 </script>
 
-	{#await promise}
-		Loading...
-	{:then items}
-		<div class='section'>
-			<div class='container'>
-				<MainPanel />
-			</div>
-		
+<ImportLayout bind:this={importLayoutComponent}/>
+
+
+{#await promise}
+<Progress max="100"/>
+{:then items}
+	<div class='section'>
+		<div class='container'>
+			<MainPanel />
 		</div>
-	{:catch error}
-		There was an error: {JSON.stringify(error)}.
-	{/await}
-
-
-<style>
-
-</style>
+	
+	</div>
+{:catch error}
+	There was an error: {JSON.stringify(error)}.
+{/await}

@@ -1,11 +1,13 @@
 import { writable } from "svelte/store";
 import itemdb from "../../Data/item-db.json";
+import bankLayoutCatalog from "../../Data/BankLayoutCatalog.json";
 
 export const ITEM_MAP = writable({});
 export const SLOTS = writable({});
 export const TAG_NAME = writable("");
 export const ACTIVE_LAYOUT = writable({});
 export const ITEMS_IN_GRID = writable(false);
+export const CATALOG = writable(bankLayoutCatalog.layouts);
 
 export const LAYOUTS = writable(localStorage.getItem("LAYOUTS") || "[]");
 LAYOUTS.subscribe((val) => {
