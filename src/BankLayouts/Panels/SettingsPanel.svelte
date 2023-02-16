@@ -1,24 +1,18 @@
 <script>
-	import { Field, Input, Icon, Toast, Tab, Tabs, Switch } from 'svelma';
+	import { Field, Input, Icon, Toast, Tab, Tabs, Switch, Tag } from 'svelma';
 	import ItemSlot from '../Components/ItemSlot.svelte';
 
-	import { SLOTS, TAG_NAME } from '../Utility/stores.js'
+	import { SLOTS, TAG_NAME, SHOW_CATALOG_PANEL } from '../Utility/stores.js'
 	import { itemContainer } from "../Utility/container";
 	import ModalCard from '../Components/ModalCard.svelte';
 	import { compressLayoutStr } from "../Utility/compress";
 
-	import ExportLayout from "../Utility/ExportLayout.svelte"
-	let exportLayoutComponent;
+	import { LoadLayout } from "../Utility/LoadLayout"
+	import { ExportLayout } from "../Utility/ExportLayout"
 
-	import LoadLayout from "../Utility/LoadLayout.svelte"
-	let loadLayoutComponent;
-
-	import Helpers from "../Utility/Helpers.svelte"
-	let helpersComponent;
 
 	let importModalActive = false;
 	let exportModalActive = false;
-	let catalogModalActive = false;
 
 	let importText = '';
 	let exportTextLayout = '';
@@ -44,10 +38,6 @@
 	}
 </script>
 
-<ExportLayout bind:this={exportLayoutComponent}/>
-<LoadLayout bind:this={loadLayoutComponent}/>
-<Helpers bind:this={helpersComponent}/>
-
 <div class='card'>
 	<div class='card-content'>
 		<div class='columns is-mobile'>
@@ -65,19 +55,17 @@
 			</div>
 		</div>
 	</div>
-	<!-- FUTURE STUFF
-		<div class='card-footer'>
-			<a on:click={(e) => {catalogModalActive=true}} class='card-footer-item'><Icon pack="fas" icon="list" />&nbsp; Layout catalog</a>
-		</div>
-	-->
 	<div class='card-footer'>
-		<a on:click={(e) => {importModalActive=true}} class='card-footer-item'><Icon pack="fas" icon="file-import" />&nbsp; Import</a>
-		<a on:click={(e) => {exportModalActive=true; ExportText(exportLayoutComponent.ExportLayout(e)); }} class='card-footer-item'><Icon pack="fas" icon="file-export" />&nbsp; Export</a>
-		<a on:click={(e) => { ExportText(exportLayoutComponent.ExportLayout(e)); getShareUrl(e) ; shareButtonText = "Copied!"; setInterval(function() { shareButtonText = "Share"}, 2000)}} class='card-footer-item'><Icon pack="fas" icon="share" />{shareButtonText}</a>
+		<a href={null} on:click={(e) => {importModalActive=true}} class='card-footer-item'><Icon pack="fas" icon="file-import" />&nbsp; Import</a>
+		<a href={null} on:click={(e) => {exportModalActive=true; ExportText(ExportLayout(e)); }} class='card-footer-item'><Icon pack="fas" icon="file-export" />&nbsp; Export</a>
+		<a href={null} on:click={(e) => { ExportText(ExportLayout(e)); getShareUrl(e) ; shareButtonText = "Copied!"; setInterval(function() { shareButtonText = "Share"}, 2000)}} class='card-footer-item'><Icon pack="fas" icon="share" />{shareButtonText}</a>
+	</div>
+	<div class='card-footer'>
+		<a href={null} on:click={(e) => {$SHOW_CATALOG_PANEL = !$SHOW_CATALOG_PANEL}} class='card-footer-item'><Icon pack="fas" icon="list" />Browse layouts {"(Beta)"}</a>
 	</div>
 </div>
 
-<ModalCard bind:active={importModalActive} title='Import' successName='Import' on:success={loadLayoutComponent.LoadLayout(importText, addToLayout)}>
+<ModalCard bind:active={importModalActive} title='Import' successName='Import' on:success={LoadLayout(importText, addToLayout)}>
 	<span>On Runelite, right click the bank tag tab you want to import and press "Export tag tab with layout" and paste the layout here.</span>
 	<Field>
 		<Input type='textarea' bind:value={importText}/>

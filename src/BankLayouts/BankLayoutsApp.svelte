@@ -5,9 +5,7 @@
 	import MainPanel from './Panels/MainPanel.svelte'
 	import { Notification, Progress } from 'svelma';
 	import { decompressLayoutStr } from "./Utility/compress";
-	
-	import ImportLayout from "./Utility/LoadLayout.svelte"
-	let importLayoutComponent;
+	import { LoadLayout } from "./Utility/LoadLayout"
 	
 	if ($WELCOME_POPUP === "true") {
 		Notification.create({message: 'Welcome to bank layout editor!<br><br>' + 
@@ -27,15 +25,13 @@
     	const compressedLayoutString = urlParams.get("layout")
 
 		if (compressedLayoutString) {
-			importLayoutComponent.LoadLayout(decompressLayoutStr(compressedLayoutString));
+			LoadLayout(decompressLayoutStr(compressedLayoutString));
 		}
 	}
 
 	window.onload = LoadLayoutFromQueryString;
 	
 </script>
-
-<ImportLayout bind:this={importLayoutComponent}/>
 
 
 {#await promise}
