@@ -4,26 +4,15 @@
     import { Tooltip } from 'svelma';
     import ModalCard from '../Components/ModalCard.svelte';
 
-    import NewLayout from "../Utility/NewLayout.svelte"
-    let newLayoutComponent;
-
-    import LoadLayout from "../Utility/LoadLayout.svelte"
-	  let loadLayoutComponent;
-
-    import SaveLayout from "../Utility/SaveLayout.svelte"
-	  let saveLayoutComponent;
-
-    import DeleteLayout from "../Utility/DeleteLayout.svelte"
-	  let deleteLayoutComponent;
+    import { NewLayout } from "../Utility/NewLayout.js"
+    import { LoadLayout } from "../Utility/LoadLayout.js"
+    import { SaveLayout } from "../Utility/SaveLayout.js"
+    import { DeleteLayout } from "../Utility/DeleteLayout.js"
 
     let confirmationModalActive = false;
     let deleteLayoutConfirmation = false;
 </script>
 
-<LoadLayout bind:this={loadLayoutComponent}/>
-<NewLayout bind:this={newLayoutComponent}/>
-<SaveLayout bind:this={saveLayoutComponent}/>
-<DeleteLayout bind:this={deleteLayoutComponent}/>
 
 <nav class="panel">
   <div>
@@ -34,15 +23,15 @@
           {#if $ITEMS_IN_GRID && Object.entries($ACTIVE_LAYOUT).length < 1} 
             <span class='column is-narrow'>
             <Tooltip label="Save as new layout" position="is-top" type="is-dark">
-                <button class="button is-small is-sucess is-pulled-right is-vcentered" on:click={() => {saveLayoutComponent.SaveLayout(true)}}>
-                    <a>Save</a>
+                <button class="button is-small is-sucess is-pulled-right is-vcentered" on:click={() => {SaveLayout(true, false, false)}}>
+                    <a href={null}>Save</a>
                 </button>
             </Tooltip>
             </span>
           {/if}
           <span class='column is-narrow'>
             <Tooltip label="New layout" position="is-top" type="is-dark">
-              <button class="button is-small is-pulled-right is-vcentered" on:click={() => { $SLOTS.items.filter((x) => x != -1).length > 0 ? confirmationModalActive = true : newLayoutComponent.CreateNewLayout(true) }}>
+              <button class="button is-small is-pulled-right is-vcentered" on:click={() => { $SLOTS.items.filter((x) => x != -1).length > 0 ? confirmationModalActive = true : NewLayout(true) }}>
                 <span class="icon is-small">
                   <i class="fas fa-plus"></i>
                 </span>
@@ -55,7 +44,7 @@
   </div>
 
   {#each JSON.parse($LAYOUTS) as item, index}
-    <a class='panel-block has-text-centered' on:click|preventDefault={() => { loadLayoutComponent.LoadLayout(item.layout_string); $ACTIVE_LAYOUT = item}}>
+    <a href={null} class='panel-block has-text-centered' on:click|preventDefault={() => { LoadLayout(item.layout_string); $ACTIVE_LAYOUT = item}}>
       <div class='container'>
         <div class="columns is-vcentered is-mobile is-1 is-variable">
           <div class="column is-narrow" style='height:64px;'>
@@ -67,7 +56,7 @@
           {#if $ACTIVE_LAYOUT.id == item.id}
           <div class="column is-narrow is-pulled-right">
             <Tooltip label="Save changes" position="is-top" type="is-success">
-              <button class="button is-success" on:click|stopPropagation={() => saveLayoutComponent.SaveLayout(false)}>
+              <button class="button is-success" on:click|stopPropagation={() => SaveLayout(false, false, false)}>
                 <span class="icon is-small">
                   <i class="fas fa-solid fa-check"></i>
                 </span>
@@ -91,10 +80,10 @@
 </nav>
 
 
-<ModalCard bind:active={confirmationModalActive} title='Are you sure?' successName='Confirm' on:success={newLayoutComponent.CreateNewLayout}>
+<ModalCard bind:active={confirmationModalActive} title='Are you sure?' successName='Confirm' on:success={NewLayout}>
 	<span>The grid contains items, any unsaved changes will be discarded.</span>
 </ModalCard>
 
-<ModalCard bind:active={deleteLayoutConfirmation} title='Are you sure?' successName='Confirm' on:success={() => {deleteLayoutComponent.DeleteLayout(); deleteLayoutConfirmation = false; $ITEMS_IN_GRID = false;}}>
+<ModalCard bind:active={deleteLayoutConfirmation} title='Are you sure?' successName='Confirm' on:success={() => {DeleteLayout(); deleteLayoutConfirmation = false; $ITEMS_IN_GRID = false;}}>
 	<span>Are you sure you want to delete this layout?<br>This process cannot be undone.</span>
 </ModalCard>

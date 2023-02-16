@@ -8,6 +8,8 @@ export const TAG_NAME = writable("");
 export const ACTIVE_LAYOUT = writable({});
 export const ITEMS_IN_GRID = writable(false);
 export const CATALOG = writable(bankLayoutCatalog.layouts);
+export const VISIBLE_CATALOG_ITEMS = writable([]);
+export const SHOW_CATALOG_PANEL = writable(false);
 
 export const LAYOUTS = writable(localStorage.getItem("LAYOUTS") || "[]");
 LAYOUTS.subscribe((val) => {
