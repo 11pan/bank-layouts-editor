@@ -7,9 +7,13 @@ export const SLOTS = writable({});
 export const TAG_NAME = writable("");
 export const ACTIVE_LAYOUT = writable({});
 export const ITEMS_IN_GRID = writable(false);
-export const CATALOG = writable(bankLayoutCatalog.layouts);
-export const VISIBLE_CATALOG_ITEMS = writable([]);
+export const LAYOUT_CATALOG = writable(bankLayoutCatalog.layouts);
+export const TAG_CATALOG = writable(bankLayoutCatalog.tags);
+export const VISIBLE_LAYOUT_CATALOG_ITEMS = writable([]);
+export const VISIBLE_TAG_CATALOG_ITEMS = writable([]);
 export const SHOW_CATALOG_PANEL = writable(false);
+export const ACTIVE_TAB = writable(1);
+export const ACTIVE_CATALOG_TAB = writable(1);
 
 export const LAYOUTS = writable(localStorage.getItem("LAYOUTS") || "[]");
 LAYOUTS.subscribe((val) => {

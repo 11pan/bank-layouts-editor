@@ -21,9 +21,21 @@
 
 	let exportText = '';
 	let exportType = 'Layout';
+	let exportInputField = ''
 	let addToLayout = true;
 
 	let shareButtonText = "Share";
+
+	$: updateInputField(tagOrLayout)
+
+	const updateInputField = (text) => {
+
+		if (tagOrLayout == 0) {
+			exportInputField = exportText.substring(exportText.indexOf("banktag:") + 8);
+		} else {
+			exportInputField = exportText;
+		}
+	}
 
 	const getShareUrl = (e) => {
 		let compressedString = compressLayoutStr(exportText);
@@ -35,6 +47,7 @@
 		exportType = layoutInfo[0];
 		exportText = layoutInfo[1];
 		exportTextLayout = layoutInfo[1]
+		exportInputField = exportText
 	}
 </script>
 
@@ -80,9 +93,14 @@
 	title='Export'
 	successName='Copy to Clipboard'
 	on:success={(e) => {
-		var text = exportText;
+		var text;
 		var type = exportType;
 
+		if (tagOrLayout == 0) {
+			text = exportText.substring(exportText.indexOf("banktag:") + 8)
+		} else {
+			text = exportText;
+		}
 
 		try {
 			navigator.clipboard.writeText(text);
@@ -95,7 +113,8 @@
 		<Tab label='Tag' icon='tag'></Tab>
 		<Tab label='Layout' icon='th-large'></Tab>
 	</Tabs>
-	<Input type='textarea' bind:value={exportText} readonly/>
+	<Input type='textarea' bind:value={exportInputField} readonly/>
+
 </ModalCard>
 
 <style>

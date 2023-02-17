@@ -3,7 +3,7 @@
 	import SearchPanel from './SearchPanel.svelte';
 	import LayoutPanel from './LayoutPanel.svelte';
 	import SavedLayoutsPanel from './SavedLayoutsPanel.svelte';
-	import LayoutCatalog from '../Components/LayoutCatalog.svelte';
+	import CatalogLayoutPanel from './CatalogLayoutPanel.svelte';
 	import CatalogSettingsPanel from './CatalogSettingsPanel.svelte';
 	import { SHOW_CATALOG_PANEL } from "../Utility/stores";
 
@@ -36,7 +36,7 @@
 		</div>
 
 		{#if $SHOW_CATALOG_PANEL == true}
-			<LayoutCatalog/>
+			<CatalogLayoutPanel/>
 		{/if}
 	</div>
 
