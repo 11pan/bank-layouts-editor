@@ -1,14 +1,22 @@
 import { compressLayoutStr } from "./compress";
 import { Toast } from "svelma";
 
-export const GetIcon = (layout) => {
-  let icon = layout.substring(layout.indexOf("banktag:"));
-  icon = icon.substring(icon.indexOf(",") + 1).split(",")[0];
-  return icon;
+export const GetIcon = (string, isTag) => {
+  if (isTag) {
+    return string.split(",")[1];
+  } else {
+    let icon = string.substring(string.indexOf("banktag:"));
+    icon = icon.substring(icon.indexOf(",") + 1).split(",")[0];
+    return icon;
+  }
 };
 
-export const GetName = (layout) => {
-  return layout.substring(layout.indexOf(":") + 1).split(",")[0];
+export const GetName = (string, isTag) => {
+  if (isTag) {
+    return string.split(",")[0];
+  } else {
+    return string.substring(string.indexOf(":") + 1).split(",")[0];
+  }
 };
 
 export const Titleize = (s) => s.replace(/^([a-z])/, (_, r) => r.toUpperCase());

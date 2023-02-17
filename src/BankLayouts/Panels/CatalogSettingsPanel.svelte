@@ -1,30 +1,44 @@
 <script>
 	import { Field, Input, Icon } from 'svelma';
-    import { SHOW_CATALOG_PANEL, VISIBLE_CATALOG_ITEMS, CATALOG } from "../Utility/stores";
+    import { SHOW_CATALOG_PANEL, VISIBLE_LAYOUT_CATALOG_ITEMS, VISIBLE_TAG_CATALOG_ITEMS, LAYOUT_CATALOG, TAG_CATALOG, ACTIVE_CATALOG_TAB } from "../Utility/stores";
 
     import Fuse from 'fuse.js';
 
-    const nameFuse = new Fuse(Object.values($CATALOG), { keys: ['name', 'description'] });
-    let creatorFuse;
+    const layoutNameFuse = new Fuse(Object.values($LAYOUT_CATALOG), { keys: ['name', 'description'] });
+    const catalogNameFuse = new Fuse(Object.values($TAG_CATALOG), { keys: ['name', 'description'] });
+    
+    let layoutCreatorFuse;
+    let tagCreatorFuse;
 
     const updateVisibleCatalog = (result) => {
         if (!result) return;
-        $VISIBLE_CATALOG_ITEMS = [];
+        if ($ACTIVE_CATALOG_TAB == 1) {
+            $VISIBLE_LAYOUT_CATALOG_ITEMS = [];
         
-        for (let i = 0; i < result.length; i++) 
-            $VISIBLE_CATALOG_ITEMS.push(result[i].item)
+            for (let i = 0; i < result.length; i++) 
+                $VISIBLE_LAYOUT_CATALOG_ITEMS.push(result[i].item)
 
-        creatorFuse = null;
+        } else {
+            $VISIBLE_TAG_CATALOG_ITEMS = [];
+        
+            for (let i = 0; i < result.length; i++) 
+                $VISIBLE_TAG_CATALOG_ITEMS.push(result[i].item)
+        }
+
+        layoutCreatorFuse = null;
+        tagCreatorFuse = null;
     }
 
     const nameSearch = text => { 
         if (text == "") {
-            if (creatorSearchText != "")
+            if (creatorSearchText != "") {
                 creatorSearch(creatorSearchText)
-            else
-                $VISIBLE_CATALOG_ITEMS = $CATALOG
+            } else {
+                $VISIBLE_LAYOUT_CATALOG_ITEMS = $LAYOUT_CATALOG
+                $VISIBLE_TAG_CATALOG_ITEMS = $TAG_CATALOG
+            }
         } else {
-            updateVisibleCatalog(nameFuse.search(`=${text}`))
+            updateVisibleCatalog(($ACTIVE_CATALOG_TAB == 1) ? layoutNameFuse.search(`=${text}`) : catalogNameFuse.search(`=${text}`))
         }
     }
 
@@ -33,10 +47,15 @@
             if (nameSearchText != "")
                 nameSearch(nameSearchText);
             else
-                $VISIBLE_CATALOG_ITEMS = $CATALOG
+                $VISIBLE_LAYOUT_CATALOG_ITEMS = $LAYOUT_CATALOG
         } else {
-            creatorFuse = new Fuse($VISIBLE_CATALOG_ITEMS == $CATALOG ? Object.values($CATALOG) : Object.values($VISIBLE_CATALOG_ITEMS), { keys: ['creator'] });
-            updateVisibleCatalog(creatorFuse.search(`=${text}`))
+            if ($ACTIVE_CATALOG_TAB == 1) {
+                layoutCreatorFuse = new Fuse($VISIBLE_LAYOUT_CATALOG_ITEMS == $LAYOUT_CATALOG ? Object.values($LAYOUT_CATALOG) : Object.values($VISIBLE_LAYOUT_CATALOG_ITEMS), { keys: ['creator'] });
+                updateVisibleCatalog(layoutCreatorFuse.search(`=${text}`))
+            } else {
+                tagCreatorFuse = new Fuse($VISIBLE_TAG_CATALOG_ITEMS == $TAG_CATALOG ? Object.values($TAG_CATALOG) : Object.values($VISIBLE_TAG_CATALOG_ITEMS), { keys: ['creator'] });
+                updateVisibleCatalog(tagCreatorFuse.search(`=${text}`))
+            }
         }
     }
 
