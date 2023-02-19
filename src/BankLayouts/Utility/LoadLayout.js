@@ -1,4 +1,10 @@
-import { SLOTS, TAG_NAME, SHOW_CATALOG_PANEL, ACTIVE_TAB } from "./stores.js";
+import {
+  SLOTS,
+  TAG_NAME,
+  SHOW_CATALOG_PANEL,
+  ACTIVE_TAB,
+  ACTIVE_LAYOUT,
+} from "./stores.js";
 import { Toast } from "svelma";
 
 SLOTS.update((value) => {
@@ -98,6 +104,7 @@ export const LoadLayout = (importText, addToLayout) => {
             value.grid[i] = items[i];
             return value;
           });
+
         ACTIVE_TAB.update((value) => (value = 1));
       } else {
         SLOTS.update((value) => {
@@ -125,6 +132,8 @@ export const LoadLayout = (importText, addToLayout) => {
         });
       }
     }
+
+    ACTIVE_LAYOUT.update((value) => (value = {}));
   } catch (e) {
     console.log(e);
     Toast.create({

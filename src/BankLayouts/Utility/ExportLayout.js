@@ -25,7 +25,7 @@ export const ExportLayout = (e) => {
   try {
     var out = "";
 
-    out += "banktaglayoutsplugin:" + $TAG_NAME + ",";
+    out += "banktaglayoutsplugin:" + $TAG_NAME.toLowerCase() + ",";
 
     for (var i = 0; i < $SLOTS["grid"].length; i++)
       if ($SLOTS["grid"][i] >= 0) {

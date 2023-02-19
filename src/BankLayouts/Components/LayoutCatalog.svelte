@@ -2,7 +2,6 @@
 	import { LAYOUT_CATALOG, VISIBLE_LAYOUT_CATALOG_ITEMS } from '../Utility/stores.js'
   import Icon from "../Components/Icon.svelte";
   import { Tooltip, Toast } from 'svelma';
-  import { onMount } from 'svelte';
 
 	import { LoadLayout } from "../Utility/LoadLayout"
   import { SaveLayout } from "../Utility/SaveLayout"
@@ -39,7 +38,7 @@
           {#if item}
             <nav class="level is-mobile">
               <div class="level-left">
-                <button href={null} class="level-item hideBackground" aria-label="copy" on:click={LoadLayout(item.layout)}>
+                <button href={null} class="level-item hideBackground" aria-label="copy" on:click={() => {LoadLayout(item.layout); window.scrollTo(0, 0);}}>
                   <span class="icon is-small">
                     <Tooltip label="Open layout" position="is-top" type="is-dark">
                         <i class="fas fa-copy buttonColor" aria-hidden="true" />

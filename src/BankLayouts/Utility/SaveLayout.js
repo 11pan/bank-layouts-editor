@@ -63,7 +63,6 @@ export const SaveLayout = async (newLayout, layoutString, cameFromCatalog) => {
       LAYOUTS.update((value) => (value = JSON.stringify(layouts)));
 
       if (!layoutString) {
-        ACTIVE_LAYOUT.update((value) => (value = save_object));
         LoadLayout(save_object.layout_string);
         Toast.create({
           message: "New layout created.",
@@ -77,6 +76,8 @@ export const SaveLayout = async (newLayout, layoutString, cameFromCatalog) => {
           position: "is-bottom-left",
         });
       }
+
+      ACTIVE_LAYOUT.update((value) => (value = save_object));
     } else {
       // UPDATES THE CURRENT ACTIVE LAYOUT
       let index = layouts.findIndex((x) => x.id === $ACTIVE_LAYOUT.id);
