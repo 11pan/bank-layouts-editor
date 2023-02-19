@@ -1,7 +1,10 @@
 <script>
 	import { WELCOME_POPUP, SLOTS } from "./Utility/stores.js"
+	import { fade } from 'svelte/transition'
 
 	import MainPanel from './Panels/MainPanel.svelte'
+	import LoadingPanel from './Panels/LoadingPanel.svelte'
+
 	import { Notification } from 'svelma';
 
 	import { getItems } from "./Utility/stores"
@@ -41,13 +44,13 @@
 </script>
 
 {#await itemsPromise}
-	loading....
+	<LoadingPanel/>
 {:then items} 
-	<div class='section'>
+	<div transition:fade class='section'>
 		<div class='container'>
 			<MainPanel />
 		</div>
 	</div>
-	{:catch itemError}
+{:catch itemError}
 	There was an error: {JSON.stringify(itemError)}.
 {/await}
