@@ -1,4 +1,4 @@
-import { TAG_NAME, LAYOUTS, ACTIVE_LAYOUT } from "./stores.js";
+import { TAG_NAME, LAYOUTS, ACTIVE_LAYOUT, ACTIVE_TAB } from "./stores.js";
 import { get } from "svelte/store";
 
 import { LoadLayout } from "./LoadLayout";
@@ -16,4 +16,5 @@ export const DeleteLayout = async () => {
 
   LoadLayout("");
   TAG_NAME.update((value) => (value = ""));
+  ACTIVE_TAB.update((value) => (value = 1));
 };

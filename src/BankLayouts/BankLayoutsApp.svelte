@@ -1,6 +1,5 @@
 <script>
-	import { getItems, WELCOME_POPUP } from "./Utility/stores.js"
-	const promise = getItems();
+	import { WELCOME_POPUP } from "./Utility/stores.js"
 
 	import MainPanel from './Panels/MainPanel.svelte'
 	import { Notification, Progress } from 'svelma';
@@ -34,15 +33,8 @@
 </script>
 
 
-{#await promise}
-<Progress max="100"/>
-{:then items}
-	<div class='section'>
-		<div class='container'>
-			<MainPanel />
-		</div>
-	
+<div class='section'>
+	<div class='container'>
+		<MainPanel />
 	</div>
-{:catch error}
-	There was an error: {JSON.stringify(error)}.
-{/await}
+</div>

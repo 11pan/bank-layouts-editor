@@ -1,14 +1,13 @@
 import { writable } from "svelte/store";
 import itemdb from "../../Data/item-db.json";
-import bankLayoutCatalog from "../../Data/BankLayoutCatalog.json";
 
-export const ITEM_MAP = writable({});
+export const ITEM_MAP = writable(itemdb);
 export const SLOTS = writable({});
 export const TAG_NAME = writable("");
 export const ACTIVE_LAYOUT = writable({});
 export const ITEMS_IN_GRID = writable(false);
-export const LAYOUT_CATALOG = writable(bankLayoutCatalog.layouts);
-export const TAG_CATALOG = writable(bankLayoutCatalog.tags);
+export const LAYOUT_CATALOG = writable([]);
+export const TAG_CATALOG = writable([]);
 export const VISIBLE_LAYOUT_CATALOG_ITEMS = writable([]);
 export const VISIBLE_TAG_CATALOG_ITEMS = writable([]);
 export const SHOW_CATALOG_PANEL = writable(false);
@@ -27,8 +26,14 @@ WELCOME_POPUP.subscribe((val) => {
   localStorage.setItem("WELCOME_POPUP", val);
 });
 
-export const getItems = async () => {
-  ITEM_MAP.set(itemdb);
+export const getCatalog = async () => {
+  let response = await fetch(
+    "https://raw.githubusercontent.com/11pan/bank-layouts-editor/main/src/Data/BankLayoutCatalog.json"
+  );
+  let items = await response.json();
 
-  return itemdb;
+  LAYOUT_CATALOG.set(items.layouts);
+  TAG_CATALOG.set(items.tags);
+
+  return items;
 };
