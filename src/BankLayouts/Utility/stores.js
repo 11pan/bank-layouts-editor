@@ -1,6 +1,6 @@
 import { writable } from "svelte/store";
 
-export const ITEM_MAP = writable(itemdb);
+export const ITEM_MAP = writable({});
 export const SLOTS = writable({});
 export const TAG_NAME = writable("");
 export const ACTIVE_LAYOUT = writable({});
