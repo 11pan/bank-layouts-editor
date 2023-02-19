@@ -1,10 +1,17 @@
 <script>
 	import { WELCOME_POPUP } from "./Utility/stores.js"
+	import { onMount } from 'svelte';
 
 	import MainPanel from './Panels/MainPanel.svelte'
 	import { Notification, Progress } from 'svelma';
 	import { decompressLayoutStr } from "./Utility/compress";
 	import { LoadLayout } from "./Utility/LoadLayout"
+
+	let hasPageLoaded = false;
+
+	onMount(async () => {
+		hasPageLoaded = true;
+	});
 	
 	if ($WELCOME_POPUP === "true") {
 		Notification.create({message: 'Welcome to bank layout editor!<br><br>' + 
@@ -33,8 +40,12 @@
 </script>
 
 
+{#if !hasPageLoaded}
+<h1>Loading page</h1>
+{:else}
 <div class='section'>
 	<div class='container'>
 		<MainPanel />
 	</div>
 </div>
+{/if}
