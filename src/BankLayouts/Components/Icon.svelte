@@ -1,9 +1,9 @@
 <script>
-	import itemdb from "../../Data/item-db.json";
+	import { ITEM_MAP } from "../Utility/stores"
 
 	export let id;
 
-	const getIconURL = (id) => itemdb[id] ? itemdb[id].icon : Object.values(itemdb).find(x => x.placeholderId === id).icon;
+	const getIconURL = (id) => ITEM_MAP[id] ? ITEM_MAP[id].icon : Object.values(ITEM_MAP).find(x => x.placeholderId === id).icon;
 	
 </script>
 

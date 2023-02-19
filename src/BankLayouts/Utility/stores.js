@@ -1,5 +1,4 @@
 import { writable } from "svelte/store";
-import itemdb from "../../Data/item-db.json";
 
 export const ITEM_MAP = writable(itemdb);
 export const SLOTS = writable({});
@@ -26,9 +25,26 @@ WELCOME_POPUP.subscribe((val) => {
   localStorage.setItem("WELCOME_POPUP", val);
 });
 
+// If you are wondering why we are fetching the files from Github
+// instead of just importing them normally, we don't want to have
+// the files cached into bundle.js because
+// 1) They cannot be modified without needing to build the project every time
+// 2) item-db.json is fucking HUGE which bloats the bundle.js file size, slowing the page load significantly
+
+export const getItems = async () => {
+  let response = await fetch(
+    "https://raw.githubusercontent.com/11pan/bank-layouts-editor/main/Data/item-db.json"
+  );
+  let items = await response.json();
+
+  ITEM_MAP.set(items);
+
+  return items;
+};
+
 export const getCatalog = async () => {
   let response = await fetch(
-    "https://raw.githubusercontent.com/11pan/bank-layouts-editor/main/src/Data/BankLayoutCatalog.json"
+    "https://raw.githubusercontent.com/11pan/bank-layouts-editor/main/Data/BankLayoutCatalog.json"
   );
   let items = await response.json();
 
