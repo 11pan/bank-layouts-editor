@@ -24,7 +24,7 @@
             <span class='column is-narrow'>
             <Tooltip label="Save as new layout" position="is-top" type="is-dark">
                 <button class="button is-small is-sucess is-pulled-right is-vcentered" on:click={() => {SaveLayout(true, false, false)}}>
-                    <a href={null}>Save</a>
+                    <a>Save</a>
                 </button>
             </Tooltip>
             </span>
