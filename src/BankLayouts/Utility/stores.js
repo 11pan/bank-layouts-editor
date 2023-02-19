@@ -1,4 +1,4 @@
-import { writable } from "svelte/store";
+import { writable, get } from "svelte/store";
 
 export const ITEM_MAP = writable({});
 export const SLOTS = writable({});
@@ -33,18 +33,19 @@ WELCOME_POPUP.subscribe((val) => {
 
 export const getItems = async () => {
   let response = await fetch(
-    "https://raw.githubusercontent.com/11pan/bank-layouts-editor/main/Data/item-db.json"
+    "https://raw.githubusercontent.com/11pan/bank-layouts-editor/main/data/item-db.json"
   );
   let items = await response.json();
 
   ITEM_MAP.set(items);
 
+  await getCatalog();
   return items;
 };
 
 export const getCatalog = async () => {
   let response = await fetch(
-    "https://raw.githubusercontent.com/11pan/bank-layouts-editor/main/Data/BankLayoutCatalog.json"
+    "https://raw.githubusercontent.com/11pan/bank-layouts-editor/main/data/BankLayoutCatalog.json"
   );
   let items = await response.json();
 

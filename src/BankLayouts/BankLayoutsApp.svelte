@@ -2,9 +2,13 @@
 	import { WELCOME_POPUP } from "./Utility/stores.js"
 
 	import MainPanel from './Panels/MainPanel.svelte'
-	import { Notification, Progress } from 'svelma';
+	import { Notification } from 'svelma';
 	import { decompressLayoutStr } from "./Utility/compress";
 	import { LoadLayout } from "./Utility/LoadLayout"
+
+	import { getItems, getCatalog } from "./Utility/stores"
+
+	const itemsPromise = getItems();
 	
 	if ($WELCOME_POPUP === "true") {
 		Notification.create({message: 'Welcome to bank layout editor!<br><br>' + 
@@ -32,9 +36,14 @@
 	
 </script>
 
-
-<div class='section'>
-	<div class='container'>
-		<MainPanel />
+{#await itemsPromise}
+	loading....
+{:then items} 
+	<div class='section'>
+		<div class='container'>
+			<MainPanel />
+		</div>
 	</div>
-</div>
+	{:catch itemError}
+	There was an error: {JSON.stringify(itemError)}.
+{/await}
