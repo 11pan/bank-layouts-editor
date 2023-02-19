@@ -1,15 +1,15 @@
 <script>
-	import { WELCOME_POPUP } from "./Utility/stores.js"
+	import { WELCOME_POPUP, SLOTS } from "./Utility/stores.js"
 
 	import MainPanel from './Panels/MainPanel.svelte'
 	import { Notification } from 'svelma';
-	import { decompressLayoutStr } from "./Utility/compress";
+
+	import { getItems } from "./Utility/stores"
 	import { LoadLayout } from "./Utility/LoadLayout"
+	import { decompressLayoutStr } from "./Utility/compress";
 
-	import { getItems, getCatalog } from "./Utility/stores"
+	let itemsPromise = getItems();
 
-	const itemsPromise = getItems();
-	
 	if ($WELCOME_POPUP === "true") {
 		Notification.create({message: 'Welcome to bank layout editor!<br><br>' + 
 		'This editor can be used to create or modify bank layouts<br>' + 
@@ -24,15 +24,17 @@
 	}
 
 	const LoadLayoutFromQueryString = () => {
+
 		const urlParams = new URLSearchParams(window.location.search);
-    	const compressedLayoutString = urlParams.get("layout")
+		const compressedLayoutString = urlParams.get("layout");
 
-		if (compressedLayoutString) {
-			LoadLayout(decompressLayoutStr(compressedLayoutString));
+		if (compressedLayoutString && $SLOTS.grid) {
+				LoadLayout(decompressLayoutStr(compressedLayoutString));
 		}
-	}
+	};
 
-	window.onload = LoadLayoutFromQueryString;
+	$: LoadLayoutFromQueryString($SLOTS.grid);
+
 	
 </script>
 
