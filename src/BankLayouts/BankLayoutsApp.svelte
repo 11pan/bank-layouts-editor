@@ -9,6 +9,7 @@
 	import { decompressLayoutStr } from "./Utility/compress";
 
 	let itemsPromise = getItems();
+	let loadedFromUrl = false;
 
 	if ($WELCOME_POPUP === "true") {
 		Notification.create({message: 'Welcome to bank layout editor!<br><br>' + 
@@ -28,8 +29,9 @@
 		const urlParams = new URLSearchParams(window.location.search);
 		const compressedLayoutString = urlParams.get("layout");
 
-		if (compressedLayoutString && $SLOTS.grid) {
+		if (compressedLayoutString && $SLOTS.grid && !loadedFromUrl) {
 				LoadLayout(decompressLayoutStr(compressedLayoutString));
+				loadedFromUrl = true;
 		}
 	};
 
