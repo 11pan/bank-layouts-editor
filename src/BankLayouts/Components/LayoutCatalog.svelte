@@ -12,6 +12,7 @@
   const pageSize = 10;
   let currentPage;
   let pageIndex = 0;
+  let button;
 
   let [pages, size] = [[...$VISIBLE_LAYOUT_CATALOG_ITEMS], pageSize]
   pages = [...Array(Math.ceil(pages.length / size))].map(_ => pages.splice(0,size))
@@ -24,11 +25,20 @@
   }
 
   const ChangePage = (index) => {
+    let currentActive = document.getElementsByClassName("active-button");
+    if (currentActive[0])
+      currentActive[0].classList.remove("active-button")
+
+    let active = document.getElementById(index.toString())
+    if (active)
+      active.classList.add("active-button")
+
     currentPage = pages[index]
     pageIndex = index;
   }
 
   $: UpdatePages($VISIBLE_LAYOUT_CATALOG_ITEMS)
+  $: ChangePage(0, button)
 
 </script>
 
@@ -113,7 +123,7 @@
         }
       }}>&laquo;</button>
       {#each pages as item}
-      <button on:click={() => ChangePage(pages.indexOf(item))}>{pages.indexOf(item) + 1}</button>    
+      <button bind:this={button} id={pages.indexOf(item)} on:click={() => ChangePage(pages.indexOf(item))}>{pages.indexOf(item) + 1}</button>    
     {/each}
     <button on:click={() => { {
         if (pageIndex < (pages.length - 1)) {
@@ -125,6 +135,7 @@
     </div>
   {/if}
 </div>
+<div class="active-button"></div>
 <style>
   .container {
     min-height: 1031px;
@@ -173,4 +184,10 @@
     background-color: #2c3535;
     color: #1aad90;
   }
+
+  .active-button {
+    background-color: #3f4e4e !important;
+    color: #1aad90;
+  }
+
 </style>
