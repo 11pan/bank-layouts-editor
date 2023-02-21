@@ -46,70 +46,77 @@
   <div class="box container">
     {#if pages.length > 0}
       {#each currentPage as item}
-      <article class="media">
-          <div class="media-left">
-            <figure class="image is-64x64">
-              {#if item}
-              <Icon id={GetIcon(item.layout)}/>
-              {/if}
-            </figure>
-          </div>
-          <div class="media-content">
-            <div class="content">
-              {#if item}
-                <p>
-                  <Tooltip label={GetName(item.layout)} position="is-top" type="is-dark">
-                    <strong>{Titleize(item.name)}</strong>
-                  </Tooltip>
-                  <small style="color:darkgray;"> @{item.creator}</small>
-                  <small/>
-                  <br>
-                  {item.description}
-                </p>
-              {/if}
+        {#if item}
+          <article class="media">
+            <div class="media-left">
+              <figure class="image is-64x64">
+                <Icon id={GetIcon(item.layout)}/>
+              </figure>
             </div>
-            {#if item}
-              <nav class="level is-mobile">
-                <div class="level-left">
-                  <button href={null} class="level-item hideBackground" aria-label="copy" on:click={() => {LoadLayout(item.layout); window.scrollTo(0, 0);}}>
-                    <span class="icon is-small">
-                      <Tooltip label="Open layout" position="is-top" type="is-dark">
-                          <i class="fas fa-copy buttonColor" aria-hidden="true" />
-                      </Tooltip>
-                    </span>
-                  </button>
-                  <button href={null} class="level-item hideBackground" aria-label="save" on:click={SaveLayout(true, item.layout, true)}>
-                    <span class="icon is-small">
-                      <Tooltip label="Save layout" position="is-top" type="is-dark">
-                          <i class="fas fa-save buttonColor" aria-hidden="true" />
-                      </Tooltip>
-                    </span>
-                  </button>
-                  <button href={null} class="level-item hideBackground" aria-label="export" on:click={() => {
-                    navigator.clipboard.writeText(item.layout)
-                    Toast.create({ message: 'Layout copied to clipboard.', type: 'is-success', position: 'is-bottom-left' });
-                  }}>
-                    <span class="icon is-small">
-                      <Tooltip label="Export layout" position="is-top" type="is-dark">
-                          <i class="fas fa-file-export buttonColor" aria-hidden="true" />
-                      </Tooltip>
-                    </span>
-                  </button>
-                  <button href={null} class="level-item hideBackground" aria-label="share" on:click={GetShareUrl(item.layout)}>
-                    <span class="icon is-small">
-                      <Tooltip label="Share layout" position="is-top" type="is-dark">
-                          <i class="fas fa-share buttonColor" aria-hidden="true" />
-                      </Tooltip>
-                    </span>
-                  </button>
+            <div class="media-content">
+              <div class="content">
+                  <p>
+                    <Tooltip label={GetName(item.layout)} position="is-top" type="is-dark">
+                      <strong>{Titleize(item.name)}</strong>
+                    </Tooltip>
+                    <small style="color:darkgray;"> @{item.creator}</small>
+                    <small/>
+                    <br>
+                    {item.description}
+                  </p>
+                  <div class="mediaFooter">
+                    <div class="footerButtons">
+                      <nav class="level is-mobile" style="padding-top: 5px;">
+                        <div class="level-left">
+                          <button href={null} class="level-item hideBackground" aria-label="copy" on:click={() => {LoadLayout(item.layout); window.scrollTo(0, 0);}}>
+                            <span class="icon is-small">
+                              <Tooltip label="Open layout" position="is-top" type="is-dark">
+                                  <i class="fas fa-copy buttonColor" aria-hidden="true" />
+                              </Tooltip>
+                            </span>
+                          </button>
+                          <button href={null} class="level-item hideBackground" aria-label="save" on:click={SaveLayout(true, item.layout, true)}>
+                            <span class="icon is-small">
+                              <Tooltip label="Save layout" position="is-top" type="is-dark">
+                                  <i class="fas fa-save buttonColor" aria-hidden="true" />
+                              </Tooltip>
+                            </span>
+                          </button>
+                          <button href={null} class="level-item hideBackground" aria-label="export" on:click={() => {
+                            navigator.clipboard.writeText(item.layout)
+                            Toast.create({ message: 'Layout copied to clipboard.', type: 'is-success', position: 'is-bottom-left' });
+                          }}>
+                            <span class="icon is-small">
+                              <Tooltip label="Export layout" position="is-top" type="is-dark">
+                                  <i class="fas fa-file-export buttonColor" aria-hidden="true" />
+                              </Tooltip>
+                            </span>
+                          </button>
+                          <button href={null} class="level-item hideBackground" aria-label="share" on:click={GetShareUrl(item.layout)}>
+                            <span class="icon is-small">
+                              <Tooltip label="Share layout" position="is-top" type="is-dark">
+                                  <i class="fas fa-share buttonColor" aria-hidden="true" />
+                              </Tooltip>
+                            </span>
+                          </button>
+                        </div>
+                      </nav>
+                    </div>
+                    {#if item.tags}
+                      <div class="mediaFooter tags">
+                        {#each item.tags.sort((a, b) => b.length - a.length) as tag}
+                          <p>{tag}</p>
+                        {/each}
+                      </div>   
+                    {/if}
+                  </div>
                 </div>
-              </nav>
-            {/if}
-          </div>
-        </article>
+            </div>
+          </article>
+          {:else}
+            <h1>No layouts found...</h1>
+        {/if}
       {/each}
-    {:else}
-      <h1>Could not find any layouts.</h1>
     {/if}
   </div>
   
@@ -123,8 +130,8 @@
         }
       }}>&laquo;</button>
       {#each pages as item}
-      <button bind:this={button} id={pages.indexOf(item)} on:click={() => ChangePage(pages.indexOf(item))}>{pages.indexOf(item) + 1}</button>    
-    {/each}
+        <button bind:this={button} id={pages.indexOf(item)} on:click={() => ChangePage(pages.indexOf(item))}>{pages.indexOf(item) + 1}</button>    
+      {/each}
     <button on:click={() => { {
         if (pageIndex < (pages.length - 1)) {
           pageIndex++;
@@ -135,10 +142,35 @@
     </div>
   {/if}
 </div>
-<div class="active-button"></div>
+
+<div class="active-button"/>
+
 <style>
   .container {
-    min-height: 1031px;
+    min-height: 1068px;
+  }
+
+  .mediaFooter {
+    display: flex;
+  }
+
+  .footerButtons {
+    display: contents;
+  }
+
+  .tags {
+    justify-content: end;
+    flex-grow: 1;
+  }
+
+  .tags p {
+    margin-bottom: 0px;
+    margin-right: 5px;
+    font-size: 11px;
+
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 12px;
   }
 
   .buttonColor {

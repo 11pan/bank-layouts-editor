@@ -1,8 +1,26 @@
 <script>
-	import { Field, Input, Icon } from 'svelma';
+	import { Field, Input, Icon, Switch, Collapse } from 'svelma';
     import { SHOW_CATALOG_PANEL, VISIBLE_LAYOUT_CATALOG_ITEMS, VISIBLE_TAG_CATALOG_ITEMS, LAYOUT_CATALOG, TAG_CATALOG, ACTIVE_CATALOG_TAB } from "../Utility/stores";
 
     import Fuse from 'fuse.js';
+
+    const tags = [];
+
+    $LAYOUT_CATALOG.forEach((layout) => {
+        layout.tags.forEach(tag => {
+            if (tags.filter(x  => x.tag === tag).length < 1)
+                tags.push({tag: tag, enabled: false})
+        })
+    });
+
+
+    $TAG_CATALOG.forEach((tag) => {
+        tag.tags.forEach(tag => {
+            if (tags.filter(x  => x.tag === tag).length < 1)
+                tags.push({tag: tag, enabled: false})
+        })
+    });
+
 
     const layoutNameFuse = new Fuse(Object.values($LAYOUT_CATALOG), { keys: ['name', 'description'] });
     const catalogNameFuse = new Fuse(Object.values($TAG_CATALOG), { keys: ['name', 'description'] });
@@ -44,10 +62,12 @@
 
     const creatorSearch = text => { 
         if (text == "") {
-            if (nameSearchText != "")
+            if (nameSearchText != "") {
                 nameSearch(nameSearchText);
-            else
+            } else {
                 $VISIBLE_LAYOUT_CATALOG_ITEMS = $LAYOUT_CATALOG
+                TagChecked();
+            }
         } else {
             if ($ACTIVE_CATALOG_TAB == 1) {
                 layoutCreatorFuse = new Fuse($VISIBLE_LAYOUT_CATALOG_ITEMS == $LAYOUT_CATALOG ? Object.values($LAYOUT_CATALOG) : Object.values($VISIBLE_LAYOUT_CATALOG_ITEMS), { keys: ['creator'] });
@@ -65,6 +85,64 @@
     let creatorSearchText = "";
     $: creatorSearch(creatorSearchText);
 
+    const TagChecked = () => {
+        let enabledTags = tags.filter(tag => tag.enabled === true);
+
+        if ($ACTIVE_CATALOG_TAB == 1) {
+            if (enabledTags.length == 0) {
+                $VISIBLE_LAYOUT_CATALOG_ITEMS = $LAYOUT_CATALOG
+
+                if (nameSearchText != "") {
+                    nameSearch(nameSearchText)
+                } else if (creatorSearchText != "") {
+                    creatorSearch(creatorSearchText)
+                }
+
+                return;
+            }
+
+            $VISIBLE_LAYOUT_CATALOG_ITEMS = [];
+            
+            enabledTags.forEach(tag => {
+                let layoutsWithTag = $LAYOUT_CATALOG.filter(layout => layout.tags.includes(tag.tag));
+
+                layoutsWithTag.forEach(layout => {
+                    $VISIBLE_LAYOUT_CATALOG_ITEMS.push(layout);
+                })
+            });
+        } else {
+            if (enabledTags.length == 0) {
+                $VISIBLE_TAG_CATALOG_ITEMS = $TAG_CATALOG;
+
+                if (nameSearchText != "") {
+                    nameSearch(nameSearchText)
+                } else if (creatorSearchText != "") {
+                    creatorSearch(creatorSearchText)
+                }
+
+                return;
+            }
+
+            $VISIBLE_TAG_CATALOG_ITEMS = [];
+            
+            enabledTags.forEach(tag => {
+                let tagsWithTags = $TAG_CATALOG.filter(x => x.tags.includes(tag.tag));
+
+                tagsWithTags.forEach(_tag => {
+                    $VISIBLE_TAG_CATALOG_ITEMS.push(_tag);
+                })
+            });
+        }
+
+        if (nameSearchText != "") {
+            nameSearch(nameSearchText)
+        } else if (creatorSearchText != "") {
+            creatorSearch(creatorSearchText)
+        }
+    }
+
+    $: TagChecked(tags)
+
 </script>
 
 <div class='card'>
@@ -78,6 +156,21 @@
                     
                 <Field label="Creator">
                     <Input bind:value={creatorSearchText} placeholder=""/>
+                </Field>
+
+                <Field label="Tags">
+                    <Collapse open={false}>
+                        <button class="showTagsButton" slot="trigger">
+                            Show tags
+                        </button>
+                        <div class="tags">
+                            {#each tags as tag}
+                            <div class="tag">
+                                <Switch bind:checked={tag.enabled}>{tag.tag}</Switch>
+                            </div>
+                            {/each}
+                        </div>
+                    </Collapse>
                 </Field>
 			</div>
             <br>
@@ -93,10 +186,35 @@
     .align {
         padding-left: 15%;
         margin-bottom: 10px;
+        padding-right: 43px;
     }
 
     .title {
         font-weight: bold;
         text-align: center;
     }
+
+    .showTagsButton {
+        background-color: #282f2f;
+        border-color: #4d5e5e;
+        border-radius: 10px;
+        color: #1dd2af;
+        margin-bottom: 10px;
+    }
+
+    .showTagsButton:active {
+        background-color: #2d3030;
+        color: #1dd2af;
+    }
+
+    .tags {
+        text-align: right;
+        display: grid;
+        gap: 10px;
+    }
+    
+    .tag {
+        display: contents;
+    }
+
 </style>
