@@ -16,6 +16,7 @@ export const LoadLayout = (importText, addToLayout) => {
   try {
     var text = importText;
     var type = "";
+    text = text.replace(/-/g, "");
 
     if (text.includes("banktaglayoutsplugin")) {
       type = "Layout";

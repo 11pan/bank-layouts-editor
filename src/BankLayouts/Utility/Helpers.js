@@ -22,6 +22,8 @@ export const GetName = (string, isTag) => {
 export const Titleize = (s) => s.replace(/^([a-z])/, (_, r) => r.toUpperCase());
 
 export const GetShareUrl = (exportText) => {
+  exportText = exportText.replace(/-/g, "");
+
   let compressedString = compressLayoutStr(exportText);
   navigator.clipboard.writeText(
     `${window.location.href.split("?")[0]}?layout=${compressedString}`
