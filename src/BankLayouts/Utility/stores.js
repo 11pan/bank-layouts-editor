@@ -1,5 +1,4 @@
 import { writable } from "svelte/store";
-import DropTableCatalog from "../../../data/DropTableTagCatalog.json";
 
 export const ITEM_MAP = writable({});
 
@@ -69,7 +68,7 @@ export const getDropTableCatalog = async () => {
   );
   let items = await response.json();
 
-  DROP_TABLE_TAG_CATALOG.set(DropTableCatalog.tags);
+  DROP_TABLE_TAG_CATALOG.set(items.tags);
 
   return items;
 };
