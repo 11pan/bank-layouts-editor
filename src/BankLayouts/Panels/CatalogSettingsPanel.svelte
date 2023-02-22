@@ -1,6 +1,6 @@
 <script>
 	import { Field, Input, Icon, Switch, Collapse } from 'svelma';
-    import { SHOW_CATALOG_PANEL, VISIBLE_LAYOUT_CATALOG_ITEMS, VISIBLE_TAG_CATALOG_ITEMS, LAYOUT_CATALOG, TAG_CATALOG, ACTIVE_CATALOG_TAB } from "../Utility/stores";
+    import { SHOW_CATALOG_PANEL, VISIBLE_LAYOUT_CATALOG_ITEMS, VISIBLE_TAG_CATALOG_ITEMS, LAYOUT_CATALOG, TAG_CATALOG, ACTIVE_CATALOG_TAB, DROP_TABLE_TAG_CATALOG } from "../Utility/stores";
 
     import Fuse from 'fuse.js';
 
@@ -22,8 +22,9 @@
     });
 
 
-    const layoutNameFuse = new Fuse(Object.values($LAYOUT_CATALOG), { keys: ['name', 'description'] });
-    const catalogNameFuse = new Fuse(Object.values($TAG_CATALOG), { keys: ['name', 'description'] });
+    const layoutNameFuse = new Fuse(Object.values($LAYOUT_CATALOG), { keys: ['name', 'description'], useExtendedSearch: true });
+    const catalogNameFuse = new Fuse(Object.values($TAG_CATALOG), { keys: ['name', 'description'], useExtendedSearch: true });
+    const dropTableFuse = new Fuse(Object.values($DROP_TABLE_TAG_CATALOG), { keys: ['name'], useExtendedSearch: true });
     
     let layoutCreatorFuse;
     let tagCreatorFuse;
@@ -56,7 +57,7 @@
                 $VISIBLE_TAG_CATALOG_ITEMS = $TAG_CATALOG
             }
         } else {
-            updateVisibleCatalog(($ACTIVE_CATALOG_TAB == 1) ? layoutNameFuse.search(`=${text}`) : catalogNameFuse.search(`=${text}`))
+            updateVisibleCatalog(($ACTIVE_CATALOG_TAB == 1) ? layoutNameFuse.search(`'${text}`) : catalogNameFuse.search(`=${text}`))
         }
     }
 
@@ -71,11 +72,20 @@
         } else {
             if ($ACTIVE_CATALOG_TAB == 1) {
                 layoutCreatorFuse = new Fuse($VISIBLE_LAYOUT_CATALOG_ITEMS == $LAYOUT_CATALOG ? Object.values($LAYOUT_CATALOG) : Object.values($VISIBLE_LAYOUT_CATALOG_ITEMS), { keys: ['creator'] });
-                updateVisibleCatalog(layoutCreatorFuse.search(`=${text}`))
+                updateVisibleCatalog(layoutCreatorFuse.search(`'${text}`))
             } else {
                 tagCreatorFuse = new Fuse($VISIBLE_TAG_CATALOG_ITEMS == $TAG_CATALOG ? Object.values($TAG_CATALOG) : Object.values($VISIBLE_TAG_CATALOG_ITEMS), { keys: ['creator'] });
-                updateVisibleCatalog(tagCreatorFuse.search(`=${text}`))
+                updateVisibleCatalog(tagCreatorFuse.search(`'${text}`))
             }
+        }
+    }
+
+    const dropTableSearch = text => { 
+        if (text == "") {
+            $VISIBLE_LAYOUT_CATALOG_ITEMS = $LAYOUT_CATALOG
+            TagChecked();
+        } else {
+            updateVisibleCatalog(dropTableFuse.search(`'${text}`))
         }
     }
 
@@ -84,6 +94,9 @@
 
     let creatorSearchText = "";
     $: creatorSearch(creatorSearchText);
+
+    let dropTableTagSearchText = "";
+    $: dropTableSearch(dropTableTagSearchText)
 
     const TagChecked = () => {
         let enabledTags = tags.filter(tag => tag.enabled === true);
@@ -172,6 +185,12 @@
                         </div>
                     </Collapse>
                 </Field>
+                {#if $ACTIVE_CATALOG_TAB == 0}
+                    <Field label="Drop table tags">
+                        <Input bind:value={dropTableTagSearchText} placeholder="NPC name"/>
+                    </Field>
+                    <small>Drop table tags are only show when searched.<br><br>These tags were generated dynamically and could contain mistakes.<br><br>The catalog currently holds <b>{$DROP_TABLE_TAG_CATALOG.length}</b> drop tables.</small>
+                {/if}
 			</div>
             <br>
 		</div>

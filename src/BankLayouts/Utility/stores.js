@@ -1,15 +1,22 @@
 import { writable } from "svelte/store";
+import DropTableCatalog from "../../../data/DropTableTagCatalog.json";
 
 export const ITEM_MAP = writable({});
+
 export const SLOTS = writable({});
 export const TAG_NAME = writable("");
 export const ACTIVE_LAYOUT = writable({});
 export const ITEMS_IN_GRID = writable(false);
+
 export const LAYOUT_CATALOG = writable([]);
 export const TAG_CATALOG = writable([]);
+export const DROP_TABLE_TAG_CATALOG = writable([]);
+
 export const VISIBLE_LAYOUT_CATALOG_ITEMS = writable([]);
 export const VISIBLE_TAG_CATALOG_ITEMS = writable([]);
+
 export const SHOW_CATALOG_PANEL = writable(false);
+
 export const ACTIVE_TAB = writable(1);
 export const ACTIVE_CATALOG_TAB = writable(1);
 
@@ -40,6 +47,7 @@ export const getItems = async () => {
   ITEM_MAP.set(items);
 
   await getCatalog();
+  await getDropTableCatalog();
   return items;
 };
 
@@ -51,6 +59,17 @@ export const getCatalog = async () => {
 
   LAYOUT_CATALOG.set(items.layouts);
   TAG_CATALOG.set(items.tags);
+
+  return items;
+};
+
+export const getDropTableCatalog = async () => {
+  let response = await fetch(
+    "https://raw.githubusercontent.com/11pan/bank-layouts-editor/main/data/DropTableTagCatalog.json"
+  );
+  let items = await response.json();
+
+  DROP_TABLE_TAG_CATALOG.set(DropTableCatalog.tags);
 
   return items;
 };

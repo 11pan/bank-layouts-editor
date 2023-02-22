@@ -22,7 +22,7 @@
 		for (var i = 0; i < result.length; i++)
 			$SLOTS['search'].push(result[i].item.id);
 	}
-	const search = text => { updateSlots(fuse.search(text, { limit: SEARCH_LIMIT })); }
+	const search = text => { updateSlots(fuse.search(('=' + text), { limit: SEARCH_LIMIT, useExtendedSearch: true })); }
 
 
 	let searchText = '';
