@@ -13,9 +13,10 @@
 
 	let itemsPromise = getItems();
 	let loadedFromUrl = false;
+	let isWelcomePopupVisible = false;
 
 	const ShowWelcomePopup = (val) => {
-		if ($WELCOME_POPUP === "true" && val) {
+		if ($WELCOME_POPUP === "true" && val && !isWelcomePopupVisible) {
 			Notification.create({message: 'Welcome to bank layout editor!<br><br>' + 
 			'This editor can be used to create or modify bank layouts<br>' + 
 			'for the Bank Tag Layouts Runelite plugin.<br><br>' + 
@@ -26,6 +27,7 @@
 			'<small>(This popup will not be shown again once you close it)</small>', position: "is-bottom-left", duration: 3600000 })
 
 			document.getElementsByClassName("delete")[0].onclick = () => $WELCOME_POPUP = "false";
+			isWelcomePopupVisible = true;
 		}
 
 	}
@@ -42,7 +44,6 @@
 
 	$: LoadLayoutFromQueryString($SLOTS.grid);
 	$: ShowWelcomePopup($SLOTS.grid)
-
 </script>
 
 {#await itemsPromise}
