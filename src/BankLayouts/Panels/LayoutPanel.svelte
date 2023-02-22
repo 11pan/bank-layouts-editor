@@ -2,9 +2,14 @@
 	import ItemGrid from '../Components/ItemGrid.svelte';
 	import ItemList from '../Components/ItemList.svelte';
 	import { ACTIVE_TAB } from "../Utility/stores";
+	import { onMount } from 'svelte';
 	import { Tabs, Tab } from 'svelma';
 
 	let active = $ACTIVE_TAB;
+
+	onMount(() => setTimeout(() => {
+		ChangeTab($ACTIVE_TAB)
+	}, 100));
 
 	const ChangeTab = (value) => active = value;
 
