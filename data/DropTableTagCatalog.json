@@ -19,22 +19,10 @@
       "tag": "nechryael,8246,25772,563,565,5100,5296,5297,5281,5106,5298,5280,22873,1073,5299,5300,5301,5302,22879,5303,5304,995,995,995,1319,995,995,995,1761,361,1163,1199,4131,23083,2722,562,560,560"
     },
     {
-      "name": "Death spawn",
-      "description": "Death spawn's drop table.",
-      "creator": "Ramdalf",
-      "tag": "death_spawn,8246,25766"
-    },
-    {
       "name": "Zombie",
       "description": "Zombie's drop table.",
       "creator": "Ramdalf",
       "tag": "zombie,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,526,884,217,995,995,995,995,995,313,11940,313,11940,559,313,11940,221,590,558,7863,6807,23490,21257,526,556,886,559,199,201,203,205,207,209,211,213,884,215,2485,217,995,995,1917,592,886,6807,561,199,201,203,7863,205,207,209,211,213,215,2485,217,995,995,6807,995,995,995,313,436,7863,6807,526,1420,1203,23490,1189,888,559,556,562,564,554,199,201,203,21257,205,207,209,211,213,215,2485,217,995,995,526,995,995,995,313,590,221,438,1139,7863,1291,6807,526,1189,1203,1420,564,562,556,559,554,1349,199,201,203,205,207,209,211,213,215,2485"
-    },
-    {
-      "name": "Summoned Zombie",
-      "description": "Summoned Zombie's drop table.",
-      "creator": "Ramdalf",
-      "tag": "summoned_zombie,8246,526,6807"
     },
     {
       "name": "Skeleton",
@@ -47,18 +35,6 @@
       "description": "Skeleton's drop table.",
       "creator": "Ramdalf",
       "tag": "skeleton,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,11941,23182,6806,23490,21257,526,1137,1279,1349,1323,556,555,562,884,563,564,995,995,995,995,995,995,2349"
-    },
-    {
-      "name": "Skeleton Mage",
-      "description": "Skeleton Mage's drop table.",
-      "creator": "Ramdalf",
-      "tag": "skeleton_mage,8246,526,6806"
-    },
-    {
-      "name": "Ghost",
-      "description": "Ghost's drop table.",
-      "creator": "Ramdalf",
-      "tag": "ghost,8246,23182"
     },
     {
       "name": "Rock Crab",
@@ -77,30 +53,6 @@
       "description": "Wolf's drop table.",
       "creator": "Ramdalf",
       "tag": "wolf,8246,2859,7830,11941,23182"
-    },
-    {
-      "name": "White wolf",
-      "description": "White wolf's drop table.",
-      "creator": "Ramdalf",
-      "tag": "white_wolf,8246,2859,7830,11941"
-    },
-    {
-      "name": "Big Wolf",
-      "description": "Big Wolf's drop table.",
-      "creator": "Ramdalf",
-      "tag": "big_wolf,8246,2859,7830"
-    },
-    {
-      "name": "Wild dog",
-      "description": "Wild dog's drop table.",
-      "creator": "Ramdalf",
-      "tag": "wild_dog,8246,526,13468"
-    },
-    {
-      "name": "Guard dog",
-      "description": "Guard dog's drop table.",
-      "creator": "Ramdalf",
-      "tag": "guard_dog,8246,526,13468"
     },
     {
       "name": "Skeleton",
@@ -145,12 +97,6 @@
       "tag": "dagannoth,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,526,5281,5106,5298,5280,22873,5299,5300,5301,5302,22879,1239,5303,5304,301,345,327,311,314,313,377,359,1237,401,413,411,995,995,995,995,405,45,1243,555,7857,13492,2801,23083,886,828,5296,5297"
     },
     {
-      "name": "Jungle Wolf",
-      "description": "Jungle Wolf's drop table.",
-      "creator": "Ramdalf",
-      "tag": "jungle_wolf,8246,2859,7830"
-    },
-    {
       "name": "King Black Dragon",
       "description": "King Black Dragon's drop table.",
       "creator": "Ramdalf",
@@ -161,12 +107,6 @@
       "description": "Black demon's drop table.",
       "creator": "Ramdalf",
       "tag": "black_demon,8246,25772,565,554,563,199,201,203,205,207,209,211,1283,213,215,2485,217,995,995,995,995,995,379,1365,2361,133,1361,1197,11941,1147,13501,23083,2722,19677,19679,19681,19683,23490,21257,1113,556,562"
-    },
-    {
-      "name": "Baby blue dragon",
-      "description": "Baby blue dragon's drop table.",
-      "creator": "Ramdalf",
-      "tag": "baby_blue_dragon,8246,534,7839,23083"
     },
     {
       "name": "Red dragon",
@@ -205,12 +145,6 @@
       "tag": "iron_dragon,8246,536,1183,1147,1373,830,565,9143,566,995,995,995,2351,161,9431,2361,2011,4585,4087,817,23083,2722,11286,1317,1357,1371,868"
     },
     {
-      "name": "Ghoul",
-      "description": "Ghoul's drop table.",
-      "creator": "Ramdalf",
-      "tag": "ghoul,8246,526,7881,6799"
-    },
-    {
       "name": "Dwarf",
       "description": "Dwarf's drop table.",
       "creator": "Ramdalf",
@@ -227,12 +161,6 @@
       "description": "Gunthor the brave's drop table.",
       "creator": "Ramdalf",
       "tag": "gunthor_the_brave,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,526,554,563,995,995,995,995,2142,1595,1917,948,1349,956,1375,23182,2677,1420,882,562,884,557,558"
-    },
-    {
-      "name": "Jailer",
-      "description": "Jailer's drop table.",
-      "creator": "Ramdalf",
-      "tag": "jailer,8246,526,1591"
     },
     {
       "name": "Black Heather",
@@ -263,12 +191,6 @@
       "description": "Corporeal Beast's drop table.",
       "creator": "Ramdalf",
       "tag": "corporeal_beast,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,12823,566,9144,560,9245,2,890,563,564,383,7936,12827,2361,1753,449,451,8780,6332,1513,7060,239,9735,12819,5321,995,5952,12829,5295,12833,4091,12073,25521,12816,4093,1405,1403,1407,1401"
-    },
-    {
-      "name": "Dark energy core",
-      "description": "Dark energy core's drop table.",
-      "creator": "Ramdalf",
-      "tag": "dark_energy_core,8246,592"
     },
     {
       "name": "Guard",
@@ -463,12 +385,6 @@
       "tag": "thermonuclear_smoke_devil,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,592,4587,4675,12002,11998,3140,4697,556,566,892,1885,1213,7060,10925,2434,7936,1775,2359,453,1513,444,1601,1113,995,590,1442,4548,9735,3049,9194,5300,1987,5316,2501,1645,989,1373,23083,2722,12073,25524,12648,1405,1401,1333,5667"
     },
     {
-      "name": "Death wing",
-      "description": "Death wing's drop table.",
-      "creator": "Ramdalf",
-      "tag": "death_wing,8246,23182"
-    },
-    {
       "name": "Dark wizard",
       "description": "Dark wizard's drop table.",
       "creator": "Ramdalf",
@@ -491,12 +407,6 @@
       "description": "Black Knight's drop table.",
       "creator": "Ramdalf",
       "tag": "black_knight,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,526,563,564,558,199,201,203,205,207,209,211,1279,213,215,2485,217,5318,5319,5324,5322,5320,5323,1153,5321,22879,2353,438,1933,995,995,995,995,995,1424,995,995,995,995,2309,888,11941,559,562,557,560"
-    },
-    {
-      "name": "Highwayman",
-      "description": "Highwayman's drop table.",
-      "creator": "Ramdalf",
-      "tag": "highwayman,8246,1019,9140,526"
     },
     {
       "name": "Chaos druid",
@@ -571,18 +481,6 @@
       "tag": "zombie_swab,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,526,199,201,203,205,207,209,211,213,215,2485,1325,217,995,995,995,995,995,313,313,6716,440,1203,1025,6721,877,7863,6807,556,564,559,555,562"
     },
     {
-      "name": "Evil spirit",
-      "description": "Evil spirit's drop table.",
-      "creator": "Ramdalf",
-      "tag": "evil_spirit,8246,592"
-    },
-    {
-      "name": "Fever spider",
-      "description": "Fever spider's drop table.",
-      "creator": "Ramdalf",
-      "tag": "fever_spider,8246,6718,213"
-    },
-    {
       "name": "Tyras guard",
       "description": "Tyras guard's drop table.",
       "creator": "Ramdalf",
@@ -593,12 +491,6 @@
       "description": "Arrg's drop table.",
       "creator": "Ramdalf",
       "tag": "arrg,8246,526,563,557,557,199,201,203,205,207,209,211,1141,213,215,2485,217,5100,5323,5292,5104,5293,5311,1341,5321,5294,22879,5295,5105,5282,5296,5281,5297,5106,1339,5298,5280,5299,22873,5300,5301,5302,5303,5304,453,1145,353,995,995,995,995,995,1345,7884,13483,1181,557,561"
-    },
-    {
-      "name": "Ice wolf",
-      "description": "Ice wolf's drop table.",
-      "creator": "Ramdalf",
-      "tag": "ice_wolf,8246,2859,7830"
     },
     {
       "name": "Ice Troll",
@@ -613,12 +505,6 @@
       "tag": "goblin,8246,526,995,995,995,2347,10999,288,1949,1917,1009,1438,1173,7812,13447,11942,23182,2677,6801,1237,559,555,557,877,995,995"
     },
     {
-      "name": "Damis",
-      "description": "Damis's drop table.",
-      "creator": "Ramdalf",
-      "tag": "damis,8246,4673"
-    },
-    {
       "name": "Bandit",
       "description": "Bandit's drop table.",
       "creator": "Ramdalf",
@@ -629,24 +515,6 @@
       "description": "Mummy's drop table.",
       "creator": "Ramdalf",
       "tag": "mummy,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,1656,1637,1677,1639,2566,199,201,203,205,207,209,211,213,215,2485,217,995,995,995,995,592,995,995,995,1939,444,950,970,405,2357,1185,1333,2801,4675,1635,1673,1654"
-    },
-    {
-      "name": "Mummy",
-      "description": "Mummy's drop table.",
-      "creator": "Ramdalf",
-      "tag": "mummy,8246,592"
-    },
-    {
-      "name": "Bandit champion",
-      "description": "Bandit champion's drop table.",
-      "creator": "Ramdalf",
-      "tag": "bandit_champion,8246,526,4600,1331"
-    },
-    {
-      "name": "Giant Roc",
-      "description": "Giant Roc's drop table.",
-      "creator": "Ramdalf",
-      "tag": "giant_roc,8246,532,10976,10977"
     },
     {
       "name": "Suqah",
@@ -667,34 +535,10 @@
       "tag": "locust_rider,8246,526,564,4699,892,199,201,203,205,207,209,211,1199,213,215,2485,217,5296,5297,5281,5106,5298,5280,1391,22873,5299,5300,5301,5302,22879,5303,5304,377,449,1213,453,9735,2359,363,1623,995,1823,365,379,10143,1432,1185,890,526,565,554"
     },
     {
-      "name": "Giant scarab",
-      "description": "Giant scarab's drop table.",
-      "creator": "Ramdalf",
-      "tag": "giant_scarab,8246,10581"
-    },
-    {
-      "name": "Wormbrain",
-      "description": "Wormbrain's drop table.",
-      "creator": "Ramdalf",
-      "tag": "wormbrain,8246,1535"
-    },
-    {
-      "name": "Icelord",
-      "description": "Icelord's drop table.",
-      "creator": "Ramdalf",
-      "tag": "icelord,8246,532,10976,10977"
-    },
-    {
       "name": "Zogre",
       "description": "Zogre's drop table.",
       "creator": "Ramdalf",
       "tag": "zogre,8246,4850,4812,7848,6807"
-    },
-    {
-      "name": "Skogre",
-      "description": "Skogre's drop table.",
-      "creator": "Ramdalf",
-      "tag": "skogre,8246,4812,4850"
     },
     {
       "name": "Slash Bash",
@@ -707,12 +551,6 @@
       "description": "Moss Guardian's drop table.",
       "creator": "Ramdalf",
       "tag": "moss_guardian,8246,532,4205,10976,10977"
-    },
-    {
-      "name": "Agrith Naar",
-      "description": "Agrith Naar's drop table.",
-      "creator": "Ramdalf",
-      "tag": "agrith_naar,8246,25769"
     },
     {
       "name": "Stick",
@@ -769,18 +607,6 @@
       "tag": "kalphite_queen,8246,7946,1391,1113,2501,5667,3053,3140,7158,560,565,888,385,892,3049,207,3051,219,5304,5321,5288,5289,5316,11936,2363,1783,444,1513,1621,1619,1617,245,3138,995,6685,1987,5940,6016,2434,3024,22671,12699,13489,23083,12073,7981,12885,12647,169,183"
     },
     {
-      "name": "Dagannoth mother",
-      "description": "Dagannoth mother's drop table.",
-      "creator": "Ramdalf",
-      "tag": "dagannoth_mother,8246,526,3849"
-    },
-    {
-      "name": "Sigmund",
-      "description": "Sigmund's drop table.",
-      "creator": "Ramdalf",
-      "tag": "sigmund,8246,5010"
-    },
-    {
       "name": "Necromancer",
       "description": "Necromancer's drop table.",
       "creator": "Ramdalf",
@@ -797,18 +623,6 @@
       "description": "Guard Bandit's drop table.",
       "creator": "Ramdalf",
       "tag": "guard_bandit,8246,526,11941,23490,21257"
-    },
-    {
-      "name": "Snake",
-      "description": "Snake's drop table.",
-      "creator": "Ramdalf",
-      "tag": "snake,8246,526,7860"
-    },
-    {
-      "name": "Albino bat",
-      "description": "Albino bat's drop table.",
-      "creator": "Ramdalf",
-      "tag": "albino_bat,8246,530"
     },
     {
       "name": "Jungle horror",
@@ -841,30 +655,6 @@
       "tag": "giant_sea_snake,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,532,209,211,213,215,2485,217,5100,5323,5292,5104,555,5293,5311,5321,5294,22879,5295,5105,5282,5296,5281,4695,5297,5106,5298,5280,5299,22873,5300,5301,5302,5303,4160,5304,995,995,995,995,823,313,46,571,363,199,377,401,403,405,411,413,201,7959,2801,10976,203,10977,205,207"
     },
     {
-      "name": "Giant scarab (hard)",
-      "description": "Giant scarab (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "giant_scarab_(hard),8246,10581"
-    },
-    {
-      "name": "Dessous (hard)",
-      "description": "Dessous (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "dessous_(hard),8246,3325"
-    },
-    {
-      "name": "Kamil (hard)",
-      "description": "Kamil (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "kamil_(hard),8246,1897,3024"
-    },
-    {
-      "name": "Damis (hard)",
-      "description": "Damis (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "damis_(hard),8246,4673"
-    },
-    {
       "name": "Paladin",
       "description": "Paladin's drop table.",
       "creator": "Ramdalf",
@@ -889,84 +679,6 @@
       "tag": "rooster,8246,526,2138,314,314,23182"
     },
     {
-      "name": "Alomone",
-      "description": "Alomone's drop table.",
-      "creator": "Ramdalf",
-      "tag": "alomone,8246,2405"
-    },
-    {
-      "name": "Bouncer",
-      "description": "Bouncer's drop table.",
-      "creator": "Ramdalf",
-      "tag": "bouncer,8246,25769"
-    },
-    {
-      "name": "Ram",
-      "description": "Ram's drop table.",
-      "creator": "Ramdalf",
-      "tag": "ram,8246,526,7818"
-    },
-    {
-      "name": "Vulture",
-      "description": "Vulture's drop table.",
-      "creator": "Ramdalf",
-      "tag": "vulture,8246,526,7911"
-    },
-    {
-      "name": "Experiment",
-      "description": "Experiment's drop table.",
-      "creator": "Ramdalf",
-      "tag": "experiment,8246,526,7893"
-    },
-    {
-      "name": "Loar Shade",
-      "description": "Loar Shade's drop table.",
-      "creator": "Ramdalf",
-      "tag": "loar_shade,8246,3396"
-    },
-    {
-      "name": "Phrin Shadow",
-      "description": "Phrin Shadow's drop table.",
-      "creator": "Ramdalf",
-      "tag": "phrin_shadow,8246,3398"
-    },
-    {
-      "name": "Phrin Shade",
-      "description": "Phrin Shade's drop table.",
-      "creator": "Ramdalf",
-      "tag": "phrin_shade,8246,3398"
-    },
-    {
-      "name": "Riyl Shadow",
-      "description": "Riyl Shadow's drop table.",
-      "creator": "Ramdalf",
-      "tag": "riyl_shadow,8246,3400"
-    },
-    {
-      "name": "Riyl Shade",
-      "description": "Riyl Shade's drop table.",
-      "creator": "Ramdalf",
-      "tag": "riyl_shade,8246,3400"
-    },
-    {
-      "name": "Asyn Shade",
-      "description": "Asyn Shade's drop table.",
-      "creator": "Ramdalf",
-      "tag": "asyn_shade,8246,3402"
-    },
-    {
-      "name": "Fiyr Shadow",
-      "description": "Fiyr Shadow's drop table.",
-      "creator": "Ramdalf",
-      "tag": "fiyr_shadow,8246,3404"
-    },
-    {
-      "name": "Fiyr Shade",
-      "description": "Fiyr Shade's drop table.",
-      "creator": "Ramdalf",
-      "tag": "fiyr_shade,8246,3404"
-    },
-    {
       "name": "Afflicted",
       "description": "Afflicted's drop table.",
       "creator": "Ramdalf",
@@ -977,12 +689,6 @@
       "description": "Seagull's drop table.",
       "creator": "Ramdalf",
       "tag": "seagull,8246,526,7887,526,314"
-    },
-    {
-      "name": "Slagilith",
-      "description": "Slagilith's drop table.",
-      "creator": "Ramdalf",
-      "tag": "slagilith,8246,449,1617,1619"
     },
     {
       "name": "Fire elemental",
@@ -1009,40 +715,16 @@
       "tag": "water_elemental,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,227,201,203,205,207,209,211,213,215,2485,217,555,995,995,1383,561,562,563,560,555,565,199"
     },
     {
-      "name": "The Kendal",
-      "description": "The Kendal's drop table.",
-      "creator": "Ramdalf",
-      "tag": "the_kendal,8246,526,4502"
-    },
-    {
       "name": "Black Guard",
       "description": "Black Guard's drop table.",
       "creator": "Ramdalf",
       "tag": "black_guard,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,526,995,995,2347,2349,440,438,436,2351,453,1265,1139,23182,1375,1363,877,562,561,995"
     },
     {
-      "name": "Jungle Demon",
-      "description": "Jungle Demon's drop table.",
-      "creator": "Ramdalf",
-      "tag": "jungle_demon,8246,592"
-    },
-    {
       "name": "Thief",
       "description": "Thief's drop table.",
       "creator": "Ramdalf",
       "tag": "thief,8246,526,199,201,203,205,207,209,211,213,215,2485,1139,217,995,995,995,995,995,313,436,1440,1965,1203,23182,2677,877,882,557,554,558,562"
-    },
-    {
-      "name": "Chompy bird",
-      "description": "Chompy bird's drop table.",
-      "creator": "Ramdalf",
-      "tag": "chompy_bird,8246,526,2876,13071"
-    },
-    {
-      "name": "Kebbit",
-      "description": "Kebbit's drop table.",
-      "creator": "Ramdalf",
-      "tag": "kebbit,8246,526,10176"
     },
     {
       "name": "Skeleton hero",
@@ -1075,102 +757,6 @@
       "tag": "skeleton_thug,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,526,808,1157,1193,1143,1181,1371,1333,1391,560,565,1191,886,9145,890,199,201,203,205,207,209,211,1081,213,215,2485,217,1515,2353,2355,2357,2361,444,11371,995,995,995,995,11341,11443,9419,1637,1295,2801,857,6806,865,1424,1325"
     },
     {
-      "name": "Fire wizard",
-      "description": "Fire wizard's drop table.",
-      "creator": "Ramdalf",
-      "tag": "fire_wizard,8246,592,554,1442"
-    },
-    {
-      "name": "Water wizard",
-      "description": "Water wizard's drop table.",
-      "creator": "Ramdalf",
-      "tag": "water_wizard,8246,592,555,1444"
-    },
-    {
-      "name": "Earth wizard",
-      "description": "Earth wizard's drop table.",
-      "creator": "Ramdalf",
-      "tag": "earth_wizard,8246,592,557,1440"
-    },
-    {
-      "name": "Air wizard",
-      "description": "Air wizard's drop table.",
-      "creator": "Ramdalf",
-      "tag": "air_wizard,8246,592,556,1438"
-    },
-    {
-      "name": "Battle mage",
-      "description": "Battle mage's drop table.",
-      "creator": "Ramdalf",
-      "tag": "battle_mage,8246,526,11941"
-    },
-    {
-      "name": "Ahrim the Blighted",
-      "description": "Ahrim the Blighted's drop table.",
-      "creator": "Ramdalf",
-      "tag": "ahrim_the_blighted,8246,23083"
-    },
-    {
-      "name": "Dharok the Wretched",
-      "description": "Dharok the Wretched's drop table.",
-      "creator": "Ramdalf",
-      "tag": "dharok_the_wretched,8246,23083"
-    },
-    {
-      "name": "Guthan the Infested",
-      "description": "Guthan the Infested's drop table.",
-      "creator": "Ramdalf",
-      "tag": "guthan_the_infested,8246,23083"
-    },
-    {
-      "name": "Karil the Tainted",
-      "description": "Karil the Tainted's drop table.",
-      "creator": "Ramdalf",
-      "tag": "karil_the_tainted,8246,23083"
-    },
-    {
-      "name": "Torag the Corrupted",
-      "description": "Torag the Corrupted's drop table.",
-      "creator": "Ramdalf",
-      "tag": "torag_the_corrupted,8246,23083"
-    },
-    {
-      "name": "Verac the Defiled",
-      "description": "Verac the Defiled's drop table.",
-      "creator": "Ramdalf",
-      "tag": "verac_the_defiled,8246,23083"
-    },
-    {
-      "name": "Crypt rat",
-      "description": "Crypt rat's drop table.",
-      "creator": "Ramdalf",
-      "tag": "crypt_rat,8246,526,7836"
-    },
-    {
-      "name": "Giant crypt rat",
-      "description": "Giant crypt rat's drop table.",
-      "creator": "Ramdalf",
-      "tag": "giant_crypt_rat,8246,526,7824"
-    },
-    {
-      "name": "Double agent",
-      "description": "Double agent's drop table.",
-      "creator": "Ramdalf",
-      "tag": "double_agent,8246,526,11941"
-    },
-    {
-      "name": "Goat",
-      "description": "Goat's drop table.",
-      "creator": "Ramdalf",
-      "tag": "goat,8246,526,9735"
-    },
-    {
-      "name": "Billy Goat",
-      "description": "Billy Goat's drop table.",
-      "creator": "Ramdalf",
-      "tag": "billy_goat,8246,526,9735"
-    },
-    {
       "name": "White Knight",
       "description": "White Knight's drop table.",
       "creator": "Ramdalf",
@@ -1181,24 +767,6 @@
       "description": "Gorak's drop table.",
       "creator": "Ramdalf",
       "tag": "gorak,8246,532,2722,10976,10977,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,9016"
-    },
-    {
-      "name": "Rabbit",
-      "description": "Rabbit's drop table.",
-      "creator": "Ramdalf",
-      "tag": "rabbit,8246,526,3226,7896"
-    },
-    {
-      "name": "Evil Chicken",
-      "description": "Evil Chicken's drop table.",
-      "creator": "Ramdalf",
-      "tag": "evil_chicken,8246,526,2138,314"
-    },
-    {
-      "name": "Baby black dragon",
-      "description": "Baby black dragon's drop table.",
-      "creator": "Ramdalf",
-      "tag": "baby_black_dragon,8246,534,23083"
     },
     {
       "name": "Ice troll grunt",
@@ -1229,18 +797,6 @@
       "description": "Chaos Elemental's drop table.",
       "creator": "Ramdalf",
       "tag": "chaos_elemental,8246,2297,361,11920,1215,7158,556,565,562,560,809,892,534,199,201,203,205,207,209,211,213,215,2485,530,217,464,5952,5940,995,532,526,536,11941,23083,12073,11995,23490,21257,2436,2442,2440"
-    },
-    {
-      "name": "Oomlie bird",
-      "description": "Oomlie bird's drop table.",
-      "creator": "Ramdalf",
-      "tag": "oomlie_bird,8246,526,2337"
-    },
-    {
-      "name": "Terrorbird",
-      "description": "Terrorbird's drop table.",
-      "creator": "Ramdalf",
-      "tag": "terrorbird,8246,526,7878"
     },
     {
       "name": "Fire giant",
@@ -1409,12 +965,6 @@
       "description": "Giant Rock Crab's drop table.",
       "creator": "Ramdalf",
       "tag": "giant_rock_crab,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,526,555,557,199,201,203,205,207,209,211,213,1119,215,2485,217,5296,5297,5281,5106,5298,5280,22873,3098,5299,5300,5301,5302,22879,5303,5304,1438,1446,1440,1125,1442,1448,1444,1454,1452,1462,995,377,363,590,1355,405,6161,6157,6159,6151,2801,6145,1341,1301"
-    },
-    {
-      "name": "Dagannoth fledgeling",
-      "description": "Dagannoth fledgeling's drop table.",
-      "creator": "Ramdalf",
-      "tag": "dagannoth_fledgeling,8246,526,23083"
     },
     {
       "name": "Dagannoth Supreme",
@@ -1693,48 +1243,6 @@
       "tag": "liliya,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,2859,209,211,213,215,2485,217,221,231,247,239,1353,225,245,440,453,2353,2138,2132,2136,227,995,886,995,995,995,995,995,995,995,1925,590,229,887,6814,958,1582,199,2677,201,203,205,207"
     },
     {
-      "name": "Myre Blamish Snail",
-      "description": "Myre Blamish Snail's drop table.",
-      "creator": "Ramdalf",
-      "tag": "myre_blamish_snail,8246,3345,3355,3363"
-    },
-    {
-      "name": "Blood Blamish Snail",
-      "description": "Blood Blamish Snail's drop table.",
-      "creator": "Ramdalf",
-      "tag": "blood_blamish_snail,8246,3367,3347"
-    },
-    {
-      "name": "Ochre Blamish Snail",
-      "description": "Ochre Blamish Snail's drop table.",
-      "creator": "Ramdalf",
-      "tag": "ochre_blamish_snail,8246,3349,3359,3363"
-    },
-    {
-      "name": "Bruise Blamish Snail",
-      "description": "Bruise Blamish Snail's drop table.",
-      "creator": "Ramdalf",
-      "tag": "bruise_blamish_snail,8246,3367,3351"
-    },
-    {
-      "name": "Bark Blamish Snail",
-      "description": "Bark Blamish Snail's drop table.",
-      "creator": "Ramdalf",
-      "tag": "bark_blamish_snail,8246,3353,3365"
-    },
-    {
-      "name": "Blood Blamish Snail",
-      "description": "Blood Blamish Snail's drop table.",
-      "creator": "Ramdalf",
-      "tag": "blood_blamish_snail,8246,3367,3357"
-    },
-    {
-      "name": "Bruise Blamish Snail",
-      "description": "Bruise Blamish Snail's drop table.",
-      "creator": "Ramdalf",
-      "tag": "bruise_blamish_snail,8246,3367,3361"
-    },
-    {
       "name": "Cow",
       "description": "Cow's drop table.",
       "creator": "Ramdalf",
@@ -1747,22 +1255,10 @@
       "tag": "cow_calf,8246,1739,2132,526,23182"
     },
     {
-      "name": "Bat",
-      "description": "Bat's drop table.",
-      "creator": "Ramdalf",
-      "tag": "bat,8246,530,7833,11941"
-    },
-    {
       "name": "Giant bat",
       "description": "Giant bat's drop table.",
       "creator": "Ramdalf",
       "tag": "giant_bat,8246,530,7827,11941,530"
-    },
-    {
-      "name": "Golem",
-      "description": "Golem's drop table.",
-      "creator": "Ramdalf",
-      "tag": "golem,8246,23907"
     },
     {
       "name": "Unicorn",
@@ -1825,12 +1321,6 @@
       "tag": "dungeon_rat,8246,526,2134,7824,23182,526,300"
     },
     {
-      "name": "Carnivorous chinchompa",
-      "description": "Carnivorous chinchompa's drop table.",
-      "creator": "Ramdalf",
-      "tag": "carnivorous_chinchompa,8246,10034"
-    },
-    {
       "name": "Waterfiend",
       "description": "Waterfiend's drop table.",
       "creator": "Ramdalf",
@@ -1849,18 +1339,6 @@
       "tag": "mithril_dragon,8246,536,11335,565,830,9144,566,892,385,385,11465,385,2359,11469,11497,11485,995,995,19582,11338,2363,11341,1373,817,1373,23083,12073,11286,868,1432,1247,1163"
     },
     {
-      "name": "Confused barbarian",
-      "description": "Confused barbarian's drop table.",
-      "creator": "Ramdalf",
-      "tag": "confused_barbarian,8246,11337"
-    },
-    {
-      "name": "Lost barbarian",
-      "description": "Lost barbarian's drop table.",
-      "creator": "Ramdalf",
-      "tag": "lost_barbarian,8246,11337"
-    },
-    {
       "name": "Nail beast",
       "description": "Nail beast's drop table.",
       "creator": "Ramdalf",
@@ -1877,12 +1355,6 @@
       "description": "Saradomin wizard's drop table.",
       "creator": "Ramdalf",
       "tag": "saradomin_wizard,8246,526,557,557,557,554,554,564,561,561,563,563,1397,560,565,995,995,995,1395,1399,1393,556,556,555,555"
-    },
-    {
-      "name": "Big Snake",
-      "description": "Big Snake's drop table.",
-      "creator": "Ramdalf",
-      "tag": "big_snake,8246,526,7576"
     },
     {
       "name": "Undead cow",
@@ -1927,12 +1399,6 @@
       "tag": "shadow_spider,8246,11941,23182,23490,21257"
     },
     {
-      "name": "Jungle spider",
-      "description": "Jungle spider's drop table.",
-      "creator": "Ramdalf",
-      "tag": "jungle_spider,8246,6291"
-    },
-    {
       "name": "Deadly red spider",
       "description": "Deadly red spider's drop table.",
       "creator": "Ramdalf",
@@ -1949,18 +1415,6 @@
       "description": "Poison spider's drop table.",
       "creator": "Ramdalf",
       "tag": "poison_spider,8246,11941,23182,23490,21257"
-    },
-    {
-      "name": "Poison Scorpion",
-      "description": "Poison Scorpion's drop table.",
-      "creator": "Ramdalf",
-      "tag": "poison_scorpion,8246,13459,23182"
-    },
-    {
-      "name": "Pit Scorpion",
-      "description": "Pit Scorpion's drop table.",
-      "creator": "Ramdalf",
-      "tag": "pit_scorpion,8246,13459,23182"
     },
     {
       "name": "King Scorpion",
@@ -1985,12 +1439,6 @@
       "description": "Farmer's drop table.",
       "creator": "Ramdalf",
       "tag": "farmer,8246,526,995,995,995,995,313,436,1440,1965,23182,526,1139,557,554,558,562,199,201,203,205,207,209,1203,211,213,215,2485,217,5318,5319,5324,5322,5320,882,5323,5321,22879,995,995,313,5341,1440,5345,5343,557,5329,5340,23182,2677,995,5318,554,558,562,995"
-    },
-    {
-      "name": "TzTok-Jad",
-      "description": "TzTok-Jad's drop table.",
-      "creator": "Ramdalf",
-      "tag": "tztok-jad,8246,13225"
     },
     {
       "name": "K'ril Tsutsaroth",
@@ -2095,12 +1543,6 @@
       "tag": "druid,8246,526,203,205,207,209,211,213,215,2485,217,995,557,995,995,995,995,229,1203,540,538,225,175,555,557,554,562,563,199,201"
     },
     {
-      "name": "Warrior woman",
-      "description": "Warrior woman's drop table.",
-      "creator": "Ramdalf",
-      "tag": "warrior_woman,8246,526,995"
-    },
-    {
       "name": "Drunken man",
       "description": "Drunken man's drop table.",
       "creator": "Ramdalf",
@@ -2155,40 +1597,10 @@
       "tag": "hero,8246,526,995,560,1993,565,1601,569,444"
     },
     {
-      "name": "Knight of Ardougne",
-      "description": "Knight of Ardougne's drop table.",
-      "creator": "Ramdalf",
-      "tag": "knight_of_ardougne,8246,526,995"
-    },
-    {
-      "name": "Man",
-      "description": "Man's drop table.",
-      "creator": "Ramdalf",
-      "tag": "man,8246,526,995"
-    },
-    {
-      "name": "Woman",
-      "description": "Woman's drop table.",
-      "creator": "Ramdalf",
-      "tag": "woman,8246,526,995"
-    },
-    {
-      "name": "Giant Champion",
-      "description": "Giant Champion's drop table.",
-      "creator": "Ramdalf",
-      "tag": "giant_champion,8246,10976,10977"
-    },
-    {
       "name": "Grizzly bear cub",
       "description": "Grizzly bear cub's drop table.",
       "creator": "Ramdalf",
       "tag": "grizzly_bear_cub,8246,526,948,2136,7815,13462,23182"
-    },
-    {
-      "name": "Dire Wolf",
-      "description": "Dire Wolf's drop table.",
-      "creator": "Ramdalf",
-      "tag": "dire_wolf,8246,2859,7830"
     },
     {
       "name": "Iorwerth Archer",
@@ -2201,48 +1613,6 @@
       "description": "Iorwerth Warrior's drop table.",
       "creator": "Ramdalf",
       "tag": "iorwerth_warrior,8246,526,563,554,199,201,203,205,207,209,211,213,1099,215,2485,217,5296,5297,5281,5106,5298,5280,22873,1135,5299,5300,5301,5302,22879,5303,5304,995,995,995,1243,995,995,365,385,449,1197,13480,2722,1161,1213,555,561"
-    },
-    {
-      "name": "Guardian of Armadyl",
-      "description": "Guardian of Armadyl's drop table.",
-      "creator": "Ramdalf",
-      "tag": "guardian_of_armadyl,8246,526,87"
-    },
-    {
-      "name": "Fareed",
-      "description": "Fareed's drop table.",
-      "creator": "Ramdalf",
-      "tag": "fareed,8246,592"
-    },
-    {
-      "name": "Kamil",
-      "description": "Kamil's drop table.",
-      "creator": "Ramdalf",
-      "tag": "kamil,8246,1897,3024"
-    },
-    {
-      "name": "Dessous",
-      "description": "Dessous's drop table.",
-      "creator": "Ramdalf",
-      "tag": "dessous,8246,3325"
-    },
-    {
-      "name": "Desert snake",
-      "description": "Desert snake's drop table.",
-      "creator": "Ramdalf",
-      "tag": "desert_snake,8246,526,7860"
-    },
-    {
-      "name": "Menaphite Thug",
-      "description": "Menaphite Thug's drop table.",
-      "creator": "Ramdalf",
-      "tag": "menaphite_thug,8246,526,995"
-    },
-    {
-      "name": "Tough Guy",
-      "description": "Tough Guy's drop table.",
-      "creator": "Ramdalf",
-      "tag": "tough_guy,8246,526,4600"
     },
     {
       "name": "Frogeel",
@@ -2281,28 +1651,10 @@
       "tag": "newtroost,8246,526,221,10859,10882"
     },
     {
-      "name": "Possessed pickaxe",
-      "description": "Possessed pickaxe's drop table.",
-      "creator": "Ramdalf",
-      "tag": "possessed_pickaxe,8246,1267"
-    },
-    {
       "name": "Skeletal miner",
       "description": "Skeletal miner's drop table.",
       "creator": "Ramdalf",
       "tag": "skeletal_miner,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,526,884,564,199,201,203,205,207,209,211,213,1137,215,2485,217,995,995,995,995,995,995,2349,1279,1349,23182,2801,1323,556,555,562,563"
-    },
-    {
-      "name": "Treus Dayth",
-      "description": "Treus Dayth's drop table.",
-      "creator": "Ramdalf",
-      "tag": "treus_dayth,8246,23182"
-    },
-    {
-      "name": "Vampyre Juvenile",
-      "description": "Vampyre Juvenile's drop table.",
-      "creator": "Ramdalf",
-      "tag": "vampyre_juvenile,8246,3325"
     },
     {
       "name": "Vampyre Juvinate",
@@ -2315,24 +1667,6 @@
       "description": "Vyrewatch's drop table.",
       "creator": "Ramdalf",
       "tag": "vyrewatch,8246,3325,561,890,2722,23083,830,199,201,203,205,207,209,211,1213,213,215,2485,217,5318,5319,5324,5322,5320,5323,1073,5321,22879,5305,5307,5308,5306,5309,5310,5311,5096,1123,5098,5097,5099,5100,5101,5102,5103,5104,5105,5106,1079,5291,5292,5293,5294,5295,5296,5297,5298,5299,5300,1355,5301,5302,5303,5304,5282,5281,5280,22873,45,9187,1163,9188,46,9189,9190,9191,9192,9193,9194,449,453,560,2363,2970,1515,3239,995,565"
-    },
-    {
-      "name": "Koschei the deathless",
-      "description": "Koschei the deathless's drop table.",
-      "creator": "Ramdalf",
-      "tag": "koschei_the_deathless,8246,3757"
-    },
-    {
-      "name": "Fox",
-      "description": "Fox's drop table.",
-      "creator": "Ramdalf",
-      "tag": "fox,8246,526,21263"
-    },
-    {
-      "name": "Bunny",
-      "description": "Bunny's drop table.",
-      "creator": "Ramdalf",
-      "tag": "bunny,8246,526,3226,7896"
     },
     {
       "name": "Bear Cub",
@@ -2413,12 +1747,6 @@
       "tag": "ceolburg,8246,526,199,201,203,205,207,209,211,213,215,2485,1139,217,995,995,995,995,313,436,1440,1965,23182,1203,2677,877,882,557,554,558,562"
     },
     {
-      "name": "Fareed (hard)",
-      "description": "Fareed (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "fareed_(hard),8246,592"
-    },
-    {
       "name": "Troll general",
       "description": "Troll general's drop table.",
       "creator": "Ramdalf",
@@ -2429,12 +1757,6 @@
       "description": "Troll spectator's drop table.",
       "creator": "Ramdalf",
       "tag": "troll_spectator,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,532,563,557,557,199,201,203,205,207,209,211,1141,213,215,2485,217,5100,5323,5292,5104,5293,5311,1341,5321,5294,22879,5295,5105,5282,5296,5281,5297,5106,1339,5298,5280,5299,22873,5300,5301,5302,5303,5304,995,1145,995,995,995,995,453,353,1345,13483,10976,10977,1181,557,561"
-    },
-    {
-      "name": "Dad",
-      "description": "Dad's drop table.",
-      "creator": "Ramdalf",
-      "tag": "dad,8246,532,10976,10977"
     },
     {
       "name": "Twig",
@@ -2455,34 +1777,10 @@
       "tag": "outlaw,8246,526,205,207,209,211,213,215,2485,217,995,995,11008,995,995,954,313,436,1965,946,1139,558,555,557,199,201,203"
     },
     {
-      "name": "Crocodile",
-      "description": "Crocodile's drop table.",
-      "creator": "Ramdalf",
-      "tag": "crocodile,8246,526,10976,10977"
-    },
-    {
-      "name": "Jackal",
-      "description": "Jackal's drop table.",
-      "creator": "Ramdalf",
-      "tag": "jackal,8246,526,7914"
-    },
-    {
-      "name": "Locust",
-      "description": "Locust's drop table.",
-      "creator": "Ramdalf",
-      "tag": "locust,8246,9052"
-    },
-    {
       "name": "Possessed Priest",
       "description": "Possessed Priest's drop table.",
       "creator": "Ramdalf",
       "tag": "possessed_priest,8246,526,3032,2428,2432,3040,113,995"
-    },
-    {
-      "name": "Sea troll",
-      "description": "Sea troll's drop table.",
-      "creator": "Ramdalf",
-      "tag": "sea_troll,8246,532,10976,10977"
     },
     {
       "name": "Skeleton Mage",
@@ -2533,94 +1831,10 @@
       "tag": "brine_rat,8246,526,555,565,377,383,2134,349,383,371,383,995,2134,995,995,995,1444,2801,23083,11037,560,556,557,557,557,555"
     },
     {
-      "name": "Mercenary Captain",
-      "description": "Mercenary Captain's drop table.",
-      "creator": "Ramdalf",
-      "tag": "mercenary_captain,8246,526,1839"
-    },
-    {
-      "name": "Desert Wolf",
-      "description": "Desert Wolf's drop table.",
-      "creator": "Ramdalf",
-      "tag": "desert_wolf,8246,2859,7830"
-    },
-    {
-      "name": "Ugthanki",
-      "description": "Ugthanki's drop table.",
-      "creator": "Ramdalf",
-      "tag": "ugthanki,8246,526,1859"
-    },
-    {
-      "name": "The Shaikahan",
-      "description": "The Shaikahan's drop table.",
-      "creator": "Ramdalf",
-      "tag": "the_shaikahan,8246,3123"
-    },
-    {
       "name": "Crab",
       "description": "Crab's drop table.",
       "creator": "Ramdalf",
       "tag": "crab,8246,7518,7536,7538,407"
-    },
-    {
-      "name": "Mudskipper",
-      "description": "Mudskipper's drop table.",
-      "creator": "Ramdalf",
-      "tag": "mudskipper,8246,7532,407"
-    },
-    {
-      "name": "Jubbly bird",
-      "description": "Jubbly bird's drop table.",
-      "creator": "Ramdalf",
-      "tag": "jubbly_bird,8246,532,7566,314"
-    },
-    {
-      "name": "Culinaromancer",
-      "description": "Culinaromancer's drop table.",
-      "creator": "Ramdalf",
-      "tag": "culinaromancer,8246,1891"
-    },
-    {
-      "name": "Agrith-Na-Na",
-      "description": "Agrith-Na-Na's drop table.",
-      "creator": "Ramdalf",
-      "tag": "agrith-na-na,8246,1963"
-    },
-    {
-      "name": "Karamel",
-      "description": "Karamel's drop table.",
-      "creator": "Ramdalf",
-      "tag": "karamel,8246,6794"
-    },
-    {
-      "name": "Dessourt",
-      "description": "Dessourt's drop table.",
-      "creator": "Ramdalf",
-      "tag": "dessourt,8246,1975"
-    },
-    {
-      "name": "Ice Queen",
-      "description": "Ice Queen's drop table.",
-      "creator": "Ramdalf",
-      "tag": "ice_queen,8246,1580"
-    },
-    {
-      "name": "Entrana firebird",
-      "description": "Entrana firebird's drop table.",
-      "creator": "Ramdalf",
-      "tag": "entrana_firebird,8246,526,1583"
-    },
-    {
-      "name": "Khazard commander",
-      "description": "Khazard commander's drop table.",
-      "creator": "Ramdalf",
-      "tag": "khazard_commander,8246,526,587"
-    },
-    {
-      "name": "Chronozon",
-      "description": "Chronozon's drop table.",
-      "creator": "Ramdalf",
-      "tag": "chronozon,8246,25769,779,11941"
     },
     {
       "name": "Skeleton Hellhound",
@@ -2635,82 +1849,10 @@
       "tag": "experiment_no.2,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,526,203,205,207,209,211,213,215,2485,217,995,11205,7416,1407,557,7893,2722,555,562,561,203,199,201"
     },
     {
-      "name": "Mouse",
-      "description": "Mouse's drop table.",
-      "creator": "Ramdalf",
-      "tag": "mouse,8246,526,1985,995"
-    },
-    {
       "name": "Glod",
       "description": "Glod's drop table.",
       "creator": "Ramdalf",
       "tag": "glod,8246,532,1623,1619,5336,11210,10976,10977"
-    },
-    {
-      "name": "Baby green dragon",
-      "description": "Baby green dragon's drop table.",
-      "creator": "Ramdalf",
-      "tag": "baby_green_dragon,8246,534"
-    },
-    {
-      "name": "Jonny the beard",
-      "description": "Jonny the beard's drop table.",
-      "creator": "Ramdalf",
-      "tag": "jonny_the_beard,8246,526,761"
-    },
-    {
-      "name": "Duke",
-      "description": "Duke's drop table.",
-      "creator": "Ramdalf",
-      "tag": "duke,8246,3180"
-    },
-    {
-      "name": "Oipuis",
-      "description": "Oipuis's drop table.",
-      "creator": "Ramdalf",
-      "tag": "oipuis,8246,3180"
-    },
-    {
-      "name": "Uyoro",
-      "description": "Uyoro's drop table.",
-      "creator": "Ramdalf",
-      "tag": "uyoro,8246,3180"
-    },
-    {
-      "name": "Ouhai",
-      "description": "Ouhai's drop table.",
-      "creator": "Ramdalf",
-      "tag": "ouhai,8246,3180"
-    },
-    {
-      "name": "Uodai",
-      "description": "Uodai's drop table.",
-      "creator": "Ramdalf",
-      "tag": "uodai,8246,3180"
-    },
-    {
-      "name": "Padulah",
-      "description": "Padulah's drop table.",
-      "creator": "Ramdalf",
-      "tag": "padulah,8246,3180"
-    },
-    {
-      "name": "Monkey Guard",
-      "description": "Monkey Guard's drop table.",
-      "creator": "Ramdalf",
-      "tag": "monkey_guard,8246,3181,3182,13450"
-    },
-    {
-      "name": "Monkey Archer",
-      "description": "Monkey Archer's drop table.",
-      "creator": "Ramdalf",
-      "tag": "monkey_archer,8246,3179,13450"
-    },
-    {
-      "name": "Monkey Zombie",
-      "description": "Monkey Zombie's drop table.",
-      "creator": "Ramdalf",
-      "tag": "monkey_zombie,8246,3185,3186,7854"
     },
     {
       "name": "Elf Warrior",
@@ -2737,34 +1879,10 @@
       "tag": "cave_goblin_guard,8246,526,5018,5016,1101,995,4537,590,7905,6801"
     },
     {
-      "name": "Undead one",
-      "description": "Undead one's drop table.",
-      "creator": "Ramdalf",
-      "tag": "undead_one,8246,526,6806,6807"
-    },
-    {
-      "name": "Nazastarool",
-      "description": "Nazastarool's drop table.",
-      "creator": "Ramdalf",
-      "tag": "nazastarool,8246,609,6806,6807"
-    },
-    {
       "name": "Goblin guard",
       "description": "Goblin guard's drop table.",
       "creator": "Ramdalf",
       "tag": "goblin_guard,8246,526,995,995,995,2347,10999,288,1949,1917,1009,1438,1173,7812,13447,23182,2677,6801,1237,559,555,557,877,995,995"
-    },
-    {
-      "name": "Grave scorpion",
-      "description": "Grave scorpion's drop table.",
-      "creator": "Ramdalf",
-      "tag": "grave_scorpion,8246,13459,23182"
-    },
-    {
-      "name": "Watchman",
-      "description": "Watchman's drop table.",
-      "creator": "Ramdalf",
-      "tag": "watchman,8246,526,2309,995"
     },
     {
       "name": "Angry barbarian spirit",
@@ -2791,34 +1909,10 @@
       "tag": "ferocious_barbarian_spirit,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,1428,199,201,203,205,207,209,211,213,215,2485,1430,217,5295,11467,11465,11487,11485,11471,11469,11499,11497,1432,11507,11505,11473,11477,1515,2353,2359,2361,2363,532,11373,11341,385,867,20543,816,892,9144,560"
     },
     {
-      "name": "Giant snail",
-      "description": "Giant snail's drop table.",
-      "creator": "Ramdalf",
-      "tag": "giant_snail,8246,7800,10996"
-    },
-    {
-      "name": "Shade",
-      "description": "Shade's drop table.",
-      "creator": "Ramdalf",
-      "tag": "shade,8246,546,548"
-    },
-    {
       "name": "Undead Lumberjack",
       "description": "Undead Lumberjack's drop table.",
       "creator": "Ramdalf",
       "tag": "undead_lumberjack,8246,526,960,10939,10940,10941,10933,6807"
-    },
-    {
-      "name": "Penance Fighter",
-      "description": "Penance Fighter's drop table.",
-      "creator": "Ramdalf",
-      "tag": "penance_fighter,8246,10533,10531,10532"
-    },
-    {
-      "name": "Penance Ranger",
-      "description": "Penance Ranger's drop table.",
-      "creator": "Ramdalf",
-      "tag": "penance_ranger,8246,10533,10531,10532"
     },
     {
       "name": "Giant Mole",
@@ -2833,24 +1927,6 @@
       "tag": "yak,8246,526,10818,10814,10816"
     },
     {
-      "name": "Ice troll grunt",
-      "description": "Ice troll grunt's drop table.",
-      "creator": "Ramdalf",
-      "tag": "ice_troll_grunt,8246,532,10976,10977"
-    },
-    {
-      "name": "Tanglefoot",
-      "description": "Tanglefoot's drop table.",
-      "creator": "Ramdalf",
-      "tag": "tanglefoot,8246,7410"
-    },
-    {
-      "name": "Baby tanglefoot",
-      "description": "Baby tanglefoot's drop table.",
-      "creator": "Ramdalf",
-      "tag": "baby_tanglefoot,8246,6020"
-    },
-    {
       "name": "Cerberus",
       "description": "Cerberus's drop table.",
       "creator": "Ramdalf",
@@ -2861,18 +1937,6 @@
       "description": "Abyssal Sire's drop table.",
       "creator": "Ramdalf",
       "tag": "abyssal_sire,8246,25775,565,560,563,566,564,2,213,217,215,2485,1391,5295,5300,5304,5321,5313,21488,5314,21486,5315,5288,1163,5316,5289,5317,22877,22869,22871,453,575,7936,1513,3054,1617,451,9194,2363,1438,1446,1440,1442,1448,1444,1289,1454,1452,1462,995,7054,3024,5521,6687,1937,13273,1127,1201,1405,23083,12073,1397"
-    },
-    {
-      "name": "Spawn",
-      "description": "Spawn's drop table.",
-      "creator": "Ramdalf",
-      "tag": "spawn,8246,25766"
-    },
-    {
-      "name": "Scion",
-      "description": "Scion's drop table.",
-      "creator": "Ramdalf",
-      "tag": "scion,8246,25766"
     },
     {
       "name": "Sand Crab",
@@ -2929,118 +1993,10 @@
       "tag": "gnome_woman,8246,526,995,557,444,2150,2162,569"
     },
     {
-      "name": "Bush snake",
-      "description": "Bush snake's drop table.",
-      "creator": "Ramdalf",
-      "tag": "bush_snake,8246,6287,7860"
-    },
-    {
-      "name": "Elvarg (hard)",
-      "description": "Elvarg (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "elvarg_(hard),8246,536"
-    },
-    {
-      "name": "Urium Shadow",
-      "description": "Urium Shadow's drop table.",
-      "creator": "Ramdalf",
-      "tag": "urium_shadow,8246,25419"
-    },
-    {
-      "name": "Large mosquito",
-      "description": "Large mosquito's drop table.",
-      "creator": "Ramdalf",
-      "tag": "large_mosquito,8246,6319"
-    },
-    {
-      "name": "Mosquito swarm",
-      "description": "Mosquito swarm's drop table.",
-      "creator": "Ramdalf",
-      "tag": "mosquito_swarm,8246,6319"
-    },
-    {
-      "name": "Tanglefoot (hard)",
-      "description": "Tanglefoot (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "tanglefoot_(hard),8246,7410"
-    },
-    {
-      "name": "Chronozon (hard)",
-      "description": "Chronozon (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "chronozon_(hard),8246,25769,779,11941"
-    },
-    {
-      "name": "Bouncer (hard)",
-      "description": "Bouncer (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "bouncer_(hard),8246,25769"
-    },
-    {
       "name": "Glod (hard)",
       "description": "Glod (hard)'s drop table.",
       "creator": "Ramdalf",
       "tag": "glod_(hard),8246,532,1623,1619,5336,11210,10976,10977"
-    },
-    {
-      "name": "Treus Dayth (hard)",
-      "description": "Treus Dayth (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "treus_dayth_(hard),8246,23182"
-    },
-    {
-      "name": "Dagannoth mother (hard)",
-      "description": "Dagannoth mother (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "dagannoth_mother_(hard),8246,526,3849"
-    },
-    {
-      "name": "Evil Chicken (hard)",
-      "description": "Evil Chicken (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "evil_chicken_(hard),8246,526,2138,314"
-    },
-    {
-      "name": "Culinaromancer (hard)",
-      "description": "Culinaromancer (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "culinaromancer_(hard),8246,1891"
-    },
-    {
-      "name": "Karamel (hard)",
-      "description": "Karamel (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "karamel_(hard),8246,6794"
-    },
-    {
-      "name": "Dessourt (hard)",
-      "description": "Dessourt (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "dessourt_(hard),8246,1975"
-    },
-    {
-      "name": "Jungle Demon (hard)",
-      "description": "Jungle Demon (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "jungle_demon_(hard),8246,592"
-    },
-    {
-      "name": "The Kendal (hard)",
-      "description": "The Kendal (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "the_kendal_(hard),8246,526,4502"
-    },
-    {
-      "name": "Giant Roc (hard)",
-      "description": "Giant Roc (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "giant_roc_(hard),8246,532,10976,10977"
-    },
-    {
-      "name": "Slagilith (hard)",
-      "description": "Slagilith (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "slagilith_(hard),8246,449,1617,1619"
     },
     {
       "name": "Skeleton Hellhound (hard)",
@@ -3049,70 +2005,10 @@
       "tag": "skeleton_hellhound_(hard),8246,532,532,1619,10976,10977"
     },
     {
-      "name": "Agrith Naar (hard)",
-      "description": "Agrith Naar (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "agrith_naar_(hard),8246,25769"
-    },
-    {
-      "name": "Khazard warlord (hard)",
-      "description": "Khazard warlord (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "khazard_warlord_(hard),8246,526,588"
-    },
-    {
-      "name": "Dad (hard)",
-      "description": "Dad (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "dad_(hard),8246,532,10976,10977"
-    },
-    {
-      "name": "Nazastarool (hard)",
-      "description": "Nazastarool (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "nazastarool_(hard),8246,609,6806,6807"
-    },
-    {
       "name": "Cow (hard)",
       "description": "Cow (hard)'s drop table.",
       "creator": "Ramdalf",
       "tag": "cow_(hard),8246,1739,2132,526,23182"
-    },
-    {
-      "name": "Elvarg",
-      "description": "Elvarg's drop table.",
-      "creator": "Ramdalf",
-      "tag": "elvarg,8246,536"
-    },
-    {
-      "name": "Black Knight Titan",
-      "description": "Black Knight Titan's drop table.",
-      "creator": "Ramdalf",
-      "tag": "black_knight_titan,8246,532,10976,10977"
-    },
-    {
-      "name": "Khazard warlord",
-      "description": "Khazard warlord's drop table.",
-      "creator": "Ramdalf",
-      "tag": "khazard_warlord,8246,526,588"
-    },
-    {
-      "name": "Arrg",
-      "description": "Arrg's drop table.",
-      "creator": "Ramdalf",
-      "tag": "arrg,8246,532,10976,10977"
-    },
-    {
-      "name": "Broodoo victim",
-      "description": "Broodoo victim's drop table.",
-      "creator": "Ramdalf",
-      "tag": "broodoo_victim,8246,6335,6337,6339"
-    },
-    {
-      "name": "Animated spade",
-      "description": "Animated spade's drop table.",
-      "creator": "Ramdalf",
-      "tag": "animated_spade,8246,952"
     },
     {
       "name": "Terror dog",
@@ -3167,12 +2063,6 @@
       "description": "Prifddinas guard's drop table.",
       "creator": "Ramdalf",
       "tag": "prifddinas_guard,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,526,563,554,199,201,203,205,207,209,211,213,1099,215,2485,217,995,995,995,6103,365,385,449,1135,23959,1243,23962,13480,2722,1197,1161,1213,555,561"
-    },
-    {
-      "name": "Rogue",
-      "description": "Rogue's drop table.",
-      "creator": "Ramdalf",
-      "tag": "rogue,8246,526,23490,21257"
     },
     {
       "name": "Mammoth",
@@ -3239,12 +2129,6 @@
       "description": "Chaos Fanatic's drop table.",
       "creator": "Ramdalf",
       "tag": "chaos_fanatic,8246,526,554,4697,562,565,7946,385,2434,2297,995,2485,11928,2570,1452,245,1621,1623,993,7936,11931,1391,3387,11941,23083,2722,11995,23490,21257,3389,1035,1033,4675"
-    },
-    {
-      "name": "Chaotic death spawn",
-      "description": "Chaotic death spawn's drop table.",
-      "creator": "Ramdalf",
-      "tag": "chaotic_death_spawn,8246,592"
     },
     {
       "name": "River troll",
@@ -3595,12 +2479,6 @@
       "tag": "vasa_nistirio,8246,20888,20911,20984,20936"
     },
     {
-      "name": "Ice demon",
-      "description": "Ice demon's drop table.",
-      "creator": "Ramdalf",
-      "tag": "ice_demon,8246,25766"
-    },
-    {
       "name": "Skeletal Mystic",
       "description": "Skeletal Mystic's drop table.",
       "creator": "Ramdalf",
@@ -3611,12 +2489,6 @@
       "description": "TzHaar-Ket's drop table.",
       "creator": "Ramdalf",
       "tag": "tzhaar-ket,8246,6528,6524,6568,21298,21301,21304,1623,1621,1619,1617,9194,6529,13498"
-    },
-    {
-      "name": "TzKal-Zuk",
-      "description": "TzKal-Zuk's drop table.",
-      "creator": "Ramdalf",
-      "tag": "tzkal-zuk,8246,21291"
     },
     {
       "name": "Long-tailed Wyvern",
@@ -3677,18 +2549,6 @@
       "description": "Deranged archaeologist's drop table.",
       "creator": "Ramdalf",
       "tag": "deranged_archaeologist,8246,526,5295,5300,5304,5321,5313,21488,5314,21486,5315,5288,2503,5316,5289,5317,22877,22869,22871,217,239,9431,1747,1319,444,1617,9194,2297,139,6705,385,989,10976,1289,555,4698,21555,21562,21564,21566,21568,868,12073,11212,2"
-    },
-    {
-      "name": "Justiciar Zachariah",
-      "description": "Justiciar Zachariah's drop table.",
-      "creator": "Ramdalf",
-      "tag": "justiciar_zachariah,8246,21797,11941"
-    },
-    {
-      "name": "Derwen",
-      "description": "Derwen's drop table.",
-      "creator": "Ramdalf",
-      "tag": "derwen,8246,21798,11941"
     },
     {
       "name": "Porazdir",
@@ -3817,18 +2677,6 @@
       "tag": "ogress_shaman,8246,532,557,554,558,555,886,884,5100,5323,5292,5104,1197,5293,5311,5321,5294,22879,5295,5105,5282,5296,5281,888,5297,5106,5298,5280,5299,22873,5300,5301,5302,5303,562,5304,225,1617,1621,1619,1623,995,995,329,13477,563,1147,1163,1373,10976,21838,10977,561,560,556,564"
     },
     {
-      "name": "Corrupt Lizardman (hard)",
-      "description": "Corrupt Lizardman (hard)'s drop table.",
-      "creator": "Ramdalf",
-      "tag": "corrupt_lizardman_(hard),8246,526,13383"
-    },
-    {
-      "name": "Corrupt Lizardman",
-      "description": "Corrupt Lizardman's drop table.",
-      "creator": "Ramdalf",
-      "tag": "corrupt_lizardman,8246,526,13383"
-    },
-    {
       "name": "Rune dragon",
       "description": "Rune dragon's drop table.",
       "creator": "Ramdalf",
@@ -3857,42 +2705,6 @@
       "description": "Swamp Crab's drop table.",
       "creator": "Ramdalf",
       "tag": "swamp_crab,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,2970,453,1519,2970,1515,995,995,995,401,946,1755,1265,313,403,3239,1969,405,1351,2677,1349,1511,1521,436,438,440"
-    },
-    {
-      "name": "Xarpus",
-      "description": "Xarpus's drop table.",
-      "creator": "Ramdalf",
-      "tag": "xarpus,8246,22512"
-    },
-    {
-      "name": "Nylocas Vasilias",
-      "description": "Nylocas Vasilias's drop table.",
-      "creator": "Ramdalf",
-      "tag": "nylocas_vasilias,8246,22508"
-    },
-    {
-      "name": "Pestilent Bloat",
-      "description": "Pestilent Bloat's drop table.",
-      "creator": "Ramdalf",
-      "tag": "pestilent_bloat,8246,22506"
-    },
-    {
-      "name": "The Maiden of Sugadinti",
-      "description": "The Maiden of Sugadinti's drop table.",
-      "creator": "Ramdalf",
-      "tag": "the_maiden_of_sugadinti,8246,22504"
-    },
-    {
-      "name": "Verzik Vitur",
-      "description": "Verzik Vitur's drop table.",
-      "creator": "Ramdalf",
-      "tag": "verzik_vitur,8246,22514"
-    },
-    {
-      "name": "Sotetseg",
-      "description": "Sotetseg's drop table.",
-      "creator": "Ramdalf",
-      "tag": "sotetseg,8246,22510,10976,10977"
     },
     {
       "name": "Hespori",
@@ -3949,12 +2761,6 @@
       "tag": "temple_spider,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,1301,564,560,561,563,566,199,201,203,205,207,1145,209,211,213,215,2485,217,5100,5323,5292,5104,1213,5293,5311,5321,5294,22879,5295,5105,5282,5296,5281,1147,5297,5106,5298,5280,5299,22873,5300,5301,5302,5303,556,5304,995,223,183,5937,557,23510,23512,23514,23499,554,2722,555,562"
     },
     {
-      "name": "Shaeded Beast",
-      "description": "Shaeded Beast's drop table.",
-      "creator": "Ramdalf",
-      "tag": "shaeded_beast,8246,23497"
-    },
-    {
       "name": "Sarachnis",
       "description": "Sarachnis's drop table.",
       "creator": "Ramdalf",
@@ -3989,30 +2795,6 @@
       "description": "Sir Harry's drop table.",
       "creator": "Ramdalf",
       "tag": "sir_harry,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,526,2353,199,201,203,205,207,209,211,213,215,1490,2485,217,995,995,995,995,995,1281,2801,1295,1157,555,565,2351,2359"
-    },
-    {
-      "name": "Othainian",
-      "description": "Othainian's drop table.",
-      "creator": "Ramdalf",
-      "tag": "othainian,8246,25769,1497"
-    },
-    {
-      "name": "Doomion",
-      "description": "Doomion's drop table.",
-      "creator": "Ramdalf",
-      "tag": "doomion,8246,25769,1498"
-    },
-    {
-      "name": "Holthion",
-      "description": "Holthion's drop table.",
-      "creator": "Ramdalf",
-      "tag": "holthion,8246,25769,1499"
-    },
-    {
-      "name": "Disciple of Iban",
-      "description": "Disciple of Iban's drop table.",
-      "creator": "Ramdalf",
-      "tag": "disciple_of_iban,8246,526,1035,1033"
     },
     {
       "name": "Mourner",
@@ -4141,12 +2923,6 @@
       "tag": "basilisk_sentinel,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,532,9075,561,563,560,565,211,207,3051,219,995,1073,449,1199,7899,2722,23083,4109,7977,10976,24268,10977,1359,20730,20736,21270,20724,1373,1213,1333,1247,1147"
     },
     {
-      "name": "Basilisk Youngling",
-      "description": "Basilisk Youngling's drop table.",
-      "creator": "Ramdalf",
-      "tag": "basilisk_youngling,8246,24256"
-    },
-    {
       "name": "Basilisk Knight",
       "description": "Basilisk Knight's drop table.",
       "creator": "Ramdalf",
@@ -4213,28 +2989,10 @@
       "tag": "sourhog,8246,532,199,201,203,205,207,209,211,213,215,2485,1331,217,5100,5323,5292,5104,5293,5311,5321,5294,22879,1199,5295,5105,5282,5296,5281,5297,5106,5298,5280,5299,558,22873,5300,5301,5302,5303,5304,995,225,1965,1942,556,1955,557,561,2677,10976,10977,562,886"
     },
     {
-      "name": "Headless Beast",
-      "description": "Headless Beast's drop table.",
-      "creator": "Ramdalf",
-      "tag": "headless_beast,8246,532,10976,10977"
-    },
-    {
       "name": "Forgotten Soul",
       "description": "Forgotten Soul's drop table.",
       "creator": "Ramdalf",
       "tag": "forgotten_soul,8246,1623,1621,1619,1452,1462,1617,830,987,985,1247,2366,1249,1295,201,203,205,207,209,211,213,215,2485,217,1399,563,9142,558,556,557,555,559,561,995,995,1393,995,227,303,1759,231,1397,1395,581,1015,1017,199"
-    },
-    {
-      "name": "Urium Shade",
-      "description": "Urium Shade's drop table.",
-      "creator": "Ramdalf",
-      "tag": "urium_shade,8246,25419"
-    },
-    {
-      "name": "Undead Zealot",
-      "description": "Undead Zealot's drop table.",
-      "creator": "Ramdalf",
-      "tag": "undead_zealot,8246,25422"
     },
     {
       "name": "Chaos Golem",
@@ -4259,18 +3017,6 @@
       "description": "Flawed Golem's drop table.",
       "creator": "Ramdalf",
       "tag": "flawed_golem,8246,434,25676,25639,23182,434,434,1436,1436,438,436,1623,1621"
-    },
-    {
-      "name": "Boar",
-      "description": "Boar's drop table.",
-      "creator": "Ramdalf",
-      "tag": "boar,8246,526,25833,23182"
-    },
-    {
-      "name": "Lynx",
-      "description": "Lynx's drop table.",
-      "creator": "Ramdalf",
-      "tag": "lynx,8246,526,2677"
     },
     {
       "name": "Lynx Tamer",
