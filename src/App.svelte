@@ -5,9 +5,11 @@
 	import BankLayoutsApp from './BankLayouts/BankLayoutsApp.svelte';
 	import FragmentApp from './FragmentPicker/FragmentApp.svelte';
 
-	const path = document.referrer.substring(document.referrer.indexOf("com") + 3);
+	const localDevelopmentDebugUrl = "https://banklayouts.com/browse";
+	const referrer = document.referrer.includes("localhost") ? localDevelopmentDebugUrl : document.referrer;
+
+	const path = referrer.substring(referrer.indexOf("com") + 3);
 	const queryString = window.location.search;
-	console.log(queryString)
 	let component;
 
 	if (path != "")

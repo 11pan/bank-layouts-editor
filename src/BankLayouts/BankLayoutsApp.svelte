@@ -11,7 +11,10 @@
 	import { LoadLayout } from "./Utility/LoadLayout"
 	import { decompressLayoutStr } from "./Utility/compress";
 
-	const path = document.referrer.substring(document.referrer.indexOf("com") + 3);
+	const localDevelopmentDebugUrl = "https://banklayouts.com/browse";
+	const referrer = document.referrer.includes("localhost") ? localDevelopmentDebugUrl : document.referrer;
+
+	const path = referrer.substring(referrer.indexOf("com") + 3);
 
 	if (path == "/browse") 
 		$SHOW_CATALOG_PANEL = true;
