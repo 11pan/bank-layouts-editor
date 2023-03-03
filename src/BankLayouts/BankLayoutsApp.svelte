@@ -49,7 +49,7 @@
 
 	const ChangeHistoryState = (show) => {
 		if (show)
-			window.history.replaceState(null, "", "/browse")
+			window.history.replaceState(null, "", `/browse${window.location.search}`)
 		else
 			window.history.replaceState(null, "", "..")
 

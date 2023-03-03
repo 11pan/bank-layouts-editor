@@ -6,10 +6,12 @@
 	import FragmentApp from './FragmentPicker/FragmentApp.svelte';
 
 	const path = document.referrer.substring(document.referrer.indexOf("com") + 3);
+	const queryString = window.location.search;
+	console.log(queryString)
 	let component;
 
 	if (path != "")
-		window.history.replaceState(null, "", path)
+		window.history.replaceState(null, "", `${path}${queryString}`)
 
 	switch(path) {
 		case "":
