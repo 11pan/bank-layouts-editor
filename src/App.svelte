@@ -20,6 +20,8 @@
 		}
 	});
 
+	console.log(document.referrer)
+
 	page.start();
 </script>
 
