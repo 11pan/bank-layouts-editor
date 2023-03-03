@@ -5,22 +5,19 @@
 	import BankLayoutsApp from './BankLayouts/BankLayoutsApp.svelte';
 	import FragmentApp from './FragmentPicker/FragmentApp.svelte';
 
-	let pages = {
-		'': BankLayoutsApp,
-		'fragments': FragmentApp
+	const path = document.referrer.substring(document.referrer.indexOf("com") + 3);
+	let component;
+
+	switch(path) {
+		case "":
+			component = BankLayoutsApp;
+			break;
+		case "/fragments":
+			component = FragmentApp;
+			break;
+		default:
+			component = BankLayoutsApp;
 	}
-
-	let component = BankLayoutsApp;
-
-	page((ctx) => {
-		if (ctx.hash in pages) {
-			var value = pages[ctx.hash];
-			component = value;
-			ctx.handled = true;
-		}
-	});
-
-	console.log(document.referrer)
 
 	page.start();
 </script>
