@@ -19,6 +19,8 @@ export const SHOW_CATALOG_PANEL = writable(false);
 export const ACTIVE_TAB = writable(1);
 export const ACTIVE_CATALOG_TAB = writable(1);
 
+export const PATH = writable("");
+
 export const LAYOUTS = writable(localStorage.getItem("LAYOUTS") || "[]");
 LAYOUTS.subscribe((val) => {
   localStorage.setItem("LAYOUTS", val);

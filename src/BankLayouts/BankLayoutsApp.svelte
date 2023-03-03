@@ -1,5 +1,5 @@
 <script>
-	import { WELCOME_POPUP, SLOTS, SHOW_CATALOG_PANEL } from "./Utility/stores.js"
+	import { WELCOME_POPUP, SLOTS, SHOW_CATALOG_PANEL, PATH } from "./Utility/stores.js"
 	import { fade } from 'svelte/transition'
 
 	import MainPanel from './Panels/MainPanel.svelte'
@@ -11,12 +11,7 @@
 	import { LoadLayout } from "./Utility/LoadLayout"
 	import { decompressLayoutStr } from "./Utility/compress";
 
-	const localDevelopmentDebugUrl = "https://banklayouts.com/browse";
-	const referrer = document.referrer.includes("localhost") ? localDevelopmentDebugUrl : document.referrer;
-
-	const path = referrer.substring(referrer.indexOf("com") + 3);
-
-	if (path == "/browse") 
+	if ($PATH.includes("/browse")) 
 		$SHOW_CATALOG_PANEL = true;
 
 	let itemsPromise = getItems();
@@ -51,8 +46,8 @@
 	};
 
 	const ChangeHistoryState = (show) => {
-		if (show)
-			window.history.replaceState(null, "", `/browse${window.location.search}`)
+		if (show) 
+			window.history.replaceState(null, "", $PATH == "" ? `/browse` : $PATH)
 		else
 			window.history.replaceState(null, "", "..")
 

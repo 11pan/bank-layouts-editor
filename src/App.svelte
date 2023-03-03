@@ -4,18 +4,18 @@
 	import page from 'page';
 	import BankLayoutsApp from './BankLayouts/BankLayoutsApp.svelte';
 	import FragmentApp from './FragmentPicker/FragmentApp.svelte';
+	import { PATH } from './BankLayouts/Utility/stores';
 
-	const localDevelopmentDebugUrl = "https://banklayouts.com/browse";
+	const localDevelopmentDebugUrl = "https://banklayouts.com/";
 	const referrer = document.referrer.includes("localhost") ? localDevelopmentDebugUrl : document.referrer;
 
-	const path = referrer.substring(referrer.indexOf("com") + 3);
-	const queryString = window.location.search;
+	$PATH = referrer.substring(referrer.indexOf("com") + 3);
 	let component;
 
-	if (path != "")
-		window.history.replaceState(null, "", `${path}${queryString}`)
+	if ($PATH != "") 
+		window.history.replaceState(null, "", $PATH)
 
-	switch(path) {
+	switch($PATH) {
 		case "":
 			component = BankLayoutsApp;
 			break;
