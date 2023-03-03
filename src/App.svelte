@@ -9,7 +9,7 @@
 	let component;
 
 	if (path != "")
-		window.history.pushState(null, "", path)
+		window.history.replaceState(null, "", path)
 
 	switch(path) {
 		case "":

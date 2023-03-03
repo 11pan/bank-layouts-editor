@@ -1,5 +1,5 @@
 <script>
-	import { WELCOME_POPUP, SLOTS } from "./Utility/stores.js"
+	import { WELCOME_POPUP, SLOTS, SHOW_CATALOG_PANEL } from "./Utility/stores.js"
 	import { fade } from 'svelte/transition'
 
 	import MainPanel from './Panels/MainPanel.svelte'
@@ -10,6 +10,11 @@
 	import { getItems } from "./Utility/stores"
 	import { LoadLayout } from "./Utility/LoadLayout"
 	import { decompressLayoutStr } from "./Utility/compress";
+
+	const path = document.referrer.substring(document.referrer.indexOf("com") + 3);
+
+	if (path == "/browse") 
+		$SHOW_CATALOG_PANEL = true;
 
 	let itemsPromise = getItems();
 	let loadedFromUrl = false;
@@ -42,8 +47,17 @@
 		}
 	};
 
+	const ChangeHistoryState = (show) => {
+		if (show)
+			window.history.replaceState(null, "", "/browse")
+		else
+			window.history.replaceState(null, "", "..")
+
+	}
+
 	$: LoadLayoutFromQueryString($SLOTS.grid);
 	$: ShowWelcomePopup($SLOTS.grid)
+	$: ChangeHistoryState($SHOW_CATALOG_PANEL);
 </script>
 
 {#await itemsPromise}

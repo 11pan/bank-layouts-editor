@@ -3,6 +3,8 @@
     import { SHOW_CATALOG_PANEL, VISIBLE_LAYOUT_CATALOG_ITEMS, VISIBLE_TAG_CATALOG_ITEMS, LAYOUT_CATALOG, TAG_CATALOG, ACTIVE_CATALOG_TAB, DROP_TABLE_TAG_CATALOG } from "../Utility/stores";
 
     import Fuse from 'fuse.js';
+    import queryString from 'query-string';
+    import { tick } from 'svelte';
 
     const tags = [];
 
@@ -25,6 +27,7 @@
     const layoutNameFuse = new Fuse(Object.values($LAYOUT_CATALOG), { keys: ['name', 'description'], useExtendedSearch: true });
     const catalogNameFuse = new Fuse(Object.values($TAG_CATALOG), { keys: ['name', 'description'], useExtendedSearch: true });
     const dropTableFuse = new Fuse(Object.values($DROP_TABLE_TAG_CATALOG), { keys: ['name'], useExtendedSearch: true });
+    const parsed = queryString.parse(location.search);
     
     let layoutCreatorFuse;
     let tagCreatorFuse;
@@ -89,15 +92,6 @@
         }
     }
 
-    let nameSearchText = "";
-    $: nameSearch(nameSearchText);
-
-    let creatorSearchText = "";
-    $: creatorSearch(creatorSearchText);
-
-    let dropTableTagSearchText = "";
-    $: dropTableSearch(dropTableTagSearchText)
-
     const TagChecked = () => {
         let enabledTags = tags.filter(tag => tag.enabled === true);
 
@@ -154,7 +148,29 @@
         }
     }
 
+    const CheckParameters = async () => {
+        if (parsed) {
+            switch(true) {
+                case parsed.creator != null:
+                    await tick();
+                    creatorSearchText = parsed.creator;
+                    break;
+            }
+        }
+    }
+
+    let nameSearchText = "";
+    $: nameSearch(nameSearchText);
+
+    let creatorSearchText = "";
+    $: creatorSearch(creatorSearchText);
+
+    let dropTableTagSearchText = "";
+    $: dropTableSearch(dropTableTagSearchText)
+
     $: TagChecked(tags)
+    
+    $: CheckParameters(parsed)
 
 </script>
 
