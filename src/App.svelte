@@ -8,6 +8,9 @@
 	const path = document.referrer.substring(document.referrer.indexOf("com") + 3);
 	let component;
 
+	if (path != "")
+		window.history.pushState(null, "", path)
+
 	switch(path) {
 		case "":
 			component = BankLayoutsApp;
