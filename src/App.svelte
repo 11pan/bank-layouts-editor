@@ -6,17 +6,16 @@
 	import FragmentApp from './FragmentPicker/FragmentApp.svelte';
 	import { PATH } from './BankLayouts/Utility/stores';
 
-	const localDevelopmentDebugUrl = "https://banklayouts.com/?layout=D1AzDysuWQNkAmYBGjFMHkHiK5MNR9MbHoABHgHmLgXMajHwACeygslOAGrkuBANwd1RrkAE7VAAHVAAd2ludGVydG9kdAB3aW50ZXJ0b2R0";
+	const localDevelopmentDebugUrl = "https://banklayouts.com/";
 	const referrer = document.referrer.includes("localhost") ? localDevelopmentDebugUrl : document.referrer;
-
-	console.log(document.referrer)
 
 	$PATH = referrer.substring(referrer.indexOf("com") + 3);
 	let component;
 
 
-	if ($PATH != "") 
+	if ($PATH.length > 1 && !$PATH.includes("?layout=")) 
 		window.history.replaceState(null, "", $PATH)
+	
 
 	switch($PATH) {
 		case "":

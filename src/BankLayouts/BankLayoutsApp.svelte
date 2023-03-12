@@ -51,7 +51,7 @@
 		if (show) 
 			window.history.replaceState(null, "", $PATH == "" ? `/browse` : $PATH)
 		else
-			window.history.replaceState(null, "", "..")
+			window.history.replaceState(null, "", ".." + window.location.search)
 
 	}
 
