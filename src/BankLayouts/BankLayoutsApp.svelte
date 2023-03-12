@@ -36,6 +36,7 @@
 	}
 	const LoadLayoutFromQueryString = () => {
 
+		console.log($PATH)
 		if (!$PATH.includes("?layout=")) return;
 
 		let compressedLayoutString =  $PATH.substring($PATH.indexOf("=") + 1)

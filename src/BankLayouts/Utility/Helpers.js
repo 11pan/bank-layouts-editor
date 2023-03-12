@@ -26,7 +26,9 @@ export const GetShareUrl = (exportText) => {
 
   let compressedString = compressLayoutStr(exportText);
   navigator.clipboard.writeText(
-    `${window.location.href.split("?")[0]}?layout=${compressedString}`
+    `${
+      window.location.href.replace("browse", "").split("?")[0]
+    }?layout=${compressedString}`
   );
   Toast.create({
     message: "Link to layout copied successfully",
