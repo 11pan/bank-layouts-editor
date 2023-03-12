@@ -36,12 +36,14 @@
 	}
 	const LoadLayoutFromQueryString = () => {
 
-		const urlParams = new URLSearchParams(window.location.search);
-		const compressedLayoutString = urlParams.get("layout");
+		if (!$PATH.includes("?layout=")) return;
+
+		let compressedLayoutString =  $PATH.substring($PATH.indexOf("=") + 1)
 
 		if (compressedLayoutString && $SLOTS.grid && !loadedFromUrl) {
 				LoadLayout(decompressLayoutStr(compressedLayoutString));
 				loadedFromUrl = true;
+				$PATH = "";
 		}
 	};
 
