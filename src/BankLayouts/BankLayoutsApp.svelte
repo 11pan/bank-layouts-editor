@@ -36,19 +36,18 @@
 	}
 	const LoadLayoutFromQueryString = () => {
 
-		console.log($PATH)
-		if (!$PATH.includes("?layout=")) return;
-
-		let compressedLayoutString =  $PATH.substring($PATH.indexOf("=") + 1)
+		const urlParams = new URLSearchParams(window.location.search);
+		const compressedLayoutString = urlParams.get("layout");
 
 		if (compressedLayoutString && $SLOTS.grid && !loadedFromUrl) {
 				LoadLayout(decompressLayoutStr(compressedLayoutString));
 				loadedFromUrl = true;
-				$PATH = "";
 		}
 	};
 
 	const ChangeHistoryState = (show) => {
+		if ($PATH.includes("?layout=")) return;
+
 		if (show) 
 			window.history.replaceState(null, "", $PATH == "" ? `/browse` : $PATH)
 		else
