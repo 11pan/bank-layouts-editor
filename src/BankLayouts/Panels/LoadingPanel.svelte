@@ -5,7 +5,6 @@
         `If you use a herring on a tree, you'll get a reference to Monty Python and the Holy Grail. - "This is not the mightiest tree in the forest."`,
         "Mod Jed sold IPs to RoT, a pking clan.",
         "There are meant to be a bunch of crows in Tirannwn and Zeah, but due to a copy-paste mistake, they all end up teleporting to the Lumbridge cow field a few seconds after the server restarts.",
-        "OTB will never get a phoenix.",
     ];
 
 </script>
