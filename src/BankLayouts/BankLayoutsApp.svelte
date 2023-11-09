@@ -27,13 +27,13 @@
 			'Before you try exporting a layout into Runelite.<br><br>' + 
 			'If you encounter any issues or have suggestions,<br>' + 
 			'please create an issue ticket on <a href="https://github.com/11pan/bank-layouts-editor">Github</a>.<br><br>' + 
-			'<small>(This popup will not be shown again once you close it)</small>', position: "is-bottom-left", duration: 3600000 })
+			'<small>(This popup will not be shown again once you close it)</small>', position: "is-bottom-left", duration: 3600000 }, onclick = () => $WELCOME_POPUP = "false")
 
-			document.getElementsByClassName("delete")[0].onclick = () => $WELCOME_POPUP = "false";
 			isWelcomePopupVisible = true;
 		}
 
 	}
+
 	const LoadLayoutFromQueryString = () => {
 
 		const urlParams = new URLSearchParams(window.location.search);
