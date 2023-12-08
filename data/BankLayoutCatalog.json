@@ -8,6 +8,13 @@
       "tags": ["Bossing", "Raiding"]
     },
     {
+      "name": "Lazy Man's Zulrah",
+      "description": "Maxed gear for those who hate maging Zulrah.",
+      "creator": "Balu",
+      "layout": "banktaglayoutsplugin:lazy zulrah,27235:1,28688:4,24635:5,12913:6,3024:7,27363:8,22249:9,11212:10,385:12,385:13,3024:14,3024:15,20997:16,27238:17,385:20,385:21,385:22,385:23,27241:25,385:28,385:29,385:30,385:31,26235:32,13237:33,28310:34,3144:36,3144:37,3144:38,3144:39,566:40,554:41,564:42,565:43,3144:44,3144:45,3144:46,3144:47,12938:52,27281:53,9790:54,25818:55,banktag:lazy zulrah,12921,27235,28688,24635,12913,3024,27363,22249,11212,385,20997,27238,27241,26235,13237,28310,3144,566,554,564,565,12938,27281,9790,25818",
+      "tags": ["Bossing"]
+    },
+    {
       "name": "Mass world Wintertodt",
       "description": "Everything you need for doing Wintertodt in a mass world.",
       "creator": "CampinOnline",
