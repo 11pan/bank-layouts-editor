@@ -74,7 +74,7 @@
 		<a href={null} on:click={(e) => { ExportText(ExportLayout(e)); getShareUrl(e) ; shareButtonText = "Copied!"; setInterval(function() { shareButtonText = "Share"}, 2000)}} class='card-footer-item'><Icon pack="fas" icon="share" />{shareButtonText}</a>
 	</div>
 	<div class='card-footer'>
-		<a href={null} on:click={(e) => {$SHOW_CATALOG_PANEL = !$SHOW_CATALOG_PANEL}} class='card-footer-item'><Icon pack="fas" icon="list" />Browse layouts {"(Beta)"}</a>
+		<a href={null} on:click={(e) => {$SHOW_CATALOG_PANEL = !$SHOW_CATALOG_PANEL}} class='card-footer-item'><Icon pack="fas" icon="list" />Browse layouts</a>
 	</div>
 </div>
 

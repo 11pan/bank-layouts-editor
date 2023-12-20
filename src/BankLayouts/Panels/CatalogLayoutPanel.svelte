@@ -1,7 +1,8 @@
 <script>
+  import ItemTagCatalog from '../Components/ItemTagCatalog.svelte';
 	import LayoutCatalog from '../Components/LayoutCatalog.svelte';
 	import TagCatalog from '../Components/TagCatalog.svelte';
-	import { ACTIVE_CATALOG_TAB, getCatalog, LAYOUT_CATALOG, TAG_CATALOG } from "../Utility/stores";
+	import { ACTIVE_CATALOG_TAB } from "../Utility/stores";
 	import { Tabs, Tab, Progress } from 'svelma';
 
 
@@ -13,8 +14,12 @@
 
 <Tabs bind:active style="is-fullwidth">
 	<Progress max="100"/>
-	<Tab label='Tags' icon='tag'>
+	<Tab label='Bank Tags' icon='tag'>
 		<TagCatalog/>
+	</Tab>
+
+	<Tab label='Item Tags' icon='tag'>
+		<ItemTagCatalog/>
 	</Tab>
 
 	<Tab label='Layouts' icon='th-large'>

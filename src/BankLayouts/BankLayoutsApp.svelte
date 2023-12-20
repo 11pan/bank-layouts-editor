@@ -49,7 +49,7 @@
 		if ($PATH.includes("?layout=")) return;
 
 		if (show) 
-			window.history.replaceState(null, "", $PATH == "" ? `/browse` : $PATH)
+			window.history.replaceState(null, "", $PATH == "/" || $PATH == "" ? `/browse` : $PATH)
 		else
 			window.history.replaceState(null, "", ".." + window.location.search)
 

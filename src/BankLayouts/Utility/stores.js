@@ -1,4 +1,5 @@
 import { writable } from "svelte/store";
+import { catalog } from "../../data/CustomItemTagCatalog";
 
 export const ITEM_MAP = writable({});
 
@@ -10,9 +11,11 @@ export const ITEMS_IN_GRID = writable(false);
 export const LAYOUT_CATALOG = writable([]);
 export const TAG_CATALOG = writable([]);
 export const DROP_TABLE_TAG_CATALOG = writable([]);
+export const ITEM_TAG_CATALOG = writable([]);
 
 export const VISIBLE_LAYOUT_CATALOG_ITEMS = writable([]);
 export const VISIBLE_TAG_CATALOG_ITEMS = writable([]);
+export const VISIBLE_ITEM_TAG_CATALOG_ITEMS = writable([]);
 
 export const SHOW_CATALOG_PANEL = writable(false);
 
@@ -29,6 +32,7 @@ LAYOUTS.subscribe((val) => {
 export const WELCOME_POPUP = writable(
   localStorage.getItem("WELCOME_POPUP") || "true"
 );
+
 WELCOME_POPUP.subscribe((val) => {
   localStorage.setItem("WELCOME_POPUP", val);
 });
@@ -73,4 +77,9 @@ export const getDropTableCatalog = async () => {
   DROP_TABLE_TAG_CATALOG.set(items.tags);
 
   return items;
+};
+
+export const getItemTagCatalog = async () => {
+  ITEM_TAG_CATALOG.set(catalog);
+  return catalog;
 };

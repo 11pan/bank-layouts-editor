@@ -1,25 +1,25 @@
 <script>
-	import { TAG_CATALOG, VISIBLE_TAG_CATALOG_ITEMS } from '../Utility/stores.js'
-  import Icon from "../Components/Icon.svelte";
+	import { getItemTagCatalog, ITEM_TAG_CATALOG, VISIBLE_ITEM_TAG_CATALOG_ITEMS } from '../Utility/stores.js'
+  import Icon from "./Icon.svelte";
   import { Tooltip, Toast } from 'svelma';
 
-	import { LoadLayout } from "../Utility/LoadLayout"
-  import { SaveLayout } from "../Utility/SaveLayout"
-  import { GetName, GetIcon, Titleize, GetShareUrl } from "../Utility/Helpers"
+  import { Titleize } from "../Utility/Helpers.js"
 
-  $VISIBLE_TAG_CATALOG_ITEMS = $TAG_CATALOG;
+  getItemTagCatalog();
+
+  $VISIBLE_ITEM_TAG_CATALOG_ITEMS = $ITEM_TAG_CATALOG;
 
   const pageSize = 10;
   let currentPage;
   let pageIndex = 0;
   let button;
 
-  let [pages, size] = [[...$VISIBLE_TAG_CATALOG_ITEMS], pageSize]
+  let [pages, size] = [[...$VISIBLE_ITEM_TAG_CATALOG_ITEMS], pageSize]
   pages = [...Array(Math.ceil(pages.length / size))].map(_ => pages.splice(0,size))
   currentPage = pages[0];
 
   const UpdatePages = () => {
-    pages = [...$VISIBLE_TAG_CATALOG_ITEMS];
+    pages = [...$VISIBLE_ITEM_TAG_CATALOG_ITEMS];
     pages = [...Array(Math.ceil(pages.length / size))].map(_ => pages.splice(0,size))
     ChangePage(0);
   }
@@ -37,7 +37,7 @@
     pageIndex = index;
   }
 
-  $: UpdatePages($VISIBLE_TAG_CATALOG_ITEMS)
+  $: UpdatePages($VISIBLE_ITEM_TAG_CATALOG_ITEMS)
   $: ChangePage(0, button)
 
 </script>
@@ -50,13 +50,13 @@
           <article class="media">
             <div class="media-left">
               <figure class="image is-64x64">
-                <Icon id={GetIcon(item.tag, true)}/>
+                <Icon id={item.icon}/>
               </figure>
             </div>
             <div class="media-content">
               <div class="content">
                   <p>
-                    <Tooltip label={GetName(item.tag, true)} position="is-top" type="is-dark">
+                    <Tooltip label={item.name} position="is-top" type="is-dark">
                       <strong>{Titleize(item.name)}</strong>
                     </Tooltip>
                     <small style="color:darkgray;"> @{item.creator}</small>
@@ -69,17 +69,10 @@
                 <div class="footerButtons">
                   <nav class="level is-mobile" style="padding-top: 5px;">
                     <div class="level-left">
-                      <button href={null} class="level-item hideBackground" aria-label="copy" on:click={LoadLayout(item.tag)}>
+                      <button href={null} class="level-item hideBackground" aria-label="copy" on:click={() => {window.open(item.source), "_blank"}}>
                         <span class="icon is-small">
-                          <Tooltip label="Open tag" position="is-top" type="is-dark">
-                              <i class="fas fa-copy buttonColor" aria-hidden="true" />
-                          </Tooltip>
-                        </span>
-                      </button>
-                      <button href={null} class="level-item hideBackground" aria-label="save" on:click={SaveLayout(true, item.tag, true)}>
-                        <span class="icon is-small">
-                          <Tooltip label="Save tag" position="is-top" type="is-dark">
-                              <i class="fas fa-save buttonColor" aria-hidden="true" />
+                          <Tooltip label="View on Github" position="is-top" type="is-dark">
+                              <i class="fa-brands fa-github buttonColor" aria-hidden="true" />
                           </Tooltip>
                         </span>
                       </button>
@@ -90,13 +83,6 @@
                         <span class="icon is-small">
                           <Tooltip label="Export tag" position="is-top" type="is-dark">
                               <i class="fas fa-file-export buttonColor" aria-hidden="true" />
-                          </Tooltip>
-                        </span>
-                      </button>
-                      <button href={null} class="level-item hideBackground" aria-label="share" on:click={GetShareUrl(item.tag)}>
-                        <span class="icon is-small">
-                          <Tooltip label="Share tag" position="is-top" type="is-dark">
-                              <i class="fas fa-share buttonColor" aria-hidden="true" />
                           </Tooltip>
                         </span>
                       </button>
