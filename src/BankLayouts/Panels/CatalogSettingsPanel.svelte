@@ -1,6 +1,6 @@
 <script>
 	import { Field, Input, Icon, Switch, Collapse } from 'svelma';
-    import { SHOW_CATALOG_PANEL, VISIBLE_LAYOUT_CATALOG_ITEMS, VISIBLE_TAG_CATALOG_ITEMS, LAYOUT_CATALOG, TAG_CATALOG, ACTIVE_CATALOG_TAB, DROP_TABLE_TAG_CATALOG } from "../Utility/stores";
+    import { SHOW_CATALOG_PANEL, VISIBLE_LAYOUT_CATALOG_ITEMS, VISIBLE_TAG_CATALOG_ITEMS, ITEM_TAG_CATALOG, VISIBLE_ITEM_TAG_CATALOG_ITEMS , LAYOUT_CATALOG, TAG_CATALOG, ACTIVE_CATALOG_TAB, DROP_TABLE_TAG_CATALOG } from "../Utility/stores";
 
     import Fuse from 'fuse.js';
     import queryString from 'query-string';
@@ -24,31 +24,42 @@
     });
 
 
-    const layoutNameFuse = new Fuse(Object.values($LAYOUT_CATALOG), { keys: ['name', 'description'], useExtendedSearch: true });
-    const catalogNameFuse = new Fuse(Object.values($TAG_CATALOG), { keys: ['name', 'description'], useExtendedSearch: true });
-    const dropTableFuse = new Fuse(Object.values($DROP_TABLE_TAG_CATALOG), { keys: ['name'], useExtendedSearch: true });
     const parsed = queryString.parse(location.search);
     
     let layoutCreatorFuse;
     let tagCreatorFuse;
+    let itemTagFuse;
 
     const updateVisibleCatalog = (result) => {
-        if (!result) return;
-        if ($ACTIVE_CATALOG_TAB == 1) {
-            $VISIBLE_LAYOUT_CATALOG_ITEMS = [];
-        
-            for (let i = 0; i < result.length; i++) 
-                $VISIBLE_LAYOUT_CATALOG_ITEMS.push(result[i].item)
 
-        } else {
-            $VISIBLE_TAG_CATALOG_ITEMS = [];
-        
-            for (let i = 0; i < result.length; i++) 
-                $VISIBLE_TAG_CATALOG_ITEMS.push(result[i].item)
+        if (!result) return;
+
+        switch($ACTIVE_CATALOG_TAB) {
+            case 0:
+                $VISIBLE_TAG_CATALOG_ITEMS = [];
+                
+                for (let i = 0; i < result.length; i++) 
+                    $VISIBLE_TAG_CATALOG_ITEMS.push(result[i].item)
+                break;
+
+            case 1:
+                $VISIBLE_ITEM_TAG_CATALOG_ITEMS = [];
+                    
+                for (let i = 0; i < result.length; i++) 
+                    $VISIBLE_ITEM_TAG_CATALOG_ITEMS.push(result[i].item)
+                break;
+
+            case 2:
+                $VISIBLE_LAYOUT_CATALOG_ITEMS = [];
+                
+                for (let i = 0; i < result.length; i++) 
+                    $VISIBLE_LAYOUT_CATALOG_ITEMS.push(result[i].item)
+                break;
         }
 
         layoutCreatorFuse = null;
         tagCreatorFuse = null;
+        itemTagFuse = null;
     }
 
     const nameSearch = text => { 
@@ -60,7 +71,25 @@
                 $VISIBLE_TAG_CATALOG_ITEMS = $TAG_CATALOG
             }
         } else {
-            updateVisibleCatalog(($ACTIVE_CATALOG_TAB == 1) ? layoutNameFuse.search(`'${text}`) : catalogNameFuse.search(`=${text}`))
+            switch($ACTIVE_CATALOG_TAB) {
+                case 0:
+                    const catalogNameFuse = new Fuse(Object.values($TAG_CATALOG), { keys: ['name', 'description'], useExtendedSearch: true });
+
+                    updateVisibleCatalog(catalogNameFuse.search(`'${text}`))
+                    break;
+
+                case 1:
+                    const itemTagNameFuse = new Fuse(Object.values($ITEM_TAG_CATALOG), { keys: ['name', 'description'], useExtendedSearch: true });
+
+                    updateVisibleCatalog(itemTagNameFuse.search(`'${text}`))
+                    break;
+
+                case 2:
+                    const layoutNameFuse = new Fuse(Object.values($LAYOUT_CATALOG), { keys: ['name', 'description'], useExtendedSearch: true });
+
+                    updateVisibleCatalog(layoutNameFuse.search(`'${text}`))
+                    break;
+            }
         }
     }
 
@@ -73,12 +102,21 @@
                 TagChecked();
             }
         } else {
-            if ($ACTIVE_CATALOG_TAB == 1) {
-                layoutCreatorFuse = new Fuse($VISIBLE_LAYOUT_CATALOG_ITEMS == $LAYOUT_CATALOG ? Object.values($LAYOUT_CATALOG) : Object.values($VISIBLE_LAYOUT_CATALOG_ITEMS), { keys: ['creator'] });
-                updateVisibleCatalog(layoutCreatorFuse.search(`'${text}`))
-            } else {
-                tagCreatorFuse = new Fuse($VISIBLE_TAG_CATALOG_ITEMS == $TAG_CATALOG ? Object.values($TAG_CATALOG) : Object.values($VISIBLE_TAG_CATALOG_ITEMS), { keys: ['creator'] });
-                updateVisibleCatalog(tagCreatorFuse.search(`'${text}`))
+            switch($ACTIVE_CATALOG_TAB) {
+                case 0:
+                    tagCreatorFuse = new Fuse($VISIBLE_TAG_CATALOG_ITEMS == $TAG_CATALOG ? Object.values($TAG_CATALOG) : Object.values($VISIBLE_TAG_CATALOG_ITEMS), { keys: ['creator'] });
+                    updateVisibleCatalog(tagCreatorFuse.search(`'${text}`))
+                    break;
+                
+                case 1:
+                    itemTagFuse = new Fuse($VISIBLE_ITEM_TAG_CATALOG_ITEMS == $ITEM_TAG_CATALOG ? Object.values($ITEM_TAG_CATALOG) : Object.values($VISIBLE_ITEM_TAG_CATALOG_ITEMS), { keys: ['creator'] });
+                    updateVisibleCatalog(itemTagFuse.search(`'${text}`))
+                    break;
+
+                case 2:
+                    layoutCreatorFuse = new Fuse($VISIBLE_LAYOUT_CATALOG_ITEMS == $LAYOUT_CATALOG ? Object.values($LAYOUT_CATALOG) : Object.values($VISIBLE_LAYOUT_CATALOG_ITEMS), { keys: ['creator'] });
+                    updateVisibleCatalog(layoutCreatorFuse.search(`'${text}`))
+                    break;
             }
         }
     }
@@ -88,6 +126,8 @@
             $VISIBLE_LAYOUT_CATALOG_ITEMS = $LAYOUT_CATALOG
             TagChecked();
         } else {
+            const dropTableFuse = new Fuse(Object.values($DROP_TABLE_TAG_CATALOG), { keys: ['name'], useExtendedSearch: true });
+
             updateVisibleCatalog(dropTableFuse.search(`'${text}`))
         }
     }
@@ -95,50 +135,83 @@
     const TagChecked = () => {
         let enabledTags = tags.filter(tag => tag.enabled === true);
 
-        if ($ACTIVE_CATALOG_TAB == 1) {
-            if (enabledTags.length == 0) {
-                $VISIBLE_LAYOUT_CATALOG_ITEMS = $LAYOUT_CATALOG
+        switch($ACTIVE_CATALOG_TAB) {
+            // BANK TAGS
+            case 0:
+                if (enabledTags.length == 0) {
+                    $VISIBLE_TAG_CATALOG_ITEMS = $TAG_CATALOG;
 
-                if (nameSearchText != "") {
-                    nameSearch(nameSearchText)
-                } else if (creatorSearchText != "") {
-                    creatorSearch(creatorSearchText)
+                    if (nameSearchText != "") {
+                        nameSearch(nameSearchText)
+                    } else if (creatorSearchText != "") {
+                        creatorSearch(creatorSearchText)
+                    }
+
+                    return;
                 }
 
-                return;
-            }
+                $VISIBLE_TAG_CATALOG_ITEMS = [];
+                
+                enabledTags.forEach(tag => {
+                    let tagsWithTags = $TAG_CATALOG.filter(x => x.tags.includes(tag.tag));
 
-            $VISIBLE_LAYOUT_CATALOG_ITEMS = [];
-            
-            enabledTags.forEach(tag => {
-                let layoutsWithTag = $LAYOUT_CATALOG.filter(layout => layout.tags.includes(tag.tag));
+                    tagsWithTags.forEach(_tag => {
+                        if ($VISIBLE_TAG_CATALOG_ITEMS.includes(tag)) return;
+                        $VISIBLE_TAG_CATALOG_ITEMS.push(_tag);
+                    })
+                });
+                break;
+            // ITEM TAGS
+            case 1:
+                if (enabledTags.length == 0) {
+                        $VISIBLE_ITEM_TAG_CATALOG_ITEMS = $ITEM_TAG_CATALOG;
 
-                layoutsWithTag.forEach(layout => {
-                    $VISIBLE_LAYOUT_CATALOG_ITEMS.push(layout);
-                })
-            });
-        } else {
-            if (enabledTags.length == 0) {
-                $VISIBLE_TAG_CATALOG_ITEMS = $TAG_CATALOG;
+                        if (nameSearchText != "") {
+                            nameSearch(nameSearchText)
+                        } else if (creatorSearchText != "") {
+                            creatorSearch(creatorSearchText)
+                        }
 
-                if (nameSearchText != "") {
-                    nameSearch(nameSearchText)
-                } else if (creatorSearchText != "") {
-                    creatorSearch(creatorSearchText)
+                        return;
+                    }
+
+                    $VISIBLE_ITEM_TAG_CATALOG_ITEMS = [];
+                    
+                    enabledTags.forEach(tag => {
+                        let tagsWithTags = $ITEM_TAG_CATALOG.filter(x => x.tags.includes(tag.tag));
+
+                        tagsWithTags.forEach(_tag => {
+                            if ($VISIBLE_ITEM_TAG_CATALOG_ITEMS.includes(tag)) return;
+                            $VISIBLE_ITEM_TAG_CATALOG_ITEMS.push(_tag);
+                        })
+                    });
+                break;
+
+            // BANK LAYOUTS
+            case 2:
+                if (enabledTags.length == 0) {
+                    $VISIBLE_LAYOUT_CATALOG_ITEMS = $LAYOUT_CATALOG
+
+                    if (nameSearchText != "") {
+                        nameSearch(nameSearchText)
+                    } else if (creatorSearchText != "") {
+                        creatorSearch(creatorSearchText)
+                    }
+
+                    return;
                 }
 
-                return;
-            }
+                $VISIBLE_LAYOUT_CATALOG_ITEMS = [];
+                
+                enabledTags.forEach(tag => {
+                    let layoutsWithTag = $LAYOUT_CATALOG.filter(layout => layout.tags.includes(tag.tag));
 
-            $VISIBLE_TAG_CATALOG_ITEMS = [];
-            
-            enabledTags.forEach(tag => {
-                let tagsWithTags = $TAG_CATALOG.filter(x => x.tags.includes(tag.tag));
-
-                tagsWithTags.forEach(_tag => {
-                    $VISIBLE_TAG_CATALOG_ITEMS.push(_tag);
-                })
-            });
+                    layoutsWithTag.forEach(layout => {
+                        if ($VISIBLE_LAYOUT_CATALOG_ITEMS.includes(layout)) return;
+                        $VISIBLE_LAYOUT_CATALOG_ITEMS.push(layout);
+                    })
+                });
+                break;
         }
 
         if (nameSearchText != "") {
