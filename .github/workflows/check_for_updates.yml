@@ -38,7 +38,7 @@ jobs:
             echo "Release changed: false"
           fi
 
-      - name: Call workflow to build code
+      - name: Call workflow to update the db
         if: steps.compare_release.outputs.release_changed == 'true'
         uses: benc-uk/workflow-dispatch@v1
         with:
