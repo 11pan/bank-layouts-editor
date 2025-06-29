@@ -26,7 +26,7 @@ jobs:
         id: compare_release
         run: |
           # Read the release info from the downloaded artifact
-          PREVIOUS_RELEASE=$(cat xyz-release-info 2> /dev/null || echo "NONE")
+          PREVIOUS_RELEASE=`cat data/item-db-version.txt`
           echo "previous release: $PREVIOUS_RELEASE"
 
           # Compare the fetched release tag with the previous release tag
