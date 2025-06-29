@@ -23,6 +23,9 @@ node ./itemDatabase.js --iconsFromRunelite
 mv ./item-db.json ../data/item-db.json
 cd ..
 
+cat $DATE > data/item-db-version.txt
+
+git stage data/item-db-version.txt
 git stage data/item-db.json
 git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
 git config --local user.name "github-actions[bot]"
