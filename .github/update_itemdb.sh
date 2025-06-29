@@ -23,7 +23,7 @@ node ./itemDatabase.js --iconsFromRunelite
 mv ./item-db.json ../data/item-db.json
 cd ..
 
-cat $DATE > data/item-db-version.txt
+echo $DATE > data/item-db-version.txt
 
 git stage data/item-db-version.txt
 git stage data/item-db.json
