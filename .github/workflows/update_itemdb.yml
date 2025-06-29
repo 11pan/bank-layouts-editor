@@ -1,4 +1,4 @@
-name: Upate item-db
+name: Update item-db
 
 on:
   workflow_dispatch:
