@@ -19,7 +19,7 @@ jobs:
         run: |
           # Fetch release information and extract the release tag
           RELEASE_TAG=`curl -s "https://api.github.com/repos/abextm/osrs-cache/releases" | jq -r '[.[] | select(.prerelease == false) | .assets[] | select(.name | endswith(".tar.gz") and startswith("dump-"))][0].browser_download_url' | grep -oP '(?<=dump-)[0-9]{4}-[0-9]{2}-[0-9]{2}(?=-rev)'`
-          echo "release_tag=$CUR_DATE" >> $RELEASE_TAG
+          echo "release_tag=$RELEASE_TAG" >> $GITHUB_OUTPUT
           echo "latest release: $RELEASE_TAG"
 
       - name: Compare with previous release
@@ -30,7 +30,7 @@ jobs:
           echo "previous release: $PREVIOUS_RELEASE"
 
           # Compare the fetched release tag with the previous release tag
-          if [ "${{ steps.get_release.outputs.release_tag }}" != "$PREVIOUS_RELEASE" ]; then
+          if [ "${{ steps.get_release.outputs.RELEASE_TAG }}" != "$PREVIOUS_RELEASE" ]; then
             echo "release_changed=true" >> $GITHUB_OUTPUT
             echo "Release changed: true"
           else
