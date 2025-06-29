@@ -30,7 +30,7 @@ jobs:
           echo "previous release: $PREVIOUS_RELEASE"
 
           # Compare the fetched release tag with the previous release tag
-          if [ "${{ steps.get_release.outputs.RELEASE_TAG }}" != "$PREVIOUS_RELEASE" ]; then
+          if [ "${{ steps.get_release.outputs.release_tag }}" != "$PREVIOUS_RELEASE" ]; then
             echo "release_changed=true" >> $GITHUB_OUTPUT
             echo "Release changed: true"
           else
