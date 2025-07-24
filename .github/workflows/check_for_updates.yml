@@ -18,7 +18,8 @@ jobs:
         id: get_release
         run: |
           # Fetch release information and extract the release tag
-          RELEASE_TAG=`curl -s "https://api.github.com/repos/abextm/osrs-cache/releases" | jq -r '[.[] | select(.prerelease == false) | .assets[] | select(.name | endswith(".tar.gz") and startswith("dump-"))][0].browser_download_url' | grep -oP '(?<=dump-)[0-9]{4}-[0-9]{2}-[0-9]{2}(?=-rev)'`
+          URL=`curl -s "https://api.github.com/repos/abextm/osrs-cache/releases/latest" | jq -r '.assets[0].browser_download_url'`
+          RELEASE_TAG=`echo $URL | grep -oP '(?<=dump-)[0-9]{4}-[0-9]{2}-[0-9]{2}(?=-rev)'`
           echo "release_tag=$RELEASE_TAG" >> $GITHUB_OUTPUT
           echo "latest release: $RELEASE_TAG"
 

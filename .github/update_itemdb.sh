@@ -8,13 +8,14 @@ npm install
 cp ../data/item-db.json ./item-db.json
 
 # Download the latest item definitions dump
-URL=`curl -s "https://api.github.com/repos/abextm/osrs-cache/releases" | jq -r '[.[] | select(.prerelease == false) | .assets[] | select(.name | endswith(".tar.gz") and startswith("dump-"))][0].browser_download_url'`
+URL=`curl -s "https://api.github.com/repos/abextm/osrs-cache/releases/latest" | jq -r '.assets[0].browser_download_url'`
 DATE=`echo $URL | grep -oP '(?<=dump-)[0-9]{4}-[0-9]{2}-[0-9]{2}(?=-rev)'`
 wget $URL -O dump.tar.gz
 
 # Extract item definitions
 tar -zxf dump.tar.gz dump/item_defs/
-mv dump/item_defs ./item_defs
+rm -rf ./item_defs
+mv dump/item_defs ./
 
 # Update the item database
 node ./itemDatabase.js --update
