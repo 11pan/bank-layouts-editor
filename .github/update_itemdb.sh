@@ -20,14 +20,17 @@ mv dump/item_defs ./
 # Update the item database
 node ./itemDatabase.js --update
 node ./itemDatabase.js --iconsFromRunelite
+node ./itemDatabase.js --clog
 
 mv ./item-db.json ../data/item-db.json
+mv ./clog-db.json ../data/clog-db.json
 cd ..
 
 echo $DATE > data/item-db-version.txt
 
 git stage data/item-db-version.txt
 git stage data/item-db.json
+git stage data/clog-db.json
 git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
 git config --local user.name "github-actions[bot]"
 git commit -m "Update item-db to $DATE"
